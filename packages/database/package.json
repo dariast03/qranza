@@ -21,6 +21,7 @@
 		"zod": "catalog:"
 	},
 	"devDependencies": {
+		"@faker-js/faker": "catalog:",
 		"@repo/tsconfig": "workspace:*",
 		"@types/node": "catalog:",
 		"dotenv-cli": "catalog:",

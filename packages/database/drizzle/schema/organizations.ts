@@ -1,9 +1,17 @@
 import { createId as cuid } from "@paralleldrive/cuid2";
 import { relations } from "drizzle-orm";
-import { index, pgTable, text, timestamp, uniqueIndex } from "drizzle-orm/pg-core";
+import {
+	index,
+	pgTable,
+	text,
+	timestamp,
+	uniqueIndex,
+} from "drizzle-orm/pg-core";
 
+import { country, currency } from "./base";
 import { user } from "./auth";
 import { purchase } from "./purchases";
+import { branch } from "./branches";
 
 export const organization = pgTable(
 	"organization",
@@ -14,7 +22,16 @@ export const organization = pgTable(
 		name: text("name").notNull(),
 		slug: text("slug").notNull().unique(),
 		logo: text("logo"),
-		createdAt: timestamp("createdAt").notNull(),
+		countryCode: text("countryCode").references(() => country.code),
+		currencyCode: text("currencyCode").references(() => currency.code),
+		timezone: text("timezone"),
+		city: text("city"),
+		address: text("address"),
+		createdAt: timestamp("createdAt").defaultNow().notNull(),
+		updatedAt: timestamp("updatedAt")
+			.defaultNow()
+			.$onUpdate(() => /* @__PURE__ */ new Date())
+			.notNull(),
 		metadata: text("metadata"),
 		paymentsCustomerId: text("paymentsCustomerId"),
 	},
@@ -37,7 +54,10 @@ export const member = pgTable(
 		createdAt: timestamp("createdAt").notNull(),
 	},
 	(table) => [
-		uniqueIndex("member_user_org_idx").on(table.userId, table.organizationId),
+		uniqueIndex("member_user_org_idx").on(
+			table.userId,
+			table.organizationId,
+		),
 		index("member_organizationId_idx").on(table.organizationId),
 		index("member_userId_idx").on(table.userId),
 	],
@@ -71,6 +91,7 @@ export const organizationRelations = relations(organization, ({ many }) => ({
 	members: many(member),
 	invitations: many(invitation),
 	purchases: many(purchase),
+	branches: many(branch),
 }));
 
 export const memberRelations = relations(member, ({ one }) => ({
