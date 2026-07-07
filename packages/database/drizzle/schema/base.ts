@@ -62,6 +62,33 @@ export const country = pgTable(
 	],
 );
 
+export const industry = pgTable(
+	"industry",
+	{
+		code: text("code").primaryKey(),
+		name: text("name").notNull(),
+		icon: text("icon"),
+		parentId: text("parentId").references((): any => industry.code),
+		createdAt: timestamp("createdAt").defaultNow().notNull(),
+		updatedAt: timestamp("updatedAt")
+			.defaultNow()
+			.$onUpdate(() => /* @__PURE__ */ new Date())
+			.notNull(),
+	},
+	(table) => [
+		index("industry_name_idx").on(table.name),
+		index("industry_parentId_idx").on(table.parentId),
+	],
+);
+
+export const industryRelations = relations(industry, ({ one, many }) => ({
+	parent: one(industry, {
+		fields: [industry.parentId],
+		references: [industry.code],
+	}),
+	children: many(industry),
+}));
+
 export const languageRelations = relations(language, ({ many }) => ({
 	countries: many(country),
 }));
