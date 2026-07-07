@@ -931,6 +931,9 @@ importers:
       drizzle-kit:
         specifier: 'catalog:'
         version: 0.31.10
+      tsx:
+        specifier: 'catalog:'
+        version: 4.22.4
 
   packages/i18n:
     dependencies:

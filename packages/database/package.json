@@ -9,6 +9,7 @@
 		"db:generate": "dotenv -c -e ../../.env -e ../../.env.local -- drizzle-kit generate",
 		"db:migrate": "dotenv -c -e ../../.env -e ../../.env.local -- drizzle-kit migrate",
 		"db:studio": "dotenv -c -e ../../.env -e ../../.env.local -- drizzle-kit studio",
+		"db:seed": "dotenv -c -e ../../.env -e ../../.env.local -- tsx ./drizzle/seeders/index.ts",
 		"type-check": "tsc --noEmit"
 	},
 	"dependencies": {
@@ -23,6 +24,7 @@
 		"@repo/tsconfig": "workspace:*",
 		"@types/node": "catalog:",
 		"dotenv-cli": "catalog:",
-		"drizzle-kit": "catalog:"
+		"drizzle-kit": "catalog:",
+		"tsx": "catalog:"
 	}
 }
