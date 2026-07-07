@@ -1,7 +1,7 @@
 import { and, count, eq, isNull } from "drizzle-orm";
 
 import { db } from "../client";
-import { notification, userNotificationPreference } from "../schema/postgres";
+import { notification, userNotificationPreference } from "../schema";
 
 export async function getDisabledNotificationPreferences(userId: string) {
 	return db

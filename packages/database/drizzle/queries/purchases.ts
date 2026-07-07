@@ -2,7 +2,7 @@ import { eq } from "drizzle-orm";
 import type { z } from "zod";
 
 import { db } from "../client";
-import { purchase } from "../schema/postgres";
+import { purchase } from "../schema";
 import type { PurchaseInsertSchema, PurchaseUpdateSchema } from "../zod";
 
 export async function getPurchasesByOrganizationId(organizationId: string) {

@@ -2,7 +2,7 @@ import { eq, ilike, or, sql } from "drizzle-orm";
 import type { z } from "zod";
 
 import { db } from "../client";
-import { account, user } from "../schema/postgres";
+import { account, user } from "../schema";
 import type { UserUpdateSchema } from "../zod";
 
 export async function getUsers({

@@ -2,7 +2,7 @@ import { and, eq, ilike, or, sql } from "drizzle-orm";
 import type { z } from "zod";
 
 import { db } from "../client";
-import { member, organization } from "../schema/postgres";
+import { member, organization } from "../schema";
 import type { OrganizationUpdateSchema } from "../zod";
 
 export async function getOrganizations({
