@@ -1,0 +1,42 @@
+import { PostContent } from "@blog/components/PostContent";
+import { localeRedirect } from "@i18n/routing";
+import { getLegalPageByPath } from "@legal/lib/pages";
+import { getCurrentLocale } from "@repo/i18n/runtime";
+import { getActivePathFromUrlParam } from "@shared/lib/content";
+import { createFileRoute } from "@tanstack/react-router";
+
+export const Route = createFileRoute("/legal/$slug/")({
+	component: LegalPage,
+	loader: async ({ params }) => {
+		const resolvedLocale = getCurrentLocale();
+		const activePath = getActivePathFromUrlParam(params.slug);
+		const page = await getLegalPageByPath(activePath, { locale: resolvedLocale });
+		if (!page) {
+			localeRedirect({ href: "/" });
+		}
+		return { page };
+	},
+	head: ({ loaderData }) => ({
+		meta: loaderData?.page ? [{ title: loaderData.page.title }] : [],
+	}),
+});
+
+function LegalPage() {
+	const { page } = Route.useLoaderData();
+
+	if (!page) {
+		return null;
+	}
+
+	const { title, body } = page;
+
+	return (
+		<div className="max-w-6xl py-16 container">
+			<div className="mb-12 max-w-2xl mx-auto">
+				<h1 className="font-bold text-4xl text-center">{title}</h1>
+			</div>
+
+			<PostContent content={body} />
+		</div>
+	);
+}

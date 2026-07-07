@@ -1,0 +1,13 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"target": "ES2022",
+		"noEmit": true
+	},
+	"display": "TanStack Start",
+	"extends": "./base.json"
+}

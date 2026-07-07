@@ -1,0 +1,32 @@
+{
+	"name": "supastarter-tanstack-start",
+	"private": true,
+	"scripts": {
+		"build": "dotenv -c -- turbo build",
+		"dev": "dotenv -c -- turbo dev --concurrency 15",
+		"type-check": "dotenv -c -- turbo type-check",
+		"start": "dotenv -c -- turbo start",
+		"test": "dotenv -c -- turbo test",
+		"lint": "oxlint",
+		"lint:fix": "oxlint --fix",
+		"verify": "pnpm --filter marketing run generate && oxlint && oxfmt --check",
+		"check": "oxlint --fix && oxfmt --write",
+		"clean": "turbo clean",
+		"format": "oxfmt --write",
+		"format:check": "oxfmt --check"
+	},
+	"devDependencies": {
+		"@repo/tsconfig": "workspace:*",
+		"@types/node": "catalog:",
+		"dotenv-cli": "catalog:",
+		"oxfmt": "catalog:",
+		"oxlint": "catalog:",
+		"oxlint-tsgolint": "^0.23.0",
+		"turbo": "^2.10.0",
+		"typescript": "catalog:"
+	},
+	"engines": {
+		"node": ">=22"
+	},
+	"packageManager": "pnpm@11.3.0"
+}

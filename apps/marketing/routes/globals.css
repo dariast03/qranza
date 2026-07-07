@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@import "@repo/tailwind-config/theme.css";
+@import "@repo/tailwind-config/tailwind-animate.css";
+
+@plugin "../node_modules/@tailwindcss/typography/src/index.js";
+
+@source "../../../packages/ui/components";
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+	/* Base UI: helps portaled overlays (dialogs, popovers) cover the visual viewport on newer Safari. */
+	body {
+		position: relative;
+	}
+
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--border);
+	}
+
+	button:not(:disabled),
+	[role="button"]:not(:disabled) {
+		cursor: pointer;
+	}
+}

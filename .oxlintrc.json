@@ -1,0 +1,17 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": ["typescript", "react", "import", "jsx-a11y", "oxc"],
+	"settings": {
+		"react": {
+			"version": "19.2.0"
+		},
+		"tailwindcss": {
+			"callees": ["clsx", "cva", "cn"]
+		}
+	},
+	"ignorePatterns": ["**/.content-collections/**", "**/routeTree.gen.ts"],
+	"options": {
+		"typeAware": true,
+		"typeCheck": true
+	}
+}

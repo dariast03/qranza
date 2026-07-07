@@ -1,0 +1,30 @@
+import { useTranslations } from "@i18n/intl";
+import { ChangeEmailForm } from "@settings/components/ChangeEmailForm";
+import { ChangeNameForm } from "@settings/components/ChangeNameForm";
+import { DeleteAccountForm } from "@settings/components/DeleteAccountForm";
+import { UserAvatarForm } from "@settings/components/UserAvatarForm";
+import { UserLanguageForm } from "@settings/components/UserLanguageForm";
+import { SettingsList } from "@shared/components/SettingsList";
+import { createFileRoute } from "@tanstack/react-router";
+
+export const Route = createFileRoute("/_authenticated/_main/settings/general/")({
+	component: SettingsGeneralPage,
+	head: () => ({ meta: [{ title: "Settings — General" }] }),
+});
+
+function SettingsGeneralPage() {
+	const t = useTranslations();
+
+	return (
+		<div>
+			<h2 className="mb-4 font-semibold text-lg">{t("settings.menu.account.general")}</h2>
+			<SettingsList>
+				<UserAvatarForm />
+				<ChangeNameForm />
+				<ChangeEmailForm />
+				<UserLanguageForm />
+				<DeleteAccountForm />
+			</SettingsList>
+		</div>
+	);
+}

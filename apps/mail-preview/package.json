@@ -1,0 +1,22 @@
+{
+	"name": "mail-preview",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "email dev --port 3003 --dir ../../packages/mail/emails",
+		"clean": "git clean -xdf .cache .turbo dist node_modules",
+		"lint": "oxlint",
+		"format": "oxfmt --write"
+	},
+	"dependencies": {
+		"@react-email/ui": "^6.6.5",
+		"@repo/mail": "workspace:*",
+		"react": "catalog:",
+		"react-email": "^6.6.5"
+	},
+	"devDependencies": {
+		"@repo/tsconfig": "workspace:*",
+		"@types/node": "catalog:",
+		"@types/react": "catalog:"
+	}
+}

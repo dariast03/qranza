@@ -1,0 +1,79 @@
+import { Logo } from "@repo/ui";
+import React, { type PropsWithChildren } from "react";
+import { Container, Font, Head, Html, Section, Tailwind } from "react-email";
+
+// Keep email design tokens aligned with tooling/tailwind/theme.css.
+const mailTailwindTheme = {
+	theme: {
+		extend: {
+			colors: {
+				border: "#e7e5e4",
+				input: "#e7e5e4",
+				ring: "#a8a29e",
+				background: "#fafaf9",
+				foreground: "#0c0a09",
+				primary: {
+					DEFAULT: "#1c1917",
+					foreground: "#ffffff",
+				},
+				secondary: {
+					DEFAULT: "#f5f5f4",
+					foreground: "#1c1917",
+				},
+				destructive: {
+					DEFAULT: "#b91c1c",
+					foreground: "#ffffff",
+				},
+				success: {
+					DEFAULT: "#047857",
+					foreground: "#ffffff",
+				},
+				muted: {
+					DEFAULT: "#f5f5f4",
+					foreground: "#78716c",
+				},
+				accent: {
+					DEFAULT: "#f5f5f4",
+					foreground: "#1c1917",
+				},
+				popover: {
+					DEFAULT: "#ffffff",
+					foreground: "#0c0a09",
+				},
+				card: {
+					DEFAULT: "#ffffff",
+					foreground: "#0c0a09",
+				},
+			},
+			borderRadius: {
+				lg: "0.75rem",
+				md: "calc(0.75rem - 2px)",
+				sm: "calc(0.75rem - 4px)",
+				DEFAULT: "0.75rem",
+			},
+		},
+	},
+};
+
+export default function Wrapper({ children }: PropsWithChildren) {
+	return (
+		<Tailwind config={mailTailwindTheme}>
+			<Html lang="en">
+				<Head>
+					<Font
+						fontFamily="Inter"
+						fallbackFontFamily="Arial"
+						fontWeight={400}
+						fontStyle="normal"
+					/>
+				</Head>
+				<Section className="p-4 bg-background">
+					<Container className="p-6 rounded-lg bg-card text-card-foreground">
+						<Logo />
+						{children}
+					</Container>
+				</Section>
+			</Html>
+		</Tailwind>
+	);
+}
