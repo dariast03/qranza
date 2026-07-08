@@ -1,7 +1,9 @@
 import { faker } from "@faker-js/faker";
 
 import type { NodePgDatabase } from "drizzle-orm/node-postgres";
+import { isNotNull } from "drizzle-orm";
 import { organization } from "../schema/organizations";
+import { organizationProfile } from "../schema/organization-profile";
 import { branch } from "../schema/branches";
 import { schedule, scheduleWeeklySlot } from "../schema/schedule";
 import { industry, country, currency } from "../schema/base";
@@ -36,10 +38,8 @@ function randomWorkingDays() {
 	return faker.helpers.arrayElements([...DAYS_OF_WEEK], faker.number.int({ min: 5, max: 7 }));
 }
 
-async function createOrganization(
+async function createOrg(
 	db: NodePgDatabase<Record<string, never>>,
-	countryCode: string,
-	currencyCode: string,
 ) {
 	const name = faker.company.name();
 	return db
@@ -47,14 +47,30 @@ async function createOrganization(
 		.values({
 			name,
 			slug: slugify(name),
+			createdAt: new Date(),
+		})
+		.returning({ id: organization.id, name: organization.name });
+}
+
+async function createOrgProfile(
+	db: NodePgDatabase<Record<string, never>>,
+	orgId: string,
+	industryCode: string,
+	countryCode: string,
+	currencyCode: string,
+) {
+	return db
+		.insert(organizationProfile)
+		.values({
+			organizationId: orgId,
+			industryCode,
 			countryCode,
 			currencyCode,
 			timezone: "America/La_Paz",
 			city: faker.location.city(),
 			address: faker.location.streetAddress(),
-			createdAt: new Date(),
 		})
-		.returning({ id: organization.id });
+		.returning({ id: organizationProfile.id });
 }
 
 async function createBranch(
@@ -157,7 +173,10 @@ export async function seed(
 		return;
 	}
 
-	const industriesRows = await db.select({ code: industry.code }).from(industry);
+	const industriesRows = await db
+		.select({ code: industry.code })
+		.from(industry)
+		.where(isNotNull(industry.parentId));
 	const countriesRows = await db.select({ code: country.code }).from(country);
 	const currenciesRows = await db.select({ code: currency.code }).from(currency);
 
@@ -171,10 +190,12 @@ export async function seed(
 	let totalSchedules = 0;
 
 	for (let i = 0; i < count; i++) {
+		const industryRow = faker.helpers.arrayElement(industriesRows);
 		const countryRow = faker.helpers.arrayElement(countriesRows);
 		const currencyRow = faker.helpers.arrayElement(currenciesRows);
 
-		const [org] = await createOrganization(db, countryRow.code, currencyRow.code);
+		const [org] = await createOrg(db);
+		await createOrgProfile(db, org.id, industryRow.code, countryRow.code, currencyRow.code);
 		orgsCreated++;
 
 		const { branchesCreated, schedulesCreated } = await createBranchesWithSchedules(

@@ -224,17 +224,29 @@
 			"avatarDescription": "Cliquez sur le cercle ou déposez une image pour télécharger votre avatar.",
 			"name": "Nom"
 		},
+		"business": {
+			"name": "Nom de l'entreprise",
+			"namePlaceholder": "Entrez le nom de votre entreprise",
+			"slug": "Slug de l'URL",
+			"slugDescription": "Ce sera votre URL publique. Vous pouvez la modifier plus tard dans les paramètres.",
+			"businessType": "Type d'entreprise",
+			"businessTypePlaceholder": "Sélectionnez votre type d'entreprise",
+			"category": "Catégorie",
+			"categoryPlaceholder": "Sélectionnez une catégorie",
+			"country": "Pays",
+			"countryPlaceholder": "Sélectionnez votre pays"
+		},
 		"continue": "Continuer",
-		"message": "Quelques étapes rapides pour commencer.",
+		"message": "Configurez votre entreprise pour commencer.",
 		"notifications": {
-			"accountSetupFailed": "Nous sommes désolés, nous n'avons pas pu configurer votre compte. Veuillez réessayer plus tard."
+			"accountSetupFailed": "Nous sommes désolés, nous n'avons pas pu configurer votre entreprise. Veuillez réessayer plus tard."
 		},
 		"pricing": {
 			"planSelected": "Votre plan a été sélectionné avec succès.",
 			"skip": "Passer pour le moment"
 		},
 		"step": "Étape {step} / {total}",
-		"title": "Configurez votre compte"
+		"title": "Configurez votre entreprise"
 	},
 	"organizations": {
 		"createForm": {

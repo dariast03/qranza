@@ -8,6 +8,20 @@
       "when": 1783400873544,
       "tag": "0000_sparkling_changeling",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1783404763178,
+      "tag": "0001_typical_bruce_banner",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1783407846495,
+      "tag": "0002_ancient_nomad",
+      "breakpoints": true
     }
   ]
 }

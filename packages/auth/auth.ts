@@ -16,7 +16,13 @@ import { getBaseUrl, getTrustedOrigins } from "@repo/utils";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { APIError, createAuthMiddleware } from "better-auth/api";
-import { admin, magicLink, openAPI, organization, twoFactor } from "better-auth/plugins";
+import {
+	admin,
+	magicLink,
+	openAPI,
+	organization,
+	twoFactor,
+} from "better-auth/plugins";
 import { parse as parseCookies } from "cookie";
 
 import { config } from "./config";
@@ -58,7 +64,8 @@ export const auth = betterAuth({
 					return {
 						data: {
 							...session,
-							activeOrganizationId: user?.lastActiveOrganizationId ?? null,
+							activeOrganizationId:
+								user?.lastActiveOrganizationId ?? null,
 						},
 					};
 				},
@@ -104,7 +111,9 @@ export const auth = betterAuth({
 					return;
 				}
 
-				await updateSeatsInOrganizationSubscription(invitation.organizationId);
+				await updateSeatsInOrganizationSubscription(
+					invitation.organizationId,
+				);
 			} else if (ctx.path.startsWith("/organization/remove-member")) {
 				const { organizationId } = ctx.body;
 
@@ -130,9 +139,10 @@ export const auth = betterAuth({
 				) as string | undefined;
 				if (
 					candidateSlug &&
-					(config.organizations.forbiddenOrganizationSlugs as readonly string[]).includes(
-						candidateSlug,
-					)
+					(
+						config.organizations
+							.forbiddenOrganizationSlugs as readonly string[]
+					).includes(candidateSlug)
 				) {
 					throw new APIError("BAD_REQUEST", {
 						code: "FORBIDDEN_ORGANIZATION_SLUG",
@@ -154,12 +164,15 @@ export const auth = betterAuth({
 						: await getPurchasesByUserId(userId as string);
 					const subscriptions = purchases.filter(
 						(purchase) =>
-							purchase.type === "SUBSCRIPTION" && purchase.subscriptionId !== null,
+							purchase.type === "SUBSCRIPTION" &&
+							purchase.subscriptionId !== null,
 					);
 
 					if (subscriptions.length > 0) {
 						for (const subscription of subscriptions) {
-							await cancelSubscription(subscription.subscriptionId as string);
+							await cancelSubscription(
+								subscription.subscriptionId as string,
+							);
 						}
 					}
 				}
@@ -186,7 +199,10 @@ export const auth = betterAuth({
 		},
 		changeEmail: {
 			enabled: true,
-			sendChangeEmailConfirmation: async ({ user: { email, name }, url }, request) => {
+			sendChangeEmailConfirmation: async (
+				{ user: { email, name }, url },
+				request,
+			) => {
 				const locale = getLocaleFromRequest(request);
 				await sendEmail({
 					to: email,
@@ -225,7 +241,10 @@ export const auth = betterAuth({
 	emailVerification: {
 		sendOnSignUp: config.requireEmailVerification,
 		autoSignInAfterVerification: true,
-		sendVerificationEmail: async ({ user: { email, name }, url }, request) => {
+		sendVerificationEmail: async (
+			{ user: { email, name }, url },
+			request,
+		) => {
 			const locale = getLocaleFromRequest(request);
 			await sendEmail({
 				to: email,
@@ -270,7 +289,10 @@ export const auth = betterAuth({
 			},
 		}),
 		organization({
-			sendInvitationEmail: async ({ email, id, organization }, request) => {
+			sendInvitationEmail: async (
+				{ email, id, organization },
+				request,
+			) => {
 				const locale = getLocaleFromRequest(request);
 				const existingUser = await getUserByEmail(email);
 
@@ -314,7 +336,8 @@ export type ActiveOrganization = NonNullable<
 
 export type Organization = typeof auth.$Infer.Organization;
 
-export type OrganizationMemberRole = ActiveOrganization["members"][number]["role"];
+export type OrganizationMemberRole =
+	ActiveOrganization["members"][number]["role"];
 
 export type OrganizationInvitationStatus = typeof auth.$Infer.Invitation.status;
 

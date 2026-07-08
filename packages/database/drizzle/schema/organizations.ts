@@ -8,10 +8,10 @@ import {
 	uniqueIndex,
 } from "drizzle-orm/pg-core";
 
-import { country, currency } from "./base";
 import { user } from "./auth";
 import { purchase } from "./purchases";
 import { branch } from "./branches";
+import { organizationProfile } from "./organization-profile";
 
 export const organization = pgTable(
 	"organization",
@@ -22,15 +22,10 @@ export const organization = pgTable(
 		name: text("name").notNull(),
 		slug: text("slug").notNull().unique(),
 		logo: text("logo"),
-		countryCode: text("countryCode").references(() => country.code),
-		currencyCode: text("currencyCode").references(() => currency.code),
-		timezone: text("timezone"),
-		city: text("city"),
-		address: text("address"),
 		createdAt: timestamp("createdAt").defaultNow().notNull(),
 		updatedAt: timestamp("updatedAt")
 			.defaultNow()
-			.$onUpdate(() => /* @__PURE__ */ new Date())
+			.$onUpdate(() => new Date())
 			.notNull(),
 		metadata: text("metadata"),
 		paymentsCustomerId: text("paymentsCustomerId"),
@@ -87,11 +82,15 @@ export const invitation = pgTable(
 	],
 );
 
-export const organizationRelations = relations(organization, ({ many }) => ({
+export const organizationRelations = relations(organization, ({ many, one }) => ({
 	members: many(member),
 	invitations: many(invitation),
 	purchases: many(purchase),
 	branches: many(branch),
+	profile: one(organizationProfile, {
+		fields: [organization.id],
+		references: [organizationProfile.organizationId],
+	}),
 }));
 
 export const memberRelations = relations(member, ({ one }) => ({

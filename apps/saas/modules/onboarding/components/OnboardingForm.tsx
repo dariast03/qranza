@@ -6,7 +6,7 @@ import { useRouter, useSearch } from "@tanstack/react-router";
 import { useMemo } from "react";
 import { withQuery } from "ufo";
 
-import { OnboardingAccountStep } from "./OnboardingAccountStep";
+import { OnboardingBusinessStep } from "./OnboardingBusinessStep";
 
 interface OnboardingSearch {
 	redirectTo?: string;
@@ -43,7 +43,7 @@ export function OnboardingForm() {
 	const steps = useMemo(() => {
 		const allSteps: { component: React.ReactNode }[] = [
 			{
-				component: <OnboardingAccountStep onCompleted={() => onCompleted()} />,
+				component: <OnboardingBusinessStep onCompleted={() => onCompleted()} />,
 			},
 		];
 

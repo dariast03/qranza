@@ -1,9 +1,7 @@
 import { and, eq, ilike, or, sql } from "drizzle-orm";
-import type { z } from "zod";
 
 import { db } from "../client";
 import { member, organization } from "../schema";
-import type { OrganizationUpdateSchema } from "../zod";
 
 export async function getOrganizations({
 	limit,
@@ -92,11 +90,16 @@ export async function getPendingInvitationByEmail(email: string) {
 	});
 }
 
-export async function updateOrganization(
-	updatedOrganization: z.infer<typeof OrganizationUpdateSchema>,
-) {
+export async function updateOrganization(data: {
+	id: string;
+	name?: string;
+	slug?: string;
+	logo?: string | null;
+	metadata?: string | null;
+	paymentsCustomerId?: string | null;
+}) {
 	return db
 		.update(organization)
-		.set(updatedOrganization)
-		.where(eq(organization.id, updatedOrganization.id));
+		.set(data)
+		.where(eq(organization.id, data.id));
 }

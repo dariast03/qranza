@@ -85,8 +85,9 @@ export const industryRelations = relations(industry, ({ one, many }) => ({
 	parent: one(industry, {
 		fields: [industry.parentId],
 		references: [industry.code],
+		relationName: "children",
 	}),
-	children: many(industry),
+	children: many(industry, { relationName: "children" }),
 }));
 
 export const languageRelations = relations(language, ({ many }) => ({

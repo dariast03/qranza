@@ -223,17 +223,29 @@
 			"avatarDescription": "Klicke auf den Kreis oder ziehe ein Bild hinein, um deinen Avatar hochzuladen.",
 			"name": "Name"
 		},
+		"business": {
+			"name": "Firmenname",
+			"namePlaceholder": "Gib deinen Firmennamen ein",
+			"slug": "URL-Slug",
+			"slugDescription": "Dies wird deine öffentliche URL sein. Du kannst sie später in den Einstellungen ändern.",
+			"businessType": "Unternehmenstyp",
+			"businessTypePlaceholder": "Wähle deinen Unternehmenstyp",
+			"category": "Kategorie",
+			"categoryPlaceholder": "Wähle eine Kategorie",
+			"country": "Land",
+			"countryPlaceholder": "Wähle dein Land"
+		},
 		"continue": "Weiter",
-		"message": "Nur ein paar schnelle Schritte, um dir den Einstieg zu erleichtern.",
+		"message": "Richte dein Unternehmen ein, um zu beginnen.",
 		"notifications": {
-			"accountSetupFailed": "Es tut uns leid, aber wir konnten dein Konto nicht einrichten. \nBitte versuche es später noch einmal."
+			"accountSetupFailed": "Es tut uns leid, aber wir konnten dein Unternehmen nicht einrichten. Bitte versuche es später noch einmal."
 		},
 		"pricing": {
 			"planSelected": "Dein Plan wurde erfolgreich ausgewählt.",
 			"skip": "Vorerst überspringen"
 		},
 		"step": "Schritt {step} / {total}",
-		"title": "Richte dein Konto ein"
+		"title": "Richte dein Unternehmen ein"
 	},
 	"organizations": {
 		"createForm": {

@@ -224,17 +224,29 @@
 			"avatarDescription": "Click the circle or drop an image to it to upload your avatar.",
 			"name": "Name"
 		},
+		"business": {
+			"name": "Business name",
+			"namePlaceholder": "Enter your business name",
+			"slug": "URL slug",
+			"slugDescription": "This will be your public URL. You can change it later in settings.",
+			"businessType": "Business type",
+			"businessTypePlaceholder": "Select your business type",
+			"category": "Category",
+			"categoryPlaceholder": "Select a category",
+			"country": "Country",
+			"countryPlaceholder": "Select your country"
+		},
 		"continue": "Continue",
-		"message": "Just a few quick steps to get you started.",
+		"message": "Set up your business to get started.",
 		"notifications": {
-			"accountSetupFailed": "We are sorry, but we were unable to set up your account. Please try again later."
+			"accountSetupFailed": "We are sorry, but we were unable to set up your business. Please try again later."
 		},
 		"pricing": {
 			"planSelected": "Your plan has been selected successfully.",
 			"skip": "Skip for now"
 		},
 		"step": "Step {step} / {total}",
-		"title": "Set up your account"
+		"title": "Set up your business"
 	},
 	"organizations": {
 		"createForm": {
