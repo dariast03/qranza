@@ -41,11 +41,19 @@ export function ChangePasswordForm() {
 			});
 
 			if (error) {
-				toastError(t("settings.account.security.changePassword.notifications.error"));
+				toastError(
+					t(
+						"settings.account.security.changePassword.notifications.error",
+					),
+				);
 				return;
 			}
 
-			toastSuccess(t("settings.account.security.changePassword.notifications.success"));
+			toastSuccess(
+				t(
+					"settings.account.security.changePassword.notifications.success",
+				),
+			);
 			formApi.reset({ currentPassword: "", newPassword: "" });
 			void router.invalidate();
 		},
@@ -55,7 +63,9 @@ export function ChangePasswordForm() {
 	const canSubmit = useStore(form.store, (s) => s.canSubmit && s.isDirty);
 
 	return (
-		<SettingsItem title={t("settings.account.security.changePassword.title")}>
+		<SettingsItem
+			title={t("settings.account.security.changePassword.title")}
+		>
 			<Form form={form}>
 				<form
 					onSubmit={(e) => {
@@ -78,7 +88,9 @@ export function ChangePasswordForm() {
 											name={field.name}
 											autoComplete="current-password"
 											value={field.state.value}
-											onChange={(next) => field.handleChange(next)}
+											onChange={(next) =>
+												field.handleChange(next)
+											}
 										/>
 									</FormControl>
 									<FormMessage />
@@ -90,7 +102,9 @@ export function ChangePasswordForm() {
 							{(field) => (
 								<FormItem>
 									<FormLabel>
-										{t("settings.account.security.changePassword.newPassword")}
+										{t(
+											"settings.account.security.changePassword.newPassword",
+										)}
 									</FormLabel>
 									<FormControl>
 										<PasswordInput
@@ -99,7 +113,9 @@ export function ChangePasswordForm() {
 											showPasswordCriteria
 											showGenerateButton
 											value={field.state.value}
-											onChange={(next) => field.handleChange(next)}
+											onChange={(next) =>
+												field.handleChange(next)
+											}
 										/>
 									</FormControl>
 									<FormMessage />
@@ -108,7 +124,11 @@ export function ChangePasswordForm() {
 						</FormField>
 
 						<div className="flex justify-end">
-							<Button type="submit" loading={isSubmitting} disabled={!canSubmit}>
+							<Button
+								type="submit"
+								loading={isSubmitting}
+								disabled={!canSubmit}
+							>
 								{t("settings.save")}
 							</Button>
 						</div>

@@ -24,6 +24,7 @@ catalog:
     "@orpc/tanstack-query": 1.14.6
     "@orpc/zod": 1.14.6
     "@playwright/test": ^1.61.1
+    "@shadcn/react": "^0.2.0"
     "@shikijs/rehype": ^4.3.0
     "@sindresorhus/slugify": ^3.0.0
     "@tailwindcss/vite": ^4.3.1
@@ -48,6 +49,7 @@ catalog:
     boring-avatars: ^2.0.4
     class-variance-authority: ^0.7.1
     clsx: ^2.1.1
+    cmdk: "^1.1.1"
     cookie: ^1.1.1
     cropperjs: 1.6.2
     date-fns: ^4.4.0
@@ -56,13 +58,15 @@ catalog:
     drizzle-kit: ^0.31.10
     drizzle-orm: ^0.45.2
     drizzle-zod: 0.8.3
+    embla-carousel-react: ^8.6.0
     es-toolkit: ^1.49.0
     hono: ^4.12.27
     input-otp: ^1.4.2
     js-cookie: ^3.0.8
-    lucide-react: ^1.22.0
+    lucide-react: ^1.23.0
     mdx: ^0.3.1
     mdx-bundler: ^10.1.1
+    motion: ^12.42.2
     nanoid: ^5.1.16
     nprogress: ^0.2.0
     nuqs: ^2.8.9
@@ -72,6 +76,9 @@ catalog:
     pg: ^8.22.0
     postcss: 8.5.16
     prettier: 3.8.3
+    radix-ui: ^1.6.2
+    react-day-picker: ^10.0.1
+    react-resizable-panels: ^4.12.1
     react: 19.2.7
     react-cropper: ^2.3.3
     react-dom: 19.2.7
@@ -93,6 +100,7 @@ catalog:
     uuid: ^14.0.1
     vite: ^8.1.0
     vitest: ^4.1.9
+    vaul: ^1.1.2
     zod: ^4.4.3
 
 allowBuilds:

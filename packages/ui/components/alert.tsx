@@ -1,18 +1,16 @@
-import type { VariantProps } from "class-variance-authority";
-import { cva } from "class-variance-authority";
 import * as React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "../lib";
 
 const alertVariants = cva(
-	"relative w-full rounded-lg border p-4 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:top-4 [&>svg]:left-4 [&>svg]:size-4 [&>svg]:text-foreground [&>svg~*]:pl-6",
+	"group/alert relative grid w-full gap-0.5 rounded-lg border px-2.5 py-2 text-left text-sm has-data-[slot=alert-action]:relative has-data-[slot=alert-action]:pr-18 has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4",
 	{
 		variants: {
 			variant: {
-				default: "bg-background text-foreground",
-				primary: "border-primary/20 bg-primary/10 text-primary [&>svg]:text-primary",
-				error: "border-destructive/20 bg-destructive/10 text-destructive [&>svg]:text-destructive",
-				success: "border-success/20 bg-success/10 text-success [&>svg]:text-success",
+				default: "bg-card text-card-foreground",
+				destructive:
+					"bg-card text-destructive *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current",
 			},
 		},
 		defaultVariants: {
@@ -21,34 +19,58 @@ const alertVariants = cva(
 	},
 );
 
-const Alert = ({
+function Alert({
 	className,
 	variant,
 	...props
-}: React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>) => (
-	<div role="alert" className={cn(alertVariants({ variant }), className)} {...props} />
-);
-
-const AlertTitle = ({
-	className,
-	children,
-	...props
-}: React.HTMLAttributes<HTMLHeadingElement>) => {
-	if (children === null || children === undefined || children === "") {
-		return null;
-	}
+}: React.ComponentProps<"div"> & VariantProps<typeof alertVariants>) {
 	return (
-		<h5
-			className={cn("font-semibold text-sm leading-tight tracking-tight", className)}
+		<div
+			data-slot="alert"
+			role="alert"
+			className={cn(alertVariants({ variant }), className)}
 			{...props}
-		>
-			{children}
-		</h5>
+		/>
 	);
-};
+}
 
-const AlertDescription = ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
-	<div className={cn("text-sm [&_p]:leading-relaxed mt-1", className)} {...props} />
-);
+function AlertTitle({ className, ...props }: React.ComponentProps<"div">) {
+	return (
+		<div
+			data-slot="alert-title"
+			className={cn(
+				"font-medium group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground",
+				className,
+			)}
+			{...props}
+		/>
+	);
+}
 
-export { Alert, AlertDescription, AlertTitle };
+function AlertDescription({
+	className,
+	...props
+}: React.ComponentProps<"div">) {
+	return (
+		<div
+			data-slot="alert-description"
+			className={cn(
+				"text-sm text-balance text-muted-foreground md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4",
+				className,
+			)}
+			{...props}
+		/>
+	);
+}
+
+function AlertAction({ className, ...props }: React.ComponentProps<"div">) {
+	return (
+		<div
+			data-slot="alert-action"
+			className={cn("absolute top-2 right-2", className)}
+			{...props}
+		/>
+	);
+}
+
+export { Alert, AlertTitle, AlertDescription, AlertAction };

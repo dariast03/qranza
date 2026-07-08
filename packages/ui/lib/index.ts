@@ -75,5 +75,7 @@ export function mergeTriggerProps(
 		out.style = { ...styleA, ...styleB };
 	}
 
-	return out as Record<string, unknown> & { ref: React.RefCallback<HTMLElement> };
+	return out as Record<string, unknown> & {
+		ref: React.RefCallback<HTMLElement>;
+	};
 }
