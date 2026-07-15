@@ -16,9 +16,11 @@
 			"@admin/*": ["./modules/admin/*"],
 			"@ai/*": ["./modules/ai/*"],
 			"@onboarding/*": ["./modules/onboarding/*"],
-			"@shared/*": ["./modules/shared/*"]
-		}
+			"@shared/*": ["./modules/shared/*"],
+			"@server/*": ["./src/server/*"],
+			"@scripts/*": ["./src/scripts/*"],
+		},
 	},
 	"include": ["**/*.ts", "**/*.tsx", "**/*.mts"],
-	"exclude": ["node_modules", "dist"]
+	"exclude": ["node_modules", "dist"],
 }

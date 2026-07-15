@@ -27,4 +27,4 @@ export * from "./components/toast";
 export * from "./components/tooltip";
 export * from "./components/theme-provider";
 export * from "./lib";
-export * from "./hooks/use-mobile";
+export * from "./hooks";
