@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "@repo/tailwind-config/theme.css";
 @import "@repo/tailwind-config/tailwind-animate.css";
+@import "../modules/shared/styles/presets/brutalist.css";
+@import "../modules/shared/styles/presets/soft-pop.css";
+@import "../modules/shared/styles/presets/tangerine.css";
 
 @source "../../../packages/ui/components";
 @source "../node_modules/streamdown/dist/*.js";
@@ -33,5 +36,39 @@
 
 	svg.lucide {
 		stroke-width: 1.5;
+	}
+
+	.disable-transitions * {
+		transition: none !important;
+	}
+
+	@keyframes accordion-down {
+		from {
+			height: 0;
+		}
+		to {
+			height: var(--collapsible-panel-height);
+		}
+	}
+	@keyframes accordion-up {
+		from {
+			height: var(--collapsible-panel-height);
+		}
+		to {
+			height: 0;
+		}
+	}
+
+	* {
+		@apply border-border outline-ring/50;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+		font-variation-settings: var(--app-font-variation-settings);
+	}
+
+	html {
+		@apply font-sans;
 	}
 }

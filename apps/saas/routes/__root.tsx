@@ -21,7 +21,7 @@ import { NuqsAdapter } from "nuqs/adapters/tanstack-router";
 import appCss from "./globals.css?url";
 import "cropperjs/dist/cropper.css";
 import { PREFERENCE_DEFAULTS } from "@shared/lib/preferences/preferences-config";
-import { ThemeBootScript } from "@scripts/theme-boot";
+import { ThemeBootScript } from "@shared/scripts/theme-boot";
 import { PreferencesStoreProvider } from "@shared/stores/preferences/preferences-provider";
 import { NotFound } from "./-components/not-found";
 import { RootError } from "./-components/root-error";

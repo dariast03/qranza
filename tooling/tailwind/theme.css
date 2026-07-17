@@ -82,36 +82,6 @@
 
 	--animation-accordion-down: accordion-down 0.2s ease-out;
 	--animation-accordion-up: accordion-up 0.2s ease-out;
-
-	@keyframes accordion-down {
-		from {
-			height: 0;
-		}
-		to {
-			height: var(--collapsible-panel-height);
-		}
-	}
-	@keyframes accordion-up {
-		from {
-			height: var(--collapsible-panel-height);
-		}
-		to {
-			height: 0;
-		}
-	}
-
-	* {
-		@apply border-border outline-ring/50;
-	}
-
-	body {
-		@apply bg-background text-foreground;
-		font-variation-settings: var(--app-font-variation-settings);
-	}
-
-	html {
-		@apply font-sans;
-	}
 }
 
 @utility container {
@@ -161,8 +131,4 @@
 	[data-theme-preset]:not([data-theme-preset="default"]) .shadow-2xl {
 		box-shadow: var(--shadow-2xl);
 	}
-}
-
-.disable-transitions * {
-	transition: none !important;
 }
