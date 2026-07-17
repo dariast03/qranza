@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { BadgeCheck, Bell, Check, CreditCard, LogOut } from "lucide-react";
 
+import { useTranslations } from "@i18n/intl";
 import {
 	Avatar,
 	AvatarFallback,
@@ -29,6 +30,7 @@ export function AccountSwitcher({
 		readonly role: string;
 	}>;
 }) {
+	const t = useTranslations();
 	const [activeUser, setActiveUser] = useState(users[0]);
 
 	if (!activeUser) {
@@ -98,21 +100,21 @@ export function AccountSwitcher({
 				<DropdownMenuGroup>
 					<DropdownMenuItem>
 						<BadgeCheck />
-						Account
+						{t("app.navUser.account")}
 					</DropdownMenuItem>
 					<DropdownMenuItem>
 						<CreditCard />
-						Billing
+						{t("app.navUser.billing")}
 					</DropdownMenuItem>
 					<DropdownMenuItem>
 						<Bell />
-						Notifications
+						{t("app.navUser.notifications")}
 					</DropdownMenuItem>
 				</DropdownMenuGroup>
 				<DropdownMenuSeparator />
 				<DropdownMenuItem>
 					<LogOut />
-					Log out
+					{t("app.navUser.logOut")}
 				</DropdownMenuItem>
 			</DropdownMenuContent>
 		</DropdownMenu>

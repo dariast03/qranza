@@ -147,6 +147,35 @@
 				}
 			}
 		},
+		"search": {
+			"label": "Search",
+			"placeholder": "Search dashboards, users, and more…",
+			"empty": "No results found."
+		},
+		"layoutControls": {
+			"title": "Preferences",
+			"description": "Customize your dashboard layout preferences.",
+			"themePreset": "Theme Preset",
+			"themePresetPlaceholder": "Preset",
+			"fonts": "Fonts",
+			"fontsPlaceholder": "Select font",
+			"themeMode": "Theme Mode",
+			"pageLayout": "Page Layout",
+			"navbarBehavior": "Navbar Behavior",
+			"sidebarStyle": "Sidebar Style",
+			"sidebarCollapseMode": "Sidebar Collapse Mode",
+			"restoreDefaults": "Restore Defaults"
+		},
+		"navUser": {
+			"account": "Account",
+			"billing": "Billing",
+			"notifications": "Notifications",
+			"logOut": "Log out"
+		},
+		"supportCard": {
+			"title": "Looking for something more?",
+			"description": "Open an issue or do reach out to me on"
+		},
 		"menu": {
 			"accountSettings": "Account settings",
 			"admin": "Admin",

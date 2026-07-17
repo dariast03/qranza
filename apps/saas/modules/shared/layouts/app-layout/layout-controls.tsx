@@ -1,6 +1,7 @@
 import { Settings } from "lucide-react";
 import { useShallow } from "zustand/react/shallow";
 
+import { useTranslations } from "@i18n/intl";
 import { Button } from "@repo/ui/components/button";
 import { Label } from "@repo/ui/components/label";
 import {
@@ -32,6 +33,7 @@ import {
 import { usePreferencesStore } from "@shared/stores/preferences/preferences-provider";
 
 export function LayoutControls() {
+	const t = useTranslations();
 	const { values, resolvedThemeMode, setPreference, resetPreferences } =
 		usePreferencesStore(
 			useShallow((state) => ({
@@ -85,23 +87,23 @@ export function LayoutControls() {
 
 	return (
 		<Popover>
-			<PopoverTrigger render={<Button size="icon" />}>
+			<PopoverTrigger render={<Button variant="ghost" size="icon" />}>
 				<Settings />
 			</PopoverTrigger>
 			<PopoverContent align="end">
 				<div className="flex flex-col gap-5">
 					<div className="space-y-1.5">
 						<h4 className="font-medium text-sm leading-none">
-							Preferences
+							{t("app.layoutControls.title")}
 						</h4>
 						<p className="text-muted-foreground text-xs">
-							Customize your dashboard layout preferences.
+							{t("app.layoutControls.description")}
 						</p>
 					</div>
 					<div className="space-y-3 **:data-[slot=toggle-group]:w-full **:data-[slot=toggle-group-item]:flex-1 **:data-[slot=toggle-group-item]:text-xs">
 						<div className="space-y-1">
 							<Label className="font-medium text-xs">
-								Theme Preset
+								{t("app.layoutControls.themePreset")}
 							</Label>
 							<Select
 								items={themePresetItems}
@@ -119,7 +121,9 @@ export function LayoutControls() {
 								>
 									<SelectValue
 										className="items-center"
-										placeholder="Preset"
+										placeholder={t(
+											"app.layoutControls.themePresetPlaceholder",
+										)}
 									/>
 								</SelectTrigger>
 								<SelectContent>
@@ -155,7 +159,9 @@ export function LayoutControls() {
 						</div>
 
 						<div className="space-y-1">
-							<Label className="font-medium text-xs">Fonts</Label>
+							<Label className="font-medium text-xs">
+								{t("app.layoutControls.fonts")}
+							</Label>
 							<Select
 								items={fontItems}
 								value={font}
@@ -168,7 +174,11 @@ export function LayoutControls() {
 									size="sm"
 									className="w-full text-xs"
 								>
-									<SelectValue placeholder="Select font" />
+									<SelectValue
+										placeholder={t(
+											"app.layoutControls.fontsPlaceholder",
+										)}
+									/>
 								</SelectTrigger>
 								<SelectContent>
 									<SelectGroup>
@@ -188,7 +198,7 @@ export function LayoutControls() {
 
 						<div className="space-y-1">
 							<Label className="font-medium text-xs">
-								Theme Mode
+								{t("app.layoutControls.themeMode")}
 							</Label>
 							<ToggleGroup
 								size="sm"
@@ -226,7 +236,7 @@ export function LayoutControls() {
 
 						<div className="space-y-1">
 							<Label className="font-medium text-xs">
-								Page Layout
+								{t("app.layoutControls.pageLayout")}
 							</Label>
 							<ToggleGroup
 								size="sm"
@@ -258,7 +268,7 @@ export function LayoutControls() {
 
 						<div className="space-y-1">
 							<Label className="font-medium text-xs">
-								Navbar Behavior
+								{t("app.layoutControls.navbarBehavior")}
 							</Label>
 							<ToggleGroup
 								size="sm"
@@ -290,7 +300,7 @@ export function LayoutControls() {
 
 						<div className="space-y-1">
 							<Label className="font-medium text-xs">
-								Sidebar Style
+								{t("app.layoutControls.sidebarStyle")}
 							</Label>
 							<ToggleGroup
 								size="sm"
@@ -328,7 +338,7 @@ export function LayoutControls() {
 
 						<div className="space-y-1">
 							<Label className="font-medium text-xs">
-								Sidebar Collapse Mode
+								{t("app.layoutControls.sidebarCollapseMode")}
 							</Label>
 							<ToggleGroup
 								size="sm"
@@ -365,7 +375,7 @@ export function LayoutControls() {
 							className="w-full text-xs"
 							onClick={resetPreferences}
 						>
-							Restore Defaults
+							{t("app.layoutControls.restoreDefaults")}
 						</Button>
 					</div>
 				</div>

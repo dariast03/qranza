@@ -1,15 +1,18 @@
 import { siX } from "simple-icons";
 
+import { useTranslations } from "@i18n/intl";
 import { SimpleIcon } from "@shared/components/simple-icon";
 import { Card, CardDescription, CardHeader, CardTitle } from "@repo/ui/components/card";
 
 export function SidebarSupportCard() {
+  const t = useTranslations();
+
   return (
     <Card size="sm" className="overflow-hidden shadow-none group-data-[collapsible=icon]:hidden">
       <CardHeader className="min-w-0 px-4">
-        <CardTitle className="truncate text-sm">Looking for something more?</CardTitle>
+        <CardTitle className="truncate text-sm">{t("app.supportCard.title")}</CardTitle>
         <CardDescription className="line-clamp-2">
-          Open an issue or do reach out to me on&nbsp;
+          {t("app.supportCard.description")}&nbsp;
           <a
             href="https://x.com/arhamkhnz"
             target="_blank"

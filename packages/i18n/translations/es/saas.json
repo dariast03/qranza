@@ -147,6 +147,35 @@
 				}
 			}
 		},
+		"search": {
+			"label": "Buscar",
+			"placeholder": "Buscar paneles, usuarios y más…",
+			"empty": "No se encontraron resultados."
+		},
+		"layoutControls": {
+			"title": "Preferencias",
+			"description": "Personaliza las preferencias de diseño del panel.",
+			"themePreset": "Tema",
+			"themePresetPlaceholder": "Tema",
+			"fonts": "Fuentes",
+			"fontsPlaceholder": "Seleccionar fuente",
+			"themeMode": "Modo de tema",
+			"pageLayout": "Diseño de página",
+			"navbarBehavior": "Comportamiento del navbar",
+			"sidebarStyle": "Estilo del sidebar",
+			"sidebarCollapseMode": "Modo de colapso del sidebar",
+			"restoreDefaults": "Restaurar predeterminados"
+		},
+		"navUser": {
+			"account": "Cuenta",
+			"billing": "Facturación",
+			"notifications": "Notificaciones",
+			"logOut": "Cerrar sesión"
+		},
+		"supportCard": {
+			"title": "¿Buscas algo más?",
+			"description": "Abre un issue o contacta en"
+		},
 		"menu": {
 			"accountSettings": "Configuración de cuenta",
 			"admin": "Admin",

@@ -2,9 +2,6 @@ import type { CSSProperties, PropsWithChildren } from "react";
 
 import { createFileRoute, Outlet } from "@tanstack/react-router";
 
-import { siGithub } from "simple-icons";
-
-import { SimpleIcon } from "@shared/components/simple-icon";
 import { Button } from "@repo/ui/components/button";
 import { Separator } from "@repo/ui/components/separator";
 import {
@@ -15,6 +12,7 @@ import {
 import { users } from "@shared/data/users";
 import { cn } from "@repo/ui/lib";
 import { getDashboardLayout } from "@server/server-actions";
+import { LocaleSwitch } from "@shared/components/locale-switch";
 
 import { AccountSwitcher } from "./account-switcher";
 import { AppSidebar } from "./app-sidebar";
@@ -73,23 +71,7 @@ export default function AppLayout({
 						<div className="flex items-center gap-2">
 							<LayoutControls />
 							<ThemeSwitcher />
-							<Button
-								size="icon"
-								nativeButton={false}
-								render={
-									<a
-										href="https://github.com/arhamkhnz/tanstack-shadcn-admin-dashboard"
-										target="_blank"
-										rel="noreferrer"
-										aria-label="Open GitHub repository"
-									/>
-								}
-							>
-								<SimpleIcon
-									icon={siGithub}
-									className="fill-primary-foreground"
-								/>
-							</Button>
+							<LocaleSwitch />
 							<AccountSwitcher users={users} />
 						</div>
 					</div>
