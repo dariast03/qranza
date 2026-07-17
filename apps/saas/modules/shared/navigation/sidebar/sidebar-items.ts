@@ -37,6 +37,7 @@ export interface NavSubItem {
 	badge?: NavBadge;
 	disabled?: boolean;
 	newTab?: boolean;
+	subItems?: NavSubItem[];
 }
 
 interface NavItemBase {

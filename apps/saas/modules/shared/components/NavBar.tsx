@@ -87,7 +87,8 @@ function NavMenuList({
 					const parentClasses = cn(
 						"gap-3 px-3 py-2 text-sm flex w-full items-center rounded-lg border border-transparent whitespace-nowrap transition-colors",
 						{
-							"font-semibold border-border bg-card": menuItem.isActive,
+							"font-semibold border-border bg-card":
+								menuItem.isActive,
 							"hover:bg-accent/50": !menuItem.isActive,
 							"md:justify-center md:px-2": isCollapsedEffective,
 						},
@@ -145,7 +146,11 @@ function NavMenuList({
 												render={(tp) => (
 													<DropdownMenuTrigger
 														render={(mp) => {
-															const m = mergeTriggerProps(tp, mp);
+															const m =
+																mergeTriggerProps(
+																	tp,
+																	mp,
+																);
 															return (
 																<button
 																	{...m}
@@ -156,7 +161,9 @@ function NavMenuList({
 																			| undefined,
 																		parentClasses,
 																	)}
-																	aria-label={menuItem.label}
+																	aria-label={
+																		menuItem.label
+																	}
 																>
 																	{parentIcon}
 																</button>
@@ -179,31 +186,39 @@ function NavMenuList({
 													{menuItem.label}
 												</DropdownMenuLabel>
 											</DropdownMenuGroup>
-											{menuItem.subItems.map((subItem) => {
-												const subActive = isNavSubItemActive(
-													pathname,
-													subItem.href,
-												);
-												return (
-													<DropdownMenuItem
-														key={subItem.href}
-														nativeButton={false}
-														render={(props) => (
-															<Link
-																{...props}
-																to={subItem.href}
-																className={cn(
-																	props.className,
-																	"flex w-full cursor-default items-center",
-																	subActive && "font-semibold",
-																)}
-															>
-																{subItem.label}
-															</Link>
-														)}
-													/>
-												);
-											})}
+											{menuItem.subItems.map(
+												(subItem) => {
+													const subActive =
+														isNavSubItemActive(
+															pathname,
+															subItem.href,
+														);
+													return (
+														<DropdownMenuItem
+															key={subItem.href}
+															nativeButton={false}
+															render={(props) => (
+																<Link
+																	{...props}
+																	to={
+																		subItem.href
+																	}
+																	className={cn(
+																		props.className,
+																		"flex w-full cursor-default items-center",
+																		subActive &&
+																			"font-semibold",
+																	)}
+																>
+																	{
+																		subItem.label
+																	}
+																</Link>
+															)}
+														/>
+													);
+												},
+											)}
 										</DropdownMenuContent>
 									</DropdownMenu>
 								</li>
@@ -211,7 +226,10 @@ function NavMenuList({
 						}
 
 						return (
-							<li key={menuItem.href} className="gap-0.5 flex flex-col">
+							<li
+								key={menuItem.href}
+								className="gap-0.5 flex flex-col"
+							>
 								<Link
 									to={menuItem.href}
 									onClick={onLinkClick}
@@ -221,8 +239,10 @@ function NavMenuList({
 									{parentIcon}
 									<span
 										className={cn({
-											"text-foreground": menuItem.isActive,
-											"text-muted-foreground": !menuItem.isActive,
+											"text-foreground":
+												menuItem.isActive,
+											"text-muted-foreground":
+												!menuItem.isActive,
 										})}
 									>
 										{menuItem.label}
@@ -236,28 +256,35 @@ function NavMenuList({
 											aria-hidden
 										/>
 										<ul className="gap-0.5 pl-9 flex flex-col">
-											{menuItem.subItems.map((subItem) => {
-												const subActive = isNavSubItemActive(
-													pathname,
-													subItem.href,
-												);
-												return (
-													<li key={subItem.href}>
-														<Link
-															to={subItem.href}
-															onClick={onLinkClick}
-															className={cn(
-																"py-1.5 pl-2 pr-3 text-sm flex w-full items-center rounded-md text-muted-foreground transition-colors hover:bg-accent/50",
-																subActive &&
-																	"font-semibold text-foreground",
-															)}
-															preload="intent"
-														>
-															{subItem.label}
-														</Link>
-													</li>
-												);
-											})}
+											{menuItem.subItems.map(
+												(subItem) => {
+													const subActive =
+														isNavSubItemActive(
+															pathname,
+															subItem.href,
+														);
+													return (
+														<li key={subItem.href}>
+															<Link
+																to={
+																	subItem.href
+																}
+																onClick={
+																	onLinkClick
+																}
+																className={cn(
+																	"py-1.5 pl-2 pr-3 text-sm flex w-full items-center rounded-md text-muted-foreground transition-colors hover:bg-accent/50",
+																	subActive &&
+																		"font-semibold text-foreground",
+																)}
+																preload="intent"
+															>
+																{subItem.label}
+															</Link>
+														</li>
+													);
+												},
+											)}
 										</ul>
 									</div>
 								)}
@@ -277,7 +304,8 @@ function NavMenuList({
 								<span
 									className={cn({
 										"text-foreground": menuItem.isActive,
-										"text-muted-foreground": !menuItem.isActive,
+										"text-muted-foreground":
+											!menuItem.isActive,
 									})}
 								>
 									{menuItem.label}
@@ -299,14 +327,19 @@ function NavMenuList({
 													props.onClick?.(e);
 													onLinkClick?.();
 												}}
-												className={cn(props.className, parentClasses)}
+												className={cn(
+													props.className,
+													parentClasses,
+												)}
 												preload="intent"
 											>
 												{parentIcon}
 											</Link>
 										)}
 									/>
-									<TooltipContent side="right">{menuItem.label}</TooltipContent>
+									<TooltipContent side="right">
+										{menuItem.label}
+									</TooltipContent>
 								</Tooltip>
 							</li>
 						);
@@ -361,7 +394,9 @@ export function NavBar() {
 
 		const orgSettingsPrefix = `${basePath}/settings`;
 		const organizationSubItems: Array<NavSubItem> | undefined =
-			authConfig.organizations.enable && activeOrganization && isOrganizationAdmin
+			authConfig.organizations.enable &&
+			activeOrganization &&
+			isOrganizationAdmin
 				? [
 						{
 							label: t("settings.menu.organization.general"),
@@ -371,11 +406,13 @@ export function NavBar() {
 							label: t("settings.menu.organization.members"),
 							href: `${orgSettingsPrefix}/members`,
 						},
-						...(paymentsConfig.billingAttachedTo === "organization" &&
-						isOrganizationAdmin
+						...(paymentsConfig.billingAttachedTo ===
+							"organization" && isOrganizationAdmin
 							? [
 									{
-										label: t("settings.menu.organization.billing"),
+										label: t(
+											"settings.menu.organization.billing",
+										),
 										href: `${orgSettingsPrefix}/billing`,
 									},
 								]
@@ -420,7 +457,9 @@ export function NavBar() {
 							label: t("app.menu.organizationSettings"),
 							href: `${orgSettingsPrefix}/general`,
 							icon: SettingsIcon,
-							isActive: pathname.startsWith(`${orgSettingsPrefix}/`),
+							isActive: pathname.startsWith(
+								`${orgSettingsPrefix}/`,
+							),
 							subItems: organizationSubItems,
 						},
 					]
@@ -444,7 +483,15 @@ export function NavBar() {
 					]
 				: []),
 		];
-	}, [activeOrganization, basePath, isOrganizationAdmin, pathname, startHref, t, user?.role]);
+	}, [
+		activeOrganization,
+		basePath,
+		isOrganizationAdmin,
+		pathname,
+		startHref,
+		t,
+		user?.role,
+	]);
 
 	return (
 		<nav
@@ -470,7 +517,10 @@ export function NavBar() {
 							)}
 						>
 							<div className="gap-2 flex shrink-0 items-center justify-center">
-								<Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+								<Sheet
+									open={mobileMenuOpen}
+									onOpenChange={setMobileMenuOpen}
+								>
 									<SheetTrigger
 										render={(props) => (
 											<Button
@@ -481,7 +531,9 @@ export function NavBar() {
 													props.className,
 													"md:hidden -ml-1.5 mr-1.5 shrink-0",
 												)}
-												aria-label={t("app.menu.openNavigation")}
+												aria-label={t(
+													"app.menu.openNavigation",
+												)}
 												type="button"
 											>
 												<MenuIcon className="size-5" />
@@ -493,7 +545,9 @@ export function NavBar() {
 										className="p-0 pt-14 sm:max-w-[280px] flex h-full w-[min(100vw,280px)] flex-col overflow-hidden border-r"
 									>
 										<SheetHeader className="sr-only">
-											<SheetTitle>{t("app.menu.navigationTitle")}</SheetTitle>
+											<SheetTitle>
+												{t("app.menu.navigationTitle")}
+											</SheetTitle>
 										</SheetHeader>
 										<div className="min-h-0 px-4 pb-4 flex flex-1 flex-col">
 											<div className="min-h-0 flex-1 overflow-y-auto overscroll-y-contain [-webkit-overflow-scrolling:touch]">
@@ -501,7 +555,9 @@ export function NavBar() {
 													menuItems={menuItems}
 													isCollapsedEffective={false}
 													listClassName="flex list-none flex-col flex-nowrap items-stretch gap-1 px-0"
-													onLinkClick={() => setMobileMenuOpen(false)}
+													onLinkClick={() =>
+														setMobileMenuOpen(false)
+													}
 												/>
 											</div>
 										</div>
@@ -515,14 +571,20 @@ export function NavBar() {
 							<div
 								className={cn(
 									"md:flex gap-2 hidden items-center",
-									isCollapsedEffective ? "flex-col" : "flex-row",
+									isCollapsedEffective
+										? "flex-col"
+										: "flex-row",
 								)}
 							>
 								<Button
 									variant="ghost"
 									size="icon"
 									onClick={toggleCollapsed}
-									aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+									aria-label={
+										isCollapsed
+											? "Expand sidebar"
+											: "Collapse sidebar"
+									}
 								>
 									{isCollapsed ? (
 										<PanelLeftOpenIcon className="size-4 opacity-40!" />
@@ -546,8 +608,11 @@ export function NavBar() {
 
 									<OrganzationSelect
 										className={cn(
-											isCollapsedEffective ? "md:mt-2" : "md:mt-3 md:mb-1.5",
-											isCollapsedEffective && "md:flex md:justify-center",
+											isCollapsedEffective
+												? "md:mt-2"
+												: "md:mt-3 md:mb-1.5",
+											isCollapsedEffective &&
+												"md:flex md:justify-center",
 										)}
 										collapsed={isCollapsedEffective}
 									/>
@@ -581,7 +646,8 @@ export function NavBar() {
 					<div
 						className={cn(
 							"min-w-0 w-full flex-1",
-							isCollapsedEffective && "md:flex md:w-full md:justify-center",
+							isCollapsedEffective &&
+								"md:flex md:w-full md:justify-center",
 						)}
 					>
 						<UserMenu showUserName={!isCollapsedEffective} />

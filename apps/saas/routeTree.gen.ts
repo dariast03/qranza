@@ -25,11 +25,13 @@ import { Route as AuthenticatedCheckoutReturnIndexRouteImport } from './routes/_
 import { Route as AuthenticatedMainIndexRouteImport } from './routes/_authenticated/_main/index'
 import { Route as AuthenticatedMainSettingsRouteRouteImport } from './routes/_authenticated/_main/settings/route'
 import { Route as AuthenticatedMainDashboardRouteRouteImport } from './routes/_authenticated/_main/dashboard/route'
+import { Route as AuthenticatedMainAppRouteRouteImport } from './routes/_authenticated/_main/app/route'
 import { Route as AuthenticatedMainAdminRouteRouteImport } from './routes/_authenticated/_main/admin/route'
 import { Route as AuthenticatedOrganizationInvitationInvitationIdIndexRouteImport } from './routes/_authenticated/organization-invitation/$invitationId/index'
 import { Route as AuthenticatedMainSettingsIndexRouteImport } from './routes/_authenticated/_main/settings/index'
 import { Route as AuthenticatedMainDashboardIndexRouteImport } from './routes/_authenticated/_main/dashboard/index'
 import { Route as AuthenticatedMainChatbotIndexRouteImport } from './routes/_authenticated/_main/chatbot/index'
+import { Route as AuthenticatedMainAppIndexRouteImport } from './routes/_authenticated/_main/app/index'
 import { Route as AuthenticatedMainAdminIndexRouteImport } from './routes/_authenticated/_main/admin/index'
 import { Route as AuthenticatedMainOrganizationSlugIndexRouteImport } from './routes/_authenticated/_main/$organizationSlug/index'
 import { Route as AuthenticatedMainDashboardSplatRouteImport } from './routes/_authenticated/_main/dashboard/$'
@@ -56,6 +58,10 @@ import { Route as AuthenticatedMainSettingsSecurityIndexRouteImport } from './ro
 import { Route as AuthenticatedMainSettingsNotificationsIndexRouteImport } from './routes/_authenticated/_main/settings/notifications/index'
 import { Route as AuthenticatedMainSettingsGeneralIndexRouteImport } from './routes/_authenticated/_main/settings/general/index'
 import { Route as AuthenticatedMainSettingsBillingIndexRouteImport } from './routes/_authenticated/_main/settings/billing/index'
+import { Route as AuthenticatedMainAppReportsIndexRouteImport } from './routes/_authenticated/_main/app/reports/index'
+import { Route as AuthenticatedMainAppOrdersIndexRouteImport } from './routes/_authenticated/_main/app/orders/index'
+import { Route as AuthenticatedMainAppDashboardIndexRouteImport } from './routes/_authenticated/_main/app/dashboard/index'
+import { Route as AuthenticatedMainAppCustomersIndexRouteImport } from './routes/_authenticated/_main/app/customers/index'
 import { Route as AuthenticatedMainAdminUsersIndexRouteImport } from './routes/_authenticated/_main/admin/users/index'
 import { Route as AuthenticatedMainAdminOrganizationsIndexRouteImport } from './routes/_authenticated/_main/admin/organizations/index'
 import { Route as AuthenticatedMainOrganizationSlugSettingsIndexRouteImport } from './routes/_authenticated/_main/$organizationSlug/settings/index'
@@ -63,11 +69,48 @@ import { Route as AuthenticatedMainDashboardlegacyFinanceV1RouteRouteImport } fr
 import { Route as AuthenticatedMainDashboardlegacyDefaultV1RouteRouteImport } from './routes/_authenticated/_main/dashboard/(legacy)/default-v1/route'
 import { Route as AuthenticatedMainDashboardlegacyCrmV1RouteRouteImport } from './routes/_authenticated/_main/dashboard/(legacy)/crm-v1/route'
 import { Route as AuthenticatedMainDashboardlegacyAnalyticsV1RouteRouteImport } from './routes/_authenticated/_main/dashboard/(legacy)/analytics-v1/route'
+import { Route as AuthenticatedMainAppTeamPermissionsIndexRouteImport } from './routes/_authenticated/_main/app/team/permissions/index'
+import { Route as AuthenticatedMainAppTeamMembersIndexRouteImport } from './routes/_authenticated/_main/app/team/members/index'
+import { Route as AuthenticatedMainAppSettingsSubscriptionsIndexRouteImport } from './routes/_authenticated/_main/app/settings/subscriptions/index'
+import { Route as AuthenticatedMainAppSettingsNotificationsIndexRouteImport } from './routes/_authenticated/_main/app/settings/notifications/index'
+import { Route as AuthenticatedMainAppSettingsBillingIndexRouteImport } from './routes/_authenticated/_main/app/settings/billing/index'
+import { Route as AuthenticatedMainAppReportsSalesIndexRouteImport } from './routes/_authenticated/_main/app/reports/sales/index'
+import { Route as AuthenticatedMainAppReportsProductsIndexRouteImport } from './routes/_authenticated/_main/app/reports/products/index'
+import { Route as AuthenticatedMainAppReportsInventoryIndexRouteImport } from './routes/_authenticated/_main/app/reports/inventory/index'
+import { Route as AuthenticatedMainAppReportsCustomersIndexRouteImport } from './routes/_authenticated/_main/app/reports/customers/index'
+import { Route as AuthenticatedMainAppOrdersShippingIndexRouteImport } from './routes/_authenticated/_main/app/orders/shipping/index'
+import { Route as AuthenticatedMainAppOrdersReturnsIndexRouteImport } from './routes/_authenticated/_main/app/orders/returns/index'
+import { Route as AuthenticatedMainAppOrdersPaymentsIndexRouteImport } from './routes/_authenticated/_main/app/orders/payments/index'
+import { Route as AuthenticatedMainAppOrdersPartialPaymentsIndexRouteImport } from './routes/_authenticated/_main/app/orders/partial-payments/index'
+import { Route as AuthenticatedMainAppItemVariantsIndexRouteImport } from './routes/_authenticated/_main/app/item/variants/index'
+import { Route as AuthenticatedMainAppItemUnitsIndexRouteImport } from './routes/_authenticated/_main/app/item/units/index'
+import { Route as AuthenticatedMainAppItemSettingsIndexRouteImport } from './routes/_authenticated/_main/app/item/settings/index'
+import { Route as AuthenticatedMainAppItemModifiersIndexRouteImport } from './routes/_authenticated/_main/app/item/modifiers/index'
+import { Route as AuthenticatedMainAppItemInventoryIndexRouteImport } from './routes/_authenticated/_main/app/item/inventory/index'
+import { Route as AuthenticatedMainAppItemGalleryIndexRouteImport } from './routes/_authenticated/_main/app/item/gallery/index'
+import { Route as AuthenticatedMainAppItemDiscountsIndexRouteImport } from './routes/_authenticated/_main/app/item/discounts/index'
+import { Route as AuthenticatedMainAppItemCustomAttributesIndexRouteImport } from './routes/_authenticated/_main/app/item/custom-attributes/index'
+import { Route as AuthenticatedMainAppItemCategoriesIndexRouteImport } from './routes/_authenticated/_main/app/item/categories/index'
+import { Route as AuthenticatedMainAppItemAllIndexRouteImport } from './routes/_authenticated/_main/app/item/all/index'
+import { Route as AuthenticatedMainAppChannelsPosIndexRouteImport } from './routes/_authenticated/_main/app/channels/pos/index'
 import { Route as AuthenticatedMainAdminOrganizationsNewIndexRouteImport } from './routes/_authenticated/_main/admin/organizations/new/index'
 import { Route as AuthenticatedMainAdminOrganizationsOrganizationIdIndexRouteImport } from './routes/_authenticated/_main/admin/organizations/$organizationId/index'
 import { Route as AuthenticatedMainOrganizationSlugSettingsMembersIndexRouteImport } from './routes/_authenticated/_main/$organizationSlug/settings/members/index'
 import { Route as AuthenticatedMainOrganizationSlugSettingsGeneralIndexRouteImport } from './routes/_authenticated/_main/$organizationSlug/settings/general/index'
 import { Route as AuthenticatedMainOrganizationSlugSettingsBillingIndexRouteImport } from './routes/_authenticated/_main/$organizationSlug/settings/billing/index'
+import { Route as AuthenticatedMainAppSettingsBusinessLocationsIndexRouteImport } from './routes/_authenticated/_main/app/settings/business/locations/index'
+import { Route as AuthenticatedMainAppSettingsBusinessInfoIndexRouteImport } from './routes/_authenticated/_main/app/settings/business/info/index'
+import { Route as AuthenticatedMainAppSettingsAccountSecurityIndexRouteImport } from './routes/_authenticated/_main/app/settings/account/security/index'
+import { Route as AuthenticatedMainAppSettingsAccountProfileIndexRouteImport } from './routes/_authenticated/_main/app/settings/account/profile/index'
+import { Route as AuthenticatedMainAppSettingsAccountPreferencesIndexRouteImport } from './routes/_authenticated/_main/app/settings/account/preferences/index'
+import { Route as AuthenticatedMainAppChannelsWebThemeIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/theme/index'
+import { Route as AuthenticatedMainAppChannelsWebStorefrontIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/storefront/index'
+import { Route as AuthenticatedMainAppChannelsWebSeoIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/seo/index'
+import { Route as AuthenticatedMainAppChannelsWebPagesIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/pages/index'
+import { Route as AuthenticatedMainAppChannelsWebNotificationsIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/notifications/index'
+import { Route as AuthenticatedMainAppChannelsWebNavigationIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/navigation/index'
+import { Route as AuthenticatedMainAppChannelsWebDomainsIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/domains/index'
+import { Route as AuthenticatedMainAppChannelsWebCheckoutIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/checkout/index'
 
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
   id: '/_authenticated',
@@ -153,6 +196,12 @@ const AuthenticatedMainDashboardRouteRoute =
     path: '/dashboard',
     getParentRoute: () => AuthenticatedMainRouteRoute,
   } as any)
+const AuthenticatedMainAppRouteRoute =
+  AuthenticatedMainAppRouteRouteImport.update({
+    id: '/app',
+    path: '/app',
+    getParentRoute: () => AuthenticatedMainRouteRoute,
+  } as any)
 const AuthenticatedMainAdminRouteRoute =
   AuthenticatedMainAdminRouteRouteImport.update({
     id: '/admin',
@@ -182,6 +231,12 @@ const AuthenticatedMainChatbotIndexRoute =
     id: '/chatbot/',
     path: '/chatbot/',
     getParentRoute: () => AuthenticatedMainRouteRoute,
+  } as any)
+const AuthenticatedMainAppIndexRoute =
+  AuthenticatedMainAppIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
   } as any)
 const AuthenticatedMainAdminIndexRoute =
   AuthenticatedMainAdminIndexRouteImport.update({
@@ -339,6 +394,30 @@ const AuthenticatedMainSettingsBillingIndexRoute =
     path: '/billing/',
     getParentRoute: () => AuthenticatedMainSettingsRouteRoute,
   } as any)
+const AuthenticatedMainAppReportsIndexRoute =
+  AuthenticatedMainAppReportsIndexRouteImport.update({
+    id: '/reports/',
+    path: '/reports/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppOrdersIndexRoute =
+  AuthenticatedMainAppOrdersIndexRouteImport.update({
+    id: '/orders/',
+    path: '/orders/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppDashboardIndexRoute =
+  AuthenticatedMainAppDashboardIndexRouteImport.update({
+    id: '/dashboard/',
+    path: '/dashboard/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppCustomersIndexRoute =
+  AuthenticatedMainAppCustomersIndexRouteImport.update({
+    id: '/customers/',
+    path: '/customers/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
 const AuthenticatedMainAdminUsersIndexRoute =
   AuthenticatedMainAdminUsersIndexRouteImport.update({
     id: '/users/',
@@ -381,6 +460,150 @@ const AuthenticatedMainDashboardlegacyAnalyticsV1RouteRoute =
     path: '/analytics-v1',
     getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
   } as any)
+const AuthenticatedMainAppTeamPermissionsIndexRoute =
+  AuthenticatedMainAppTeamPermissionsIndexRouteImport.update({
+    id: '/team/permissions/',
+    path: '/team/permissions/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppTeamMembersIndexRoute =
+  AuthenticatedMainAppTeamMembersIndexRouteImport.update({
+    id: '/team/members/',
+    path: '/team/members/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppSettingsSubscriptionsIndexRoute =
+  AuthenticatedMainAppSettingsSubscriptionsIndexRouteImport.update({
+    id: '/settings/subscriptions/',
+    path: '/settings/subscriptions/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppSettingsNotificationsIndexRoute =
+  AuthenticatedMainAppSettingsNotificationsIndexRouteImport.update({
+    id: '/settings/notifications/',
+    path: '/settings/notifications/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppSettingsBillingIndexRoute =
+  AuthenticatedMainAppSettingsBillingIndexRouteImport.update({
+    id: '/settings/billing/',
+    path: '/settings/billing/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppReportsSalesIndexRoute =
+  AuthenticatedMainAppReportsSalesIndexRouteImport.update({
+    id: '/reports/sales/',
+    path: '/reports/sales/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppReportsProductsIndexRoute =
+  AuthenticatedMainAppReportsProductsIndexRouteImport.update({
+    id: '/reports/products/',
+    path: '/reports/products/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppReportsInventoryIndexRoute =
+  AuthenticatedMainAppReportsInventoryIndexRouteImport.update({
+    id: '/reports/inventory/',
+    path: '/reports/inventory/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppReportsCustomersIndexRoute =
+  AuthenticatedMainAppReportsCustomersIndexRouteImport.update({
+    id: '/reports/customers/',
+    path: '/reports/customers/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppOrdersShippingIndexRoute =
+  AuthenticatedMainAppOrdersShippingIndexRouteImport.update({
+    id: '/orders/shipping/',
+    path: '/orders/shipping/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppOrdersReturnsIndexRoute =
+  AuthenticatedMainAppOrdersReturnsIndexRouteImport.update({
+    id: '/orders/returns/',
+    path: '/orders/returns/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppOrdersPaymentsIndexRoute =
+  AuthenticatedMainAppOrdersPaymentsIndexRouteImport.update({
+    id: '/orders/payments/',
+    path: '/orders/payments/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppOrdersPartialPaymentsIndexRoute =
+  AuthenticatedMainAppOrdersPartialPaymentsIndexRouteImport.update({
+    id: '/orders/partial-payments/',
+    path: '/orders/partial-payments/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppItemVariantsIndexRoute =
+  AuthenticatedMainAppItemVariantsIndexRouteImport.update({
+    id: '/item/variants/',
+    path: '/item/variants/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppItemUnitsIndexRoute =
+  AuthenticatedMainAppItemUnitsIndexRouteImport.update({
+    id: '/item/units/',
+    path: '/item/units/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppItemSettingsIndexRoute =
+  AuthenticatedMainAppItemSettingsIndexRouteImport.update({
+    id: '/item/settings/',
+    path: '/item/settings/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppItemModifiersIndexRoute =
+  AuthenticatedMainAppItemModifiersIndexRouteImport.update({
+    id: '/item/modifiers/',
+    path: '/item/modifiers/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppItemInventoryIndexRoute =
+  AuthenticatedMainAppItemInventoryIndexRouteImport.update({
+    id: '/item/inventory/',
+    path: '/item/inventory/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppItemGalleryIndexRoute =
+  AuthenticatedMainAppItemGalleryIndexRouteImport.update({
+    id: '/item/gallery/',
+    path: '/item/gallery/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppItemDiscountsIndexRoute =
+  AuthenticatedMainAppItemDiscountsIndexRouteImport.update({
+    id: '/item/discounts/',
+    path: '/item/discounts/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppItemCustomAttributesIndexRoute =
+  AuthenticatedMainAppItemCustomAttributesIndexRouteImport.update({
+    id: '/item/custom-attributes/',
+    path: '/item/custom-attributes/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppItemCategoriesIndexRoute =
+  AuthenticatedMainAppItemCategoriesIndexRouteImport.update({
+    id: '/item/categories/',
+    path: '/item/categories/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppItemAllIndexRoute =
+  AuthenticatedMainAppItemAllIndexRouteImport.update({
+    id: '/item/all/',
+    path: '/item/all/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppChannelsPosIndexRoute =
+  AuthenticatedMainAppChannelsPosIndexRouteImport.update({
+    id: '/channels/pos/',
+    path: '/channels/pos/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
 const AuthenticatedMainAdminOrganizationsNewIndexRoute =
   AuthenticatedMainAdminOrganizationsNewIndexRouteImport.update({
     id: '/organizations/new/',
@@ -411,6 +634,84 @@ const AuthenticatedMainOrganizationSlugSettingsBillingIndexRoute =
     path: '/billing/',
     getParentRoute: () => AuthenticatedMainOrganizationSlugSettingsRouteRoute,
   } as any)
+const AuthenticatedMainAppSettingsBusinessLocationsIndexRoute =
+  AuthenticatedMainAppSettingsBusinessLocationsIndexRouteImport.update({
+    id: '/settings/business/locations/',
+    path: '/settings/business/locations/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppSettingsBusinessInfoIndexRoute =
+  AuthenticatedMainAppSettingsBusinessInfoIndexRouteImport.update({
+    id: '/settings/business/info/',
+    path: '/settings/business/info/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppSettingsAccountSecurityIndexRoute =
+  AuthenticatedMainAppSettingsAccountSecurityIndexRouteImport.update({
+    id: '/settings/account/security/',
+    path: '/settings/account/security/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppSettingsAccountProfileIndexRoute =
+  AuthenticatedMainAppSettingsAccountProfileIndexRouteImport.update({
+    id: '/settings/account/profile/',
+    path: '/settings/account/profile/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppSettingsAccountPreferencesIndexRoute =
+  AuthenticatedMainAppSettingsAccountPreferencesIndexRouteImport.update({
+    id: '/settings/account/preferences/',
+    path: '/settings/account/preferences/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppChannelsWebThemeIndexRoute =
+  AuthenticatedMainAppChannelsWebThemeIndexRouteImport.update({
+    id: '/channels/web/theme/',
+    path: '/channels/web/theme/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppChannelsWebStorefrontIndexRoute =
+  AuthenticatedMainAppChannelsWebStorefrontIndexRouteImport.update({
+    id: '/channels/web/storefront/',
+    path: '/channels/web/storefront/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppChannelsWebSeoIndexRoute =
+  AuthenticatedMainAppChannelsWebSeoIndexRouteImport.update({
+    id: '/channels/web/seo/',
+    path: '/channels/web/seo/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppChannelsWebPagesIndexRoute =
+  AuthenticatedMainAppChannelsWebPagesIndexRouteImport.update({
+    id: '/channels/web/pages/',
+    path: '/channels/web/pages/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppChannelsWebNotificationsIndexRoute =
+  AuthenticatedMainAppChannelsWebNotificationsIndexRouteImport.update({
+    id: '/channels/web/notifications/',
+    path: '/channels/web/notifications/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppChannelsWebNavigationIndexRoute =
+  AuthenticatedMainAppChannelsWebNavigationIndexRouteImport.update({
+    id: '/channels/web/navigation/',
+    path: '/channels/web/navigation/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppChannelsWebDomainsIndexRoute =
+  AuthenticatedMainAppChannelsWebDomainsIndexRouteImport.update({
+    id: '/channels/web/domains/',
+    path: '/channels/web/domains/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppChannelsWebCheckoutIndexRoute =
+  AuthenticatedMainAppChannelsWebCheckoutIndexRouteImport.update({
+    id: '/channels/web/checkout/',
+    path: '/channels/web/checkout/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof AuthenticatedMainIndexRoute
@@ -422,6 +723,7 @@ export interface FileRoutesByFullPath {
   '/signup/': typeof SignupIndexRoute
   '/verify/': typeof VerifyIndexRoute
   '/admin': typeof AuthenticatedMainAdminRouteRouteWithChildren
+  '/app': typeof AuthenticatedMainAppRouteRouteWithChildren
   '/dashboard': typeof AuthenticatedMainDashboardRouteRouteWithChildren
   '/settings': typeof AuthenticatedMainSettingsRouteRouteWithChildren
   '/checkout-return/': typeof AuthenticatedCheckoutReturnIndexRoute
@@ -450,6 +752,7 @@ export interface FileRoutesByFullPath {
   '/dashboard/$': typeof AuthenticatedMainDashboardSplatRoute
   '/$organizationSlug/': typeof AuthenticatedMainOrganizationSlugIndexRoute
   '/admin/': typeof AuthenticatedMainAdminIndexRoute
+  '/app/': typeof AuthenticatedMainAppIndexRoute
   '/chatbot/': typeof AuthenticatedMainChatbotIndexRoute
   '/dashboard/': typeof AuthenticatedMainDashboardIndexRoute
   '/settings/': typeof AuthenticatedMainSettingsIndexRoute
@@ -461,6 +764,10 @@ export interface FileRoutesByFullPath {
   '/$organizationSlug/settings/': typeof AuthenticatedMainOrganizationSlugSettingsIndexRoute
   '/admin/organizations/': typeof AuthenticatedMainAdminOrganizationsIndexRoute
   '/admin/users/': typeof AuthenticatedMainAdminUsersIndexRoute
+  '/app/customers/': typeof AuthenticatedMainAppCustomersIndexRoute
+  '/app/dashboard/': typeof AuthenticatedMainAppDashboardIndexRoute
+  '/app/orders/': typeof AuthenticatedMainAppOrdersIndexRoute
+  '/app/reports/': typeof AuthenticatedMainAppReportsIndexRoute
   '/settings/billing/': typeof AuthenticatedMainSettingsBillingIndexRoute
   '/settings/general/': typeof AuthenticatedMainSettingsGeneralIndexRoute
   '/settings/notifications/': typeof AuthenticatedMainSettingsNotificationsIndexRoute
@@ -470,6 +777,43 @@ export interface FileRoutesByFullPath {
   '/$organizationSlug/settings/members/': typeof AuthenticatedMainOrganizationSlugSettingsMembersIndexRoute
   '/admin/organizations/$organizationId/': typeof AuthenticatedMainAdminOrganizationsOrganizationIdIndexRoute
   '/admin/organizations/new/': typeof AuthenticatedMainAdminOrganizationsNewIndexRoute
+  '/app/channels/pos/': typeof AuthenticatedMainAppChannelsPosIndexRoute
+  '/app/item/all/': typeof AuthenticatedMainAppItemAllIndexRoute
+  '/app/item/categories/': typeof AuthenticatedMainAppItemCategoriesIndexRoute
+  '/app/item/custom-attributes/': typeof AuthenticatedMainAppItemCustomAttributesIndexRoute
+  '/app/item/discounts/': typeof AuthenticatedMainAppItemDiscountsIndexRoute
+  '/app/item/gallery/': typeof AuthenticatedMainAppItemGalleryIndexRoute
+  '/app/item/inventory/': typeof AuthenticatedMainAppItemInventoryIndexRoute
+  '/app/item/modifiers/': typeof AuthenticatedMainAppItemModifiersIndexRoute
+  '/app/item/settings/': typeof AuthenticatedMainAppItemSettingsIndexRoute
+  '/app/item/units/': typeof AuthenticatedMainAppItemUnitsIndexRoute
+  '/app/item/variants/': typeof AuthenticatedMainAppItemVariantsIndexRoute
+  '/app/orders/partial-payments/': typeof AuthenticatedMainAppOrdersPartialPaymentsIndexRoute
+  '/app/orders/payments/': typeof AuthenticatedMainAppOrdersPaymentsIndexRoute
+  '/app/orders/returns/': typeof AuthenticatedMainAppOrdersReturnsIndexRoute
+  '/app/orders/shipping/': typeof AuthenticatedMainAppOrdersShippingIndexRoute
+  '/app/reports/customers/': typeof AuthenticatedMainAppReportsCustomersIndexRoute
+  '/app/reports/inventory/': typeof AuthenticatedMainAppReportsInventoryIndexRoute
+  '/app/reports/products/': typeof AuthenticatedMainAppReportsProductsIndexRoute
+  '/app/reports/sales/': typeof AuthenticatedMainAppReportsSalesIndexRoute
+  '/app/settings/billing/': typeof AuthenticatedMainAppSettingsBillingIndexRoute
+  '/app/settings/notifications/': typeof AuthenticatedMainAppSettingsNotificationsIndexRoute
+  '/app/settings/subscriptions/': typeof AuthenticatedMainAppSettingsSubscriptionsIndexRoute
+  '/app/team/members/': typeof AuthenticatedMainAppTeamMembersIndexRoute
+  '/app/team/permissions/': typeof AuthenticatedMainAppTeamPermissionsIndexRoute
+  '/app/channels/web/checkout/': typeof AuthenticatedMainAppChannelsWebCheckoutIndexRoute
+  '/app/channels/web/domains/': typeof AuthenticatedMainAppChannelsWebDomainsIndexRoute
+  '/app/channels/web/navigation/': typeof AuthenticatedMainAppChannelsWebNavigationIndexRoute
+  '/app/channels/web/notifications/': typeof AuthenticatedMainAppChannelsWebNotificationsIndexRoute
+  '/app/channels/web/pages/': typeof AuthenticatedMainAppChannelsWebPagesIndexRoute
+  '/app/channels/web/seo/': typeof AuthenticatedMainAppChannelsWebSeoIndexRoute
+  '/app/channels/web/storefront/': typeof AuthenticatedMainAppChannelsWebStorefrontIndexRoute
+  '/app/channels/web/theme/': typeof AuthenticatedMainAppChannelsWebThemeIndexRoute
+  '/app/settings/account/preferences/': typeof AuthenticatedMainAppSettingsAccountPreferencesIndexRoute
+  '/app/settings/account/profile/': typeof AuthenticatedMainAppSettingsAccountProfileIndexRoute
+  '/app/settings/account/security/': typeof AuthenticatedMainAppSettingsAccountSecurityIndexRoute
+  '/app/settings/business/info/': typeof AuthenticatedMainAppSettingsBusinessInfoIndexRoute
+  '/app/settings/business/locations/': typeof AuthenticatedMainAppSettingsBusinessLocationsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof AuthenticatedMainIndexRoute
@@ -505,6 +849,7 @@ export interface FileRoutesByTo {
   '/dashboard/$': typeof AuthenticatedMainDashboardSplatRoute
   '/$organizationSlug': typeof AuthenticatedMainOrganizationSlugIndexRoute
   '/admin': typeof AuthenticatedMainAdminIndexRoute
+  '/app': typeof AuthenticatedMainAppIndexRoute
   '/chatbot': typeof AuthenticatedMainChatbotIndexRoute
   '/dashboard': typeof AuthenticatedMainDashboardIndexRoute
   '/settings': typeof AuthenticatedMainSettingsIndexRoute
@@ -516,6 +861,10 @@ export interface FileRoutesByTo {
   '/$organizationSlug/settings': typeof AuthenticatedMainOrganizationSlugSettingsIndexRoute
   '/admin/organizations': typeof AuthenticatedMainAdminOrganizationsIndexRoute
   '/admin/users': typeof AuthenticatedMainAdminUsersIndexRoute
+  '/app/customers': typeof AuthenticatedMainAppCustomersIndexRoute
+  '/app/dashboard': typeof AuthenticatedMainAppDashboardIndexRoute
+  '/app/orders': typeof AuthenticatedMainAppOrdersIndexRoute
+  '/app/reports': typeof AuthenticatedMainAppReportsIndexRoute
   '/settings/billing': typeof AuthenticatedMainSettingsBillingIndexRoute
   '/settings/general': typeof AuthenticatedMainSettingsGeneralIndexRoute
   '/settings/notifications': typeof AuthenticatedMainSettingsNotificationsIndexRoute
@@ -525,6 +874,43 @@ export interface FileRoutesByTo {
   '/$organizationSlug/settings/members': typeof AuthenticatedMainOrganizationSlugSettingsMembersIndexRoute
   '/admin/organizations/$organizationId': typeof AuthenticatedMainAdminOrganizationsOrganizationIdIndexRoute
   '/admin/organizations/new': typeof AuthenticatedMainAdminOrganizationsNewIndexRoute
+  '/app/channels/pos': typeof AuthenticatedMainAppChannelsPosIndexRoute
+  '/app/item/all': typeof AuthenticatedMainAppItemAllIndexRoute
+  '/app/item/categories': typeof AuthenticatedMainAppItemCategoriesIndexRoute
+  '/app/item/custom-attributes': typeof AuthenticatedMainAppItemCustomAttributesIndexRoute
+  '/app/item/discounts': typeof AuthenticatedMainAppItemDiscountsIndexRoute
+  '/app/item/gallery': typeof AuthenticatedMainAppItemGalleryIndexRoute
+  '/app/item/inventory': typeof AuthenticatedMainAppItemInventoryIndexRoute
+  '/app/item/modifiers': typeof AuthenticatedMainAppItemModifiersIndexRoute
+  '/app/item/settings': typeof AuthenticatedMainAppItemSettingsIndexRoute
+  '/app/item/units': typeof AuthenticatedMainAppItemUnitsIndexRoute
+  '/app/item/variants': typeof AuthenticatedMainAppItemVariantsIndexRoute
+  '/app/orders/partial-payments': typeof AuthenticatedMainAppOrdersPartialPaymentsIndexRoute
+  '/app/orders/payments': typeof AuthenticatedMainAppOrdersPaymentsIndexRoute
+  '/app/orders/returns': typeof AuthenticatedMainAppOrdersReturnsIndexRoute
+  '/app/orders/shipping': typeof AuthenticatedMainAppOrdersShippingIndexRoute
+  '/app/reports/customers': typeof AuthenticatedMainAppReportsCustomersIndexRoute
+  '/app/reports/inventory': typeof AuthenticatedMainAppReportsInventoryIndexRoute
+  '/app/reports/products': typeof AuthenticatedMainAppReportsProductsIndexRoute
+  '/app/reports/sales': typeof AuthenticatedMainAppReportsSalesIndexRoute
+  '/app/settings/billing': typeof AuthenticatedMainAppSettingsBillingIndexRoute
+  '/app/settings/notifications': typeof AuthenticatedMainAppSettingsNotificationsIndexRoute
+  '/app/settings/subscriptions': typeof AuthenticatedMainAppSettingsSubscriptionsIndexRoute
+  '/app/team/members': typeof AuthenticatedMainAppTeamMembersIndexRoute
+  '/app/team/permissions': typeof AuthenticatedMainAppTeamPermissionsIndexRoute
+  '/app/channels/web/checkout': typeof AuthenticatedMainAppChannelsWebCheckoutIndexRoute
+  '/app/channels/web/domains': typeof AuthenticatedMainAppChannelsWebDomainsIndexRoute
+  '/app/channels/web/navigation': typeof AuthenticatedMainAppChannelsWebNavigationIndexRoute
+  '/app/channels/web/notifications': typeof AuthenticatedMainAppChannelsWebNotificationsIndexRoute
+  '/app/channels/web/pages': typeof AuthenticatedMainAppChannelsWebPagesIndexRoute
+  '/app/channels/web/seo': typeof AuthenticatedMainAppChannelsWebSeoIndexRoute
+  '/app/channels/web/storefront': typeof AuthenticatedMainAppChannelsWebStorefrontIndexRoute
+  '/app/channels/web/theme': typeof AuthenticatedMainAppChannelsWebThemeIndexRoute
+  '/app/settings/account/preferences': typeof AuthenticatedMainAppSettingsAccountPreferencesIndexRoute
+  '/app/settings/account/profile': typeof AuthenticatedMainAppSettingsAccountProfileIndexRoute
+  '/app/settings/account/security': typeof AuthenticatedMainAppSettingsAccountSecurityIndexRoute
+  '/app/settings/business/info': typeof AuthenticatedMainAppSettingsBusinessInfoIndexRoute
+  '/app/settings/business/locations': typeof AuthenticatedMainAppSettingsBusinessLocationsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -538,6 +924,7 @@ export interface FileRoutesById {
   '/signup/': typeof SignupIndexRoute
   '/verify/': typeof VerifyIndexRoute
   '/_authenticated/_main/admin': typeof AuthenticatedMainAdminRouteRouteWithChildren
+  '/_authenticated/_main/app': typeof AuthenticatedMainAppRouteRouteWithChildren
   '/_authenticated/_main/dashboard': typeof AuthenticatedMainDashboardRouteRouteWithChildren
   '/_authenticated/_main/settings': typeof AuthenticatedMainSettingsRouteRouteWithChildren
   '/_authenticated/_main/': typeof AuthenticatedMainIndexRoute
@@ -567,6 +954,7 @@ export interface FileRoutesById {
   '/_authenticated/_main/dashboard/$': typeof AuthenticatedMainDashboardSplatRoute
   '/_authenticated/_main/$organizationSlug/': typeof AuthenticatedMainOrganizationSlugIndexRoute
   '/_authenticated/_main/admin/': typeof AuthenticatedMainAdminIndexRoute
+  '/_authenticated/_main/app/': typeof AuthenticatedMainAppIndexRoute
   '/_authenticated/_main/chatbot/': typeof AuthenticatedMainChatbotIndexRoute
   '/_authenticated/_main/dashboard/': typeof AuthenticatedMainDashboardIndexRoute
   '/_authenticated/_main/settings/': typeof AuthenticatedMainSettingsIndexRoute
@@ -578,6 +966,10 @@ export interface FileRoutesById {
   '/_authenticated/_main/$organizationSlug/settings/': typeof AuthenticatedMainOrganizationSlugSettingsIndexRoute
   '/_authenticated/_main/admin/organizations/': typeof AuthenticatedMainAdminOrganizationsIndexRoute
   '/_authenticated/_main/admin/users/': typeof AuthenticatedMainAdminUsersIndexRoute
+  '/_authenticated/_main/app/customers/': typeof AuthenticatedMainAppCustomersIndexRoute
+  '/_authenticated/_main/app/dashboard/': typeof AuthenticatedMainAppDashboardIndexRoute
+  '/_authenticated/_main/app/orders/': typeof AuthenticatedMainAppOrdersIndexRoute
+  '/_authenticated/_main/app/reports/': typeof AuthenticatedMainAppReportsIndexRoute
   '/_authenticated/_main/settings/billing/': typeof AuthenticatedMainSettingsBillingIndexRoute
   '/_authenticated/_main/settings/general/': typeof AuthenticatedMainSettingsGeneralIndexRoute
   '/_authenticated/_main/settings/notifications/': typeof AuthenticatedMainSettingsNotificationsIndexRoute
@@ -587,6 +979,43 @@ export interface FileRoutesById {
   '/_authenticated/_main/$organizationSlug/settings/members/': typeof AuthenticatedMainOrganizationSlugSettingsMembersIndexRoute
   '/_authenticated/_main/admin/organizations/$organizationId/': typeof AuthenticatedMainAdminOrganizationsOrganizationIdIndexRoute
   '/_authenticated/_main/admin/organizations/new/': typeof AuthenticatedMainAdminOrganizationsNewIndexRoute
+  '/_authenticated/_main/app/channels/pos/': typeof AuthenticatedMainAppChannelsPosIndexRoute
+  '/_authenticated/_main/app/item/all/': typeof AuthenticatedMainAppItemAllIndexRoute
+  '/_authenticated/_main/app/item/categories/': typeof AuthenticatedMainAppItemCategoriesIndexRoute
+  '/_authenticated/_main/app/item/custom-attributes/': typeof AuthenticatedMainAppItemCustomAttributesIndexRoute
+  '/_authenticated/_main/app/item/discounts/': typeof AuthenticatedMainAppItemDiscountsIndexRoute
+  '/_authenticated/_main/app/item/gallery/': typeof AuthenticatedMainAppItemGalleryIndexRoute
+  '/_authenticated/_main/app/item/inventory/': typeof AuthenticatedMainAppItemInventoryIndexRoute
+  '/_authenticated/_main/app/item/modifiers/': typeof AuthenticatedMainAppItemModifiersIndexRoute
+  '/_authenticated/_main/app/item/settings/': typeof AuthenticatedMainAppItemSettingsIndexRoute
+  '/_authenticated/_main/app/item/units/': typeof AuthenticatedMainAppItemUnitsIndexRoute
+  '/_authenticated/_main/app/item/variants/': typeof AuthenticatedMainAppItemVariantsIndexRoute
+  '/_authenticated/_main/app/orders/partial-payments/': typeof AuthenticatedMainAppOrdersPartialPaymentsIndexRoute
+  '/_authenticated/_main/app/orders/payments/': typeof AuthenticatedMainAppOrdersPaymentsIndexRoute
+  '/_authenticated/_main/app/orders/returns/': typeof AuthenticatedMainAppOrdersReturnsIndexRoute
+  '/_authenticated/_main/app/orders/shipping/': typeof AuthenticatedMainAppOrdersShippingIndexRoute
+  '/_authenticated/_main/app/reports/customers/': typeof AuthenticatedMainAppReportsCustomersIndexRoute
+  '/_authenticated/_main/app/reports/inventory/': typeof AuthenticatedMainAppReportsInventoryIndexRoute
+  '/_authenticated/_main/app/reports/products/': typeof AuthenticatedMainAppReportsProductsIndexRoute
+  '/_authenticated/_main/app/reports/sales/': typeof AuthenticatedMainAppReportsSalesIndexRoute
+  '/_authenticated/_main/app/settings/billing/': typeof AuthenticatedMainAppSettingsBillingIndexRoute
+  '/_authenticated/_main/app/settings/notifications/': typeof AuthenticatedMainAppSettingsNotificationsIndexRoute
+  '/_authenticated/_main/app/settings/subscriptions/': typeof AuthenticatedMainAppSettingsSubscriptionsIndexRoute
+  '/_authenticated/_main/app/team/members/': typeof AuthenticatedMainAppTeamMembersIndexRoute
+  '/_authenticated/_main/app/team/permissions/': typeof AuthenticatedMainAppTeamPermissionsIndexRoute
+  '/_authenticated/_main/app/channels/web/checkout/': typeof AuthenticatedMainAppChannelsWebCheckoutIndexRoute
+  '/_authenticated/_main/app/channels/web/domains/': typeof AuthenticatedMainAppChannelsWebDomainsIndexRoute
+  '/_authenticated/_main/app/channels/web/navigation/': typeof AuthenticatedMainAppChannelsWebNavigationIndexRoute
+  '/_authenticated/_main/app/channels/web/notifications/': typeof AuthenticatedMainAppChannelsWebNotificationsIndexRoute
+  '/_authenticated/_main/app/channels/web/pages/': typeof AuthenticatedMainAppChannelsWebPagesIndexRoute
+  '/_authenticated/_main/app/channels/web/seo/': typeof AuthenticatedMainAppChannelsWebSeoIndexRoute
+  '/_authenticated/_main/app/channels/web/storefront/': typeof AuthenticatedMainAppChannelsWebStorefrontIndexRoute
+  '/_authenticated/_main/app/channels/web/theme/': typeof AuthenticatedMainAppChannelsWebThemeIndexRoute
+  '/_authenticated/_main/app/settings/account/preferences/': typeof AuthenticatedMainAppSettingsAccountPreferencesIndexRoute
+  '/_authenticated/_main/app/settings/account/profile/': typeof AuthenticatedMainAppSettingsAccountProfileIndexRoute
+  '/_authenticated/_main/app/settings/account/security/': typeof AuthenticatedMainAppSettingsAccountSecurityIndexRoute
+  '/_authenticated/_main/app/settings/business/info/': typeof AuthenticatedMainAppSettingsBusinessInfoIndexRoute
+  '/_authenticated/_main/app/settings/business/locations/': typeof AuthenticatedMainAppSettingsBusinessLocationsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -600,6 +1029,7 @@ export interface FileRouteTypes {
     | '/signup/'
     | '/verify/'
     | '/admin'
+    | '/app'
     | '/dashboard'
     | '/settings'
     | '/checkout-return/'
@@ -628,6 +1058,7 @@ export interface FileRouteTypes {
     | '/dashboard/$'
     | '/$organizationSlug/'
     | '/admin/'
+    | '/app/'
     | '/chatbot/'
     | '/dashboard/'
     | '/settings/'
@@ -639,6 +1070,10 @@ export interface FileRouteTypes {
     | '/$organizationSlug/settings/'
     | '/admin/organizations/'
     | '/admin/users/'
+    | '/app/customers/'
+    | '/app/dashboard/'
+    | '/app/orders/'
+    | '/app/reports/'
     | '/settings/billing/'
     | '/settings/general/'
     | '/settings/notifications/'
@@ -648,6 +1083,43 @@ export interface FileRouteTypes {
     | '/$organizationSlug/settings/members/'
     | '/admin/organizations/$organizationId/'
     | '/admin/organizations/new/'
+    | '/app/channels/pos/'
+    | '/app/item/all/'
+    | '/app/item/categories/'
+    | '/app/item/custom-attributes/'
+    | '/app/item/discounts/'
+    | '/app/item/gallery/'
+    | '/app/item/inventory/'
+    | '/app/item/modifiers/'
+    | '/app/item/settings/'
+    | '/app/item/units/'
+    | '/app/item/variants/'
+    | '/app/orders/partial-payments/'
+    | '/app/orders/payments/'
+    | '/app/orders/returns/'
+    | '/app/orders/shipping/'
+    | '/app/reports/customers/'
+    | '/app/reports/inventory/'
+    | '/app/reports/products/'
+    | '/app/reports/sales/'
+    | '/app/settings/billing/'
+    | '/app/settings/notifications/'
+    | '/app/settings/subscriptions/'
+    | '/app/team/members/'
+    | '/app/team/permissions/'
+    | '/app/channels/web/checkout/'
+    | '/app/channels/web/domains/'
+    | '/app/channels/web/navigation/'
+    | '/app/channels/web/notifications/'
+    | '/app/channels/web/pages/'
+    | '/app/channels/web/seo/'
+    | '/app/channels/web/storefront/'
+    | '/app/channels/web/theme/'
+    | '/app/settings/account/preferences/'
+    | '/app/settings/account/profile/'
+    | '/app/settings/account/security/'
+    | '/app/settings/business/info/'
+    | '/app/settings/business/locations/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -683,6 +1155,7 @@ export interface FileRouteTypes {
     | '/dashboard/$'
     | '/$organizationSlug'
     | '/admin'
+    | '/app'
     | '/chatbot'
     | '/dashboard'
     | '/settings'
@@ -694,6 +1167,10 @@ export interface FileRouteTypes {
     | '/$organizationSlug/settings'
     | '/admin/organizations'
     | '/admin/users'
+    | '/app/customers'
+    | '/app/dashboard'
+    | '/app/orders'
+    | '/app/reports'
     | '/settings/billing'
     | '/settings/general'
     | '/settings/notifications'
@@ -703,6 +1180,43 @@ export interface FileRouteTypes {
     | '/$organizationSlug/settings/members'
     | '/admin/organizations/$organizationId'
     | '/admin/organizations/new'
+    | '/app/channels/pos'
+    | '/app/item/all'
+    | '/app/item/categories'
+    | '/app/item/custom-attributes'
+    | '/app/item/discounts'
+    | '/app/item/gallery'
+    | '/app/item/inventory'
+    | '/app/item/modifiers'
+    | '/app/item/settings'
+    | '/app/item/units'
+    | '/app/item/variants'
+    | '/app/orders/partial-payments'
+    | '/app/orders/payments'
+    | '/app/orders/returns'
+    | '/app/orders/shipping'
+    | '/app/reports/customers'
+    | '/app/reports/inventory'
+    | '/app/reports/products'
+    | '/app/reports/sales'
+    | '/app/settings/billing'
+    | '/app/settings/notifications'
+    | '/app/settings/subscriptions'
+    | '/app/team/members'
+    | '/app/team/permissions'
+    | '/app/channels/web/checkout'
+    | '/app/channels/web/domains'
+    | '/app/channels/web/navigation'
+    | '/app/channels/web/notifications'
+    | '/app/channels/web/pages'
+    | '/app/channels/web/seo'
+    | '/app/channels/web/storefront'
+    | '/app/channels/web/theme'
+    | '/app/settings/account/preferences'
+    | '/app/settings/account/profile'
+    | '/app/settings/account/security'
+    | '/app/settings/business/info'
+    | '/app/settings/business/locations'
   id:
     | '__root__'
     | '/_authenticated'
@@ -715,6 +1229,7 @@ export interface FileRouteTypes {
     | '/signup/'
     | '/verify/'
     | '/_authenticated/_main/admin'
+    | '/_authenticated/_main/app'
     | '/_authenticated/_main/dashboard'
     | '/_authenticated/_main/settings'
     | '/_authenticated/_main/'
@@ -744,6 +1259,7 @@ export interface FileRouteTypes {
     | '/_authenticated/_main/dashboard/$'
     | '/_authenticated/_main/$organizationSlug/'
     | '/_authenticated/_main/admin/'
+    | '/_authenticated/_main/app/'
     | '/_authenticated/_main/chatbot/'
     | '/_authenticated/_main/dashboard/'
     | '/_authenticated/_main/settings/'
@@ -755,6 +1271,10 @@ export interface FileRouteTypes {
     | '/_authenticated/_main/$organizationSlug/settings/'
     | '/_authenticated/_main/admin/organizations/'
     | '/_authenticated/_main/admin/users/'
+    | '/_authenticated/_main/app/customers/'
+    | '/_authenticated/_main/app/dashboard/'
+    | '/_authenticated/_main/app/orders/'
+    | '/_authenticated/_main/app/reports/'
     | '/_authenticated/_main/settings/billing/'
     | '/_authenticated/_main/settings/general/'
     | '/_authenticated/_main/settings/notifications/'
@@ -764,6 +1284,43 @@ export interface FileRouteTypes {
     | '/_authenticated/_main/$organizationSlug/settings/members/'
     | '/_authenticated/_main/admin/organizations/$organizationId/'
     | '/_authenticated/_main/admin/organizations/new/'
+    | '/_authenticated/_main/app/channels/pos/'
+    | '/_authenticated/_main/app/item/all/'
+    | '/_authenticated/_main/app/item/categories/'
+    | '/_authenticated/_main/app/item/custom-attributes/'
+    | '/_authenticated/_main/app/item/discounts/'
+    | '/_authenticated/_main/app/item/gallery/'
+    | '/_authenticated/_main/app/item/inventory/'
+    | '/_authenticated/_main/app/item/modifiers/'
+    | '/_authenticated/_main/app/item/settings/'
+    | '/_authenticated/_main/app/item/units/'
+    | '/_authenticated/_main/app/item/variants/'
+    | '/_authenticated/_main/app/orders/partial-payments/'
+    | '/_authenticated/_main/app/orders/payments/'
+    | '/_authenticated/_main/app/orders/returns/'
+    | '/_authenticated/_main/app/orders/shipping/'
+    | '/_authenticated/_main/app/reports/customers/'
+    | '/_authenticated/_main/app/reports/inventory/'
+    | '/_authenticated/_main/app/reports/products/'
+    | '/_authenticated/_main/app/reports/sales/'
+    | '/_authenticated/_main/app/settings/billing/'
+    | '/_authenticated/_main/app/settings/notifications/'
+    | '/_authenticated/_main/app/settings/subscriptions/'
+    | '/_authenticated/_main/app/team/members/'
+    | '/_authenticated/_main/app/team/permissions/'
+    | '/_authenticated/_main/app/channels/web/checkout/'
+    | '/_authenticated/_main/app/channels/web/domains/'
+    | '/_authenticated/_main/app/channels/web/navigation/'
+    | '/_authenticated/_main/app/channels/web/notifications/'
+    | '/_authenticated/_main/app/channels/web/pages/'
+    | '/_authenticated/_main/app/channels/web/seo/'
+    | '/_authenticated/_main/app/channels/web/storefront/'
+    | '/_authenticated/_main/app/channels/web/theme/'
+    | '/_authenticated/_main/app/settings/account/preferences/'
+    | '/_authenticated/_main/app/settings/account/profile/'
+    | '/_authenticated/_main/app/settings/account/security/'
+    | '/_authenticated/_main/app/settings/business/info/'
+    | '/_authenticated/_main/app/settings/business/locations/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -891,6 +1448,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedMainDashboardRouteRouteImport
       parentRoute: typeof AuthenticatedMainRouteRoute
     }
+    '/_authenticated/_main/app': {
+      id: '/_authenticated/_main/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AuthenticatedMainAppRouteRouteImport
+      parentRoute: typeof AuthenticatedMainRouteRoute
+    }
     '/_authenticated/_main/admin': {
       id: '/_authenticated/_main/admin'
       path: '/admin'
@@ -925,6 +1489,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/chatbot/'
       preLoaderRoute: typeof AuthenticatedMainChatbotIndexRouteImport
       parentRoute: typeof AuthenticatedMainRouteRoute
+    }
+    '/_authenticated/_main/app/': {
+      id: '/_authenticated/_main/app/'
+      path: '/'
+      fullPath: '/app/'
+      preLoaderRoute: typeof AuthenticatedMainAppIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
     }
     '/_authenticated/_main/admin/': {
       id: '/_authenticated/_main/admin/'
@@ -1108,6 +1679,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedMainSettingsBillingIndexRouteImport
       parentRoute: typeof AuthenticatedMainSettingsRouteRoute
     }
+    '/_authenticated/_main/app/reports/': {
+      id: '/_authenticated/_main/app/reports/'
+      path: '/reports'
+      fullPath: '/app/reports/'
+      preLoaderRoute: typeof AuthenticatedMainAppReportsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/orders/': {
+      id: '/_authenticated/_main/app/orders/'
+      path: '/orders'
+      fullPath: '/app/orders/'
+      preLoaderRoute: typeof AuthenticatedMainAppOrdersIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/dashboard/': {
+      id: '/_authenticated/_main/app/dashboard/'
+      path: '/dashboard'
+      fullPath: '/app/dashboard/'
+      preLoaderRoute: typeof AuthenticatedMainAppDashboardIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/customers/': {
+      id: '/_authenticated/_main/app/customers/'
+      path: '/customers'
+      fullPath: '/app/customers/'
+      preLoaderRoute: typeof AuthenticatedMainAppCustomersIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
     '/_authenticated/_main/admin/users/': {
       id: '/_authenticated/_main/admin/users/'
       path: '/users'
@@ -1157,6 +1756,174 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedMainDashboardlegacyAnalyticsV1RouteRouteImport
       parentRoute: typeof AuthenticatedMainDashboardRouteRoute
     }
+    '/_authenticated/_main/app/team/permissions/': {
+      id: '/_authenticated/_main/app/team/permissions/'
+      path: '/team/permissions'
+      fullPath: '/app/team/permissions/'
+      preLoaderRoute: typeof AuthenticatedMainAppTeamPermissionsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/team/members/': {
+      id: '/_authenticated/_main/app/team/members/'
+      path: '/team/members'
+      fullPath: '/app/team/members/'
+      preLoaderRoute: typeof AuthenticatedMainAppTeamMembersIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/settings/subscriptions/': {
+      id: '/_authenticated/_main/app/settings/subscriptions/'
+      path: '/settings/subscriptions'
+      fullPath: '/app/settings/subscriptions/'
+      preLoaderRoute: typeof AuthenticatedMainAppSettingsSubscriptionsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/settings/notifications/': {
+      id: '/_authenticated/_main/app/settings/notifications/'
+      path: '/settings/notifications'
+      fullPath: '/app/settings/notifications/'
+      preLoaderRoute: typeof AuthenticatedMainAppSettingsNotificationsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/settings/billing/': {
+      id: '/_authenticated/_main/app/settings/billing/'
+      path: '/settings/billing'
+      fullPath: '/app/settings/billing/'
+      preLoaderRoute: typeof AuthenticatedMainAppSettingsBillingIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/reports/sales/': {
+      id: '/_authenticated/_main/app/reports/sales/'
+      path: '/reports/sales'
+      fullPath: '/app/reports/sales/'
+      preLoaderRoute: typeof AuthenticatedMainAppReportsSalesIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/reports/products/': {
+      id: '/_authenticated/_main/app/reports/products/'
+      path: '/reports/products'
+      fullPath: '/app/reports/products/'
+      preLoaderRoute: typeof AuthenticatedMainAppReportsProductsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/reports/inventory/': {
+      id: '/_authenticated/_main/app/reports/inventory/'
+      path: '/reports/inventory'
+      fullPath: '/app/reports/inventory/'
+      preLoaderRoute: typeof AuthenticatedMainAppReportsInventoryIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/reports/customers/': {
+      id: '/_authenticated/_main/app/reports/customers/'
+      path: '/reports/customers'
+      fullPath: '/app/reports/customers/'
+      preLoaderRoute: typeof AuthenticatedMainAppReportsCustomersIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/orders/shipping/': {
+      id: '/_authenticated/_main/app/orders/shipping/'
+      path: '/orders/shipping'
+      fullPath: '/app/orders/shipping/'
+      preLoaderRoute: typeof AuthenticatedMainAppOrdersShippingIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/orders/returns/': {
+      id: '/_authenticated/_main/app/orders/returns/'
+      path: '/orders/returns'
+      fullPath: '/app/orders/returns/'
+      preLoaderRoute: typeof AuthenticatedMainAppOrdersReturnsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/orders/payments/': {
+      id: '/_authenticated/_main/app/orders/payments/'
+      path: '/orders/payments'
+      fullPath: '/app/orders/payments/'
+      preLoaderRoute: typeof AuthenticatedMainAppOrdersPaymentsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/orders/partial-payments/': {
+      id: '/_authenticated/_main/app/orders/partial-payments/'
+      path: '/orders/partial-payments'
+      fullPath: '/app/orders/partial-payments/'
+      preLoaderRoute: typeof AuthenticatedMainAppOrdersPartialPaymentsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/item/variants/': {
+      id: '/_authenticated/_main/app/item/variants/'
+      path: '/item/variants'
+      fullPath: '/app/item/variants/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemVariantsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/item/units/': {
+      id: '/_authenticated/_main/app/item/units/'
+      path: '/item/units'
+      fullPath: '/app/item/units/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemUnitsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/item/settings/': {
+      id: '/_authenticated/_main/app/item/settings/'
+      path: '/item/settings'
+      fullPath: '/app/item/settings/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemSettingsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/item/modifiers/': {
+      id: '/_authenticated/_main/app/item/modifiers/'
+      path: '/item/modifiers'
+      fullPath: '/app/item/modifiers/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemModifiersIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/item/inventory/': {
+      id: '/_authenticated/_main/app/item/inventory/'
+      path: '/item/inventory'
+      fullPath: '/app/item/inventory/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemInventoryIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/item/gallery/': {
+      id: '/_authenticated/_main/app/item/gallery/'
+      path: '/item/gallery'
+      fullPath: '/app/item/gallery/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemGalleryIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/item/discounts/': {
+      id: '/_authenticated/_main/app/item/discounts/'
+      path: '/item/discounts'
+      fullPath: '/app/item/discounts/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemDiscountsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/item/custom-attributes/': {
+      id: '/_authenticated/_main/app/item/custom-attributes/'
+      path: '/item/custom-attributes'
+      fullPath: '/app/item/custom-attributes/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemCustomAttributesIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/item/categories/': {
+      id: '/_authenticated/_main/app/item/categories/'
+      path: '/item/categories'
+      fullPath: '/app/item/categories/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemCategoriesIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/item/all/': {
+      id: '/_authenticated/_main/app/item/all/'
+      path: '/item/all'
+      fullPath: '/app/item/all/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemAllIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/channels/pos/': {
+      id: '/_authenticated/_main/app/channels/pos/'
+      path: '/channels/pos'
+      fullPath: '/app/channels/pos/'
+      preLoaderRoute: typeof AuthenticatedMainAppChannelsPosIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
     '/_authenticated/_main/admin/organizations/new/': {
       id: '/_authenticated/_main/admin/organizations/new/'
       path: '/organizations/new'
@@ -1192,6 +1959,97 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedMainOrganizationSlugSettingsBillingIndexRouteImport
       parentRoute: typeof AuthenticatedMainOrganizationSlugSettingsRouteRoute
     }
+    '/_authenticated/_main/app/settings/business/locations/': {
+      id: '/_authenticated/_main/app/settings/business/locations/'
+      path: '/settings/business/locations'
+      fullPath: '/app/settings/business/locations/'
+      preLoaderRoute: typeof AuthenticatedMainAppSettingsBusinessLocationsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/settings/business/info/': {
+      id: '/_authenticated/_main/app/settings/business/info/'
+      path: '/settings/business/info'
+      fullPath: '/app/settings/business/info/'
+      preLoaderRoute: typeof AuthenticatedMainAppSettingsBusinessInfoIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/settings/account/security/': {
+      id: '/_authenticated/_main/app/settings/account/security/'
+      path: '/settings/account/security'
+      fullPath: '/app/settings/account/security/'
+      preLoaderRoute: typeof AuthenticatedMainAppSettingsAccountSecurityIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/settings/account/profile/': {
+      id: '/_authenticated/_main/app/settings/account/profile/'
+      path: '/settings/account/profile'
+      fullPath: '/app/settings/account/profile/'
+      preLoaderRoute: typeof AuthenticatedMainAppSettingsAccountProfileIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/settings/account/preferences/': {
+      id: '/_authenticated/_main/app/settings/account/preferences/'
+      path: '/settings/account/preferences'
+      fullPath: '/app/settings/account/preferences/'
+      preLoaderRoute: typeof AuthenticatedMainAppSettingsAccountPreferencesIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/channels/web/theme/': {
+      id: '/_authenticated/_main/app/channels/web/theme/'
+      path: '/channels/web/theme'
+      fullPath: '/app/channels/web/theme/'
+      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebThemeIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/channels/web/storefront/': {
+      id: '/_authenticated/_main/app/channels/web/storefront/'
+      path: '/channels/web/storefront'
+      fullPath: '/app/channels/web/storefront/'
+      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebStorefrontIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/channels/web/seo/': {
+      id: '/_authenticated/_main/app/channels/web/seo/'
+      path: '/channels/web/seo'
+      fullPath: '/app/channels/web/seo/'
+      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebSeoIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/channels/web/pages/': {
+      id: '/_authenticated/_main/app/channels/web/pages/'
+      path: '/channels/web/pages'
+      fullPath: '/app/channels/web/pages/'
+      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebPagesIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/channels/web/notifications/': {
+      id: '/_authenticated/_main/app/channels/web/notifications/'
+      path: '/channels/web/notifications'
+      fullPath: '/app/channels/web/notifications/'
+      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebNotificationsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/channels/web/navigation/': {
+      id: '/_authenticated/_main/app/channels/web/navigation/'
+      path: '/channels/web/navigation'
+      fullPath: '/app/channels/web/navigation/'
+      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebNavigationIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/channels/web/domains/': {
+      id: '/_authenticated/_main/app/channels/web/domains/'
+      path: '/channels/web/domains'
+      fullPath: '/app/channels/web/domains/'
+      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebDomainsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/channels/web/checkout/': {
+      id: '/_authenticated/_main/app/channels/web/checkout/'
+      path: '/channels/web/checkout'
+      fullPath: '/app/channels/web/checkout/'
+      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebCheckoutIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
   }
 }
 
@@ -1219,6 +2077,142 @@ const AuthenticatedMainAdminRouteRouteChildren: AuthenticatedMainAdminRouteRoute
 const AuthenticatedMainAdminRouteRouteWithChildren =
   AuthenticatedMainAdminRouteRoute._addFileChildren(
     AuthenticatedMainAdminRouteRouteChildren,
+  )
+
+interface AuthenticatedMainAppRouteRouteChildren {
+  AuthenticatedMainAppIndexRoute: typeof AuthenticatedMainAppIndexRoute
+  AuthenticatedMainAppCustomersIndexRoute: typeof AuthenticatedMainAppCustomersIndexRoute
+  AuthenticatedMainAppDashboardIndexRoute: typeof AuthenticatedMainAppDashboardIndexRoute
+  AuthenticatedMainAppOrdersIndexRoute: typeof AuthenticatedMainAppOrdersIndexRoute
+  AuthenticatedMainAppReportsIndexRoute: typeof AuthenticatedMainAppReportsIndexRoute
+  AuthenticatedMainAppChannelsPosIndexRoute: typeof AuthenticatedMainAppChannelsPosIndexRoute
+  AuthenticatedMainAppItemAllIndexRoute: typeof AuthenticatedMainAppItemAllIndexRoute
+  AuthenticatedMainAppItemCategoriesIndexRoute: typeof AuthenticatedMainAppItemCategoriesIndexRoute
+  AuthenticatedMainAppItemCustomAttributesIndexRoute: typeof AuthenticatedMainAppItemCustomAttributesIndexRoute
+  AuthenticatedMainAppItemDiscountsIndexRoute: typeof AuthenticatedMainAppItemDiscountsIndexRoute
+  AuthenticatedMainAppItemGalleryIndexRoute: typeof AuthenticatedMainAppItemGalleryIndexRoute
+  AuthenticatedMainAppItemInventoryIndexRoute: typeof AuthenticatedMainAppItemInventoryIndexRoute
+  AuthenticatedMainAppItemModifiersIndexRoute: typeof AuthenticatedMainAppItemModifiersIndexRoute
+  AuthenticatedMainAppItemSettingsIndexRoute: typeof AuthenticatedMainAppItemSettingsIndexRoute
+  AuthenticatedMainAppItemUnitsIndexRoute: typeof AuthenticatedMainAppItemUnitsIndexRoute
+  AuthenticatedMainAppItemVariantsIndexRoute: typeof AuthenticatedMainAppItemVariantsIndexRoute
+  AuthenticatedMainAppOrdersPartialPaymentsIndexRoute: typeof AuthenticatedMainAppOrdersPartialPaymentsIndexRoute
+  AuthenticatedMainAppOrdersPaymentsIndexRoute: typeof AuthenticatedMainAppOrdersPaymentsIndexRoute
+  AuthenticatedMainAppOrdersReturnsIndexRoute: typeof AuthenticatedMainAppOrdersReturnsIndexRoute
+  AuthenticatedMainAppOrdersShippingIndexRoute: typeof AuthenticatedMainAppOrdersShippingIndexRoute
+  AuthenticatedMainAppReportsCustomersIndexRoute: typeof AuthenticatedMainAppReportsCustomersIndexRoute
+  AuthenticatedMainAppReportsInventoryIndexRoute: typeof AuthenticatedMainAppReportsInventoryIndexRoute
+  AuthenticatedMainAppReportsProductsIndexRoute: typeof AuthenticatedMainAppReportsProductsIndexRoute
+  AuthenticatedMainAppReportsSalesIndexRoute: typeof AuthenticatedMainAppReportsSalesIndexRoute
+  AuthenticatedMainAppSettingsBillingIndexRoute: typeof AuthenticatedMainAppSettingsBillingIndexRoute
+  AuthenticatedMainAppSettingsNotificationsIndexRoute: typeof AuthenticatedMainAppSettingsNotificationsIndexRoute
+  AuthenticatedMainAppSettingsSubscriptionsIndexRoute: typeof AuthenticatedMainAppSettingsSubscriptionsIndexRoute
+  AuthenticatedMainAppTeamMembersIndexRoute: typeof AuthenticatedMainAppTeamMembersIndexRoute
+  AuthenticatedMainAppTeamPermissionsIndexRoute: typeof AuthenticatedMainAppTeamPermissionsIndexRoute
+  AuthenticatedMainAppChannelsWebCheckoutIndexRoute: typeof AuthenticatedMainAppChannelsWebCheckoutIndexRoute
+  AuthenticatedMainAppChannelsWebDomainsIndexRoute: typeof AuthenticatedMainAppChannelsWebDomainsIndexRoute
+  AuthenticatedMainAppChannelsWebNavigationIndexRoute: typeof AuthenticatedMainAppChannelsWebNavigationIndexRoute
+  AuthenticatedMainAppChannelsWebNotificationsIndexRoute: typeof AuthenticatedMainAppChannelsWebNotificationsIndexRoute
+  AuthenticatedMainAppChannelsWebPagesIndexRoute: typeof AuthenticatedMainAppChannelsWebPagesIndexRoute
+  AuthenticatedMainAppChannelsWebSeoIndexRoute: typeof AuthenticatedMainAppChannelsWebSeoIndexRoute
+  AuthenticatedMainAppChannelsWebStorefrontIndexRoute: typeof AuthenticatedMainAppChannelsWebStorefrontIndexRoute
+  AuthenticatedMainAppChannelsWebThemeIndexRoute: typeof AuthenticatedMainAppChannelsWebThemeIndexRoute
+  AuthenticatedMainAppSettingsAccountPreferencesIndexRoute: typeof AuthenticatedMainAppSettingsAccountPreferencesIndexRoute
+  AuthenticatedMainAppSettingsAccountProfileIndexRoute: typeof AuthenticatedMainAppSettingsAccountProfileIndexRoute
+  AuthenticatedMainAppSettingsAccountSecurityIndexRoute: typeof AuthenticatedMainAppSettingsAccountSecurityIndexRoute
+  AuthenticatedMainAppSettingsBusinessInfoIndexRoute: typeof AuthenticatedMainAppSettingsBusinessInfoIndexRoute
+  AuthenticatedMainAppSettingsBusinessLocationsIndexRoute: typeof AuthenticatedMainAppSettingsBusinessLocationsIndexRoute
+}
+
+const AuthenticatedMainAppRouteRouteChildren: AuthenticatedMainAppRouteRouteChildren =
+  {
+    AuthenticatedMainAppIndexRoute: AuthenticatedMainAppIndexRoute,
+    AuthenticatedMainAppCustomersIndexRoute:
+      AuthenticatedMainAppCustomersIndexRoute,
+    AuthenticatedMainAppDashboardIndexRoute:
+      AuthenticatedMainAppDashboardIndexRoute,
+    AuthenticatedMainAppOrdersIndexRoute: AuthenticatedMainAppOrdersIndexRoute,
+    AuthenticatedMainAppReportsIndexRoute:
+      AuthenticatedMainAppReportsIndexRoute,
+    AuthenticatedMainAppChannelsPosIndexRoute:
+      AuthenticatedMainAppChannelsPosIndexRoute,
+    AuthenticatedMainAppItemAllIndexRoute:
+      AuthenticatedMainAppItemAllIndexRoute,
+    AuthenticatedMainAppItemCategoriesIndexRoute:
+      AuthenticatedMainAppItemCategoriesIndexRoute,
+    AuthenticatedMainAppItemCustomAttributesIndexRoute:
+      AuthenticatedMainAppItemCustomAttributesIndexRoute,
+    AuthenticatedMainAppItemDiscountsIndexRoute:
+      AuthenticatedMainAppItemDiscountsIndexRoute,
+    AuthenticatedMainAppItemGalleryIndexRoute:
+      AuthenticatedMainAppItemGalleryIndexRoute,
+    AuthenticatedMainAppItemInventoryIndexRoute:
+      AuthenticatedMainAppItemInventoryIndexRoute,
+    AuthenticatedMainAppItemModifiersIndexRoute:
+      AuthenticatedMainAppItemModifiersIndexRoute,
+    AuthenticatedMainAppItemSettingsIndexRoute:
+      AuthenticatedMainAppItemSettingsIndexRoute,
+    AuthenticatedMainAppItemUnitsIndexRoute:
+      AuthenticatedMainAppItemUnitsIndexRoute,
+    AuthenticatedMainAppItemVariantsIndexRoute:
+      AuthenticatedMainAppItemVariantsIndexRoute,
+    AuthenticatedMainAppOrdersPartialPaymentsIndexRoute:
+      AuthenticatedMainAppOrdersPartialPaymentsIndexRoute,
+    AuthenticatedMainAppOrdersPaymentsIndexRoute:
+      AuthenticatedMainAppOrdersPaymentsIndexRoute,
+    AuthenticatedMainAppOrdersReturnsIndexRoute:
+      AuthenticatedMainAppOrdersReturnsIndexRoute,
+    AuthenticatedMainAppOrdersShippingIndexRoute:
+      AuthenticatedMainAppOrdersShippingIndexRoute,
+    AuthenticatedMainAppReportsCustomersIndexRoute:
+      AuthenticatedMainAppReportsCustomersIndexRoute,
+    AuthenticatedMainAppReportsInventoryIndexRoute:
+      AuthenticatedMainAppReportsInventoryIndexRoute,
+    AuthenticatedMainAppReportsProductsIndexRoute:
+      AuthenticatedMainAppReportsProductsIndexRoute,
+    AuthenticatedMainAppReportsSalesIndexRoute:
+      AuthenticatedMainAppReportsSalesIndexRoute,
+    AuthenticatedMainAppSettingsBillingIndexRoute:
+      AuthenticatedMainAppSettingsBillingIndexRoute,
+    AuthenticatedMainAppSettingsNotificationsIndexRoute:
+      AuthenticatedMainAppSettingsNotificationsIndexRoute,
+    AuthenticatedMainAppSettingsSubscriptionsIndexRoute:
+      AuthenticatedMainAppSettingsSubscriptionsIndexRoute,
+    AuthenticatedMainAppTeamMembersIndexRoute:
+      AuthenticatedMainAppTeamMembersIndexRoute,
+    AuthenticatedMainAppTeamPermissionsIndexRoute:
+      AuthenticatedMainAppTeamPermissionsIndexRoute,
+    AuthenticatedMainAppChannelsWebCheckoutIndexRoute:
+      AuthenticatedMainAppChannelsWebCheckoutIndexRoute,
+    AuthenticatedMainAppChannelsWebDomainsIndexRoute:
+      AuthenticatedMainAppChannelsWebDomainsIndexRoute,
+    AuthenticatedMainAppChannelsWebNavigationIndexRoute:
+      AuthenticatedMainAppChannelsWebNavigationIndexRoute,
+    AuthenticatedMainAppChannelsWebNotificationsIndexRoute:
+      AuthenticatedMainAppChannelsWebNotificationsIndexRoute,
+    AuthenticatedMainAppChannelsWebPagesIndexRoute:
+      AuthenticatedMainAppChannelsWebPagesIndexRoute,
+    AuthenticatedMainAppChannelsWebSeoIndexRoute:
+      AuthenticatedMainAppChannelsWebSeoIndexRoute,
+    AuthenticatedMainAppChannelsWebStorefrontIndexRoute:
+      AuthenticatedMainAppChannelsWebStorefrontIndexRoute,
+    AuthenticatedMainAppChannelsWebThemeIndexRoute:
+      AuthenticatedMainAppChannelsWebThemeIndexRoute,
+    AuthenticatedMainAppSettingsAccountPreferencesIndexRoute:
+      AuthenticatedMainAppSettingsAccountPreferencesIndexRoute,
+    AuthenticatedMainAppSettingsAccountProfileIndexRoute:
+      AuthenticatedMainAppSettingsAccountProfileIndexRoute,
+    AuthenticatedMainAppSettingsAccountSecurityIndexRoute:
+      AuthenticatedMainAppSettingsAccountSecurityIndexRoute,
+    AuthenticatedMainAppSettingsBusinessInfoIndexRoute:
+      AuthenticatedMainAppSettingsBusinessInfoIndexRoute,
+    AuthenticatedMainAppSettingsBusinessLocationsIndexRoute:
+      AuthenticatedMainAppSettingsBusinessLocationsIndexRoute,
+  }
+
+const AuthenticatedMainAppRouteRouteWithChildren =
+  AuthenticatedMainAppRouteRoute._addFileChildren(
+    AuthenticatedMainAppRouteRouteChildren,
   )
 
 interface AuthenticatedMainDashboardRouteRouteChildren {
@@ -1355,6 +2349,7 @@ const AuthenticatedMainOrganizationSlugSettingsRouteRouteWithChildren =
 
 interface AuthenticatedMainRouteRouteChildren {
   AuthenticatedMainAdminRouteRoute: typeof AuthenticatedMainAdminRouteRouteWithChildren
+  AuthenticatedMainAppRouteRoute: typeof AuthenticatedMainAppRouteRouteWithChildren
   AuthenticatedMainDashboardRouteRoute: typeof AuthenticatedMainDashboardRouteRouteWithChildren
   AuthenticatedMainSettingsRouteRoute: typeof AuthenticatedMainSettingsRouteRouteWithChildren
   AuthenticatedMainIndexRoute: typeof AuthenticatedMainIndexRoute
@@ -1367,6 +2362,7 @@ const AuthenticatedMainRouteRouteChildren: AuthenticatedMainRouteRouteChildren =
   {
     AuthenticatedMainAdminRouteRoute:
       AuthenticatedMainAdminRouteRouteWithChildren,
+    AuthenticatedMainAppRouteRoute: AuthenticatedMainAppRouteRouteWithChildren,
     AuthenticatedMainDashboardRouteRoute:
       AuthenticatedMainDashboardRouteRouteWithChildren,
     AuthenticatedMainSettingsRouteRoute:

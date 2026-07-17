@@ -76,6 +76,77 @@
 		"description": "Gestiona tu aplicación."
 	},
 	"app": {
+		"sidebar": {
+			"home": "Inicio",
+			"catalog": {
+				"label": "Catálogo",
+				"items": "Artículos",
+				"gallery": "Galería",
+				"modifiers": "Modificadores",
+				"categories": "Categorías",
+				"discounts": "Descuentos",
+				"variants": "Variantes",
+				"units": "Unidades",
+				"customAttributes": "Atributos Personalizados",
+				"inventory": "Inventario",
+				"settings": "Ajustes"
+			},
+			"orders": {
+				"label": "Ordenes",
+				"list": "Pedidos",
+				"returns": "Devoluciones",
+				"shipping": "Envíos",
+				"payments": "Pagos",
+				"partialPayments": "Abonos"
+			},
+			"customers": "Clientes",
+			"reports": {
+				"label": "Reportes",
+				"sales": "Ventas",
+				"inventory": "Inventario",
+				"customers": "Clientes",
+				"products": "Productos"
+			},
+			"team": {
+				"label": "Personal",
+				"members": "Miembros",
+				"permissions": "Permisos"
+			},
+			"settings": {
+				"label": "Ajustes",
+				"myAccount": {
+					"label": "Mi Cuenta",
+					"personalInfo": "Información Personal",
+					"security": "Seguridad",
+					"preferences": "Preferencias"
+				},
+				"myBusiness": {
+					"label": "Mi Negocio",
+					"information": "Información",
+					"locations": "Sucursales"
+				},
+				"billing": "Facturación",
+				"plansAndSubscriptions": "Planes y Suscripciones",
+				"notifications": "Notificaciones"
+			},
+			"salesChannels": {
+				"label": "Canales de Venta",
+				"website": {
+					"label": "Sitio Web",
+					"storefront": "Tienda",
+					"checkout": "Checkout",
+					"theme": "Tema",
+					"pages": "Páginas",
+					"navigation": "Navegación",
+					"seo": "SEO",
+					"domains": "Dominios",
+					"notifications": "Notificaciones"
+				},
+				"pos": {
+					"label": "Punto de Venta"
+				}
+			}
+		},
 		"menu": {
 			"accountSettings": "Configuración de cuenta",
 			"admin": "Admin",

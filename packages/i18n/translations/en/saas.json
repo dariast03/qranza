@@ -76,6 +76,77 @@
 		"description": "Manage your application."
 	},
 	"app": {
+		"sidebar": {
+			"home": "Home",
+			"catalog": {
+				"label": "Catalog",
+				"items": "Items",
+				"gallery": "Gallery",
+				"modifiers": "Modifiers",
+				"categories": "Categories",
+				"discounts": "Discounts",
+				"variants": "Variants",
+				"units": "Units",
+				"customAttributes": "Custom Attributes",
+				"inventory": "Inventory",
+				"settings": "Settings"
+			},
+			"orders": {
+				"label": "Orders",
+				"list": "Orders",
+				"returns": "Returns",
+				"shipping": "Shipping",
+				"payments": "Payments",
+				"partialPayments": "Partial Payments"
+			},
+			"customers": "Customers",
+			"reports": {
+				"label": "Reports",
+				"sales": "Sales",
+				"inventory": "Inventory",
+				"customers": "Customers",
+				"products": "Products"
+			},
+			"team": {
+				"label": "Team",
+				"members": "Members",
+				"permissions": "Permissions"
+			},
+			"settings": {
+				"label": "Settings",
+				"myAccount": {
+					"label": "My Account",
+					"personalInfo": "Personal Information",
+					"security": "Security",
+					"preferences": "Preferences"
+				},
+				"myBusiness": {
+					"label": "My Business",
+					"information": "Information",
+					"locations": "Locations"
+				},
+				"billing": "Billing",
+				"plansAndSubscriptions": "Plans & Subscriptions",
+				"notifications": "Notifications"
+			},
+			"salesChannels": {
+				"label": "Sales Channels",
+				"website": {
+					"label": "Website",
+					"storefront": "Storefront",
+					"checkout": "Checkout",
+					"theme": "Theme",
+					"pages": "Pages",
+					"navigation": "Navigation",
+					"seo": "SEO",
+					"domains": "Domains",
+					"notifications": "Notifications"
+				},
+				"pos": {
+					"label": "Point of Sale"
+				}
+			}
+		},
 		"menu": {
 			"accountSettings": "Account settings",
 			"admin": "Admin",
