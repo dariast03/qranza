@@ -129,6 +129,7 @@ CREATE TABLE "language" (
 CREATE TABLE "branch" (
 	"id" text PRIMARY KEY NOT NULL,
 	"organizationId" text NOT NULL,
+	"brandingId" text,
 	"name" text NOT NULL,
 	"slug" text NOT NULL,
 	"type" "BranchType" DEFAULT 'PHYSICAL' NOT NULL,
@@ -137,6 +138,8 @@ CREATE TABLE "branch" (
 	"address" text,
 	"city" text,
 	"countryCode" text,
+	"latitude" numeric(9, 6),
+	"longitude" numeric(9, 6),
 	"phone" text,
 	"email" text,
 	"website" text,
@@ -144,7 +147,21 @@ CREATE TABLE "branch" (
 	"timezone" text,
 	"currencyCode" text,
 	"createdAt" timestamp DEFAULT now() NOT NULL,
-	"updatedAt" timestamp DEFAULT now() NOT NULL
+	"updatedAt" timestamp DEFAULT now() NOT NULL,
+	"deletedAt" timestamp,
+	"deletedById" text
+);
+--> statement-breakpoint
+CREATE TABLE "branding" (
+	"id" text PRIMARY KEY NOT NULL,
+	"organizationId" text NOT NULL,
+	"name" text NOT NULL,
+	"logoUrl" text,
+	"primaryColor" text,
+	"createdAt" timestamp DEFAULT now() NOT NULL,
+	"updatedAt" timestamp DEFAULT now() NOT NULL,
+	"deletedAt" timestamp,
+	"deletedById" text
 );
 --> statement-breakpoint
 CREATE TABLE "invitation" (
@@ -171,16 +188,25 @@ CREATE TABLE "organization" (
 	"name" text NOT NULL,
 	"slug" text NOT NULL,
 	"logo" text,
-	"countryCode" text,
-	"currencyCode" text,
-	"timezone" text,
-	"city" text,
-	"address" text,
 	"createdAt" timestamp DEFAULT now() NOT NULL,
 	"updatedAt" timestamp DEFAULT now() NOT NULL,
 	"metadata" text,
 	"paymentsCustomerId" text,
 	CONSTRAINT "organization_slug_unique" UNIQUE("slug")
+);
+--> statement-breakpoint
+CREATE TABLE "organization_profile" (
+	"id" text PRIMARY KEY NOT NULL,
+	"organizationId" text NOT NULL,
+	"industryCode" text NOT NULL,
+	"countryCode" text NOT NULL,
+	"currencyCode" text NOT NULL,
+	"timezone" text NOT NULL,
+	"city" text,
+	"address" text,
+	"createdAt" timestamp DEFAULT now() NOT NULL,
+	"updatedAt" timestamp DEFAULT now() NOT NULL,
+	CONSTRAINT "organization_profile_organizationId_unique" UNIQUE("organizationId")
 );
 --> statement-breakpoint
 CREATE TABLE "schedule" (
@@ -261,14 +287,20 @@ ALTER TABLE "country" ADD CONSTRAINT "country_currencyCode_currency_code_fk" FOR
 ALTER TABLE "country" ADD CONSTRAINT "country_languageCode_language_code_fk" FOREIGN KEY ("languageCode") REFERENCES "public"."language"("code") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "industry" ADD CONSTRAINT "industry_parentId_industry_code_fk" FOREIGN KEY ("parentId") REFERENCES "public"."industry"("code") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "branch" ADD CONSTRAINT "branch_organizationId_organization_id_fk" FOREIGN KEY ("organizationId") REFERENCES "public"."organization"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "branch" ADD CONSTRAINT "branch_brandingId_branding_id_fk" FOREIGN KEY ("brandingId") REFERENCES "public"."branding"("id") ON DELETE set null ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "branch" ADD CONSTRAINT "branch_countryCode_country_code_fk" FOREIGN KEY ("countryCode") REFERENCES "public"."country"("code") ON DELETE set null ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "branch" ADD CONSTRAINT "branch_currencyCode_currency_code_fk" FOREIGN KEY ("currencyCode") REFERENCES "public"."currency"("code") ON DELETE set null ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "branch" ADD CONSTRAINT "branch_deletedById_user_id_fk" FOREIGN KEY ("deletedById") REFERENCES "public"."user"("id") ON DELETE set null ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "branding" ADD CONSTRAINT "branding_organizationId_organization_id_fk" FOREIGN KEY ("organizationId") REFERENCES "public"."organization"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "branding" ADD CONSTRAINT "branding_deletedById_user_id_fk" FOREIGN KEY ("deletedById") REFERENCES "public"."user"("id") ON DELETE set null ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "invitation" ADD CONSTRAINT "invitation_organizationId_organization_id_fk" FOREIGN KEY ("organizationId") REFERENCES "public"."organization"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "invitation" ADD CONSTRAINT "invitation_inviterId_user_id_fk" FOREIGN KEY ("inviterId") REFERENCES "public"."user"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "member" ADD CONSTRAINT "member_organizationId_organization_id_fk" FOREIGN KEY ("organizationId") REFERENCES "public"."organization"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "member" ADD CONSTRAINT "member_userId_user_id_fk" FOREIGN KEY ("userId") REFERENCES "public"."user"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "organization" ADD CONSTRAINT "organization_countryCode_country_code_fk" FOREIGN KEY ("countryCode") REFERENCES "public"."country"("code") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
-ALTER TABLE "organization" ADD CONSTRAINT "organization_currencyCode_currency_code_fk" FOREIGN KEY ("currencyCode") REFERENCES "public"."currency"("code") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "organization_profile" ADD CONSTRAINT "organization_profile_organizationId_organization_id_fk" FOREIGN KEY ("organizationId") REFERENCES "public"."organization"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "organization_profile" ADD CONSTRAINT "organization_profile_industryCode_industry_code_fk" FOREIGN KEY ("industryCode") REFERENCES "public"."industry"("code") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "organization_profile" ADD CONSTRAINT "organization_profile_countryCode_country_code_fk" FOREIGN KEY ("countryCode") REFERENCES "public"."country"("code") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "organization_profile" ADD CONSTRAINT "organization_profile_currencyCode_currency_code_fk" FOREIGN KEY ("currencyCode") REFERENCES "public"."currency"("code") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "schedule" ADD CONSTRAINT "schedule_organizationId_organization_id_fk" FOREIGN KEY ("organizationId") REFERENCES "public"."organization"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "schedule_exception" ADD CONSTRAINT "schedule_exception_scheduleId_schedule_id_fk" FOREIGN KEY ("scheduleId") REFERENCES "public"."schedule"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "schedule_weekly_slot" ADD CONSTRAINT "schedule_weekly_slot_scheduleId_schedule_id_fk" FOREIGN KEY ("scheduleId") REFERENCES "public"."schedule"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
@@ -295,12 +327,14 @@ CREATE UNIQUE INDEX "branch_org_slug_uidx" ON "branch" USING btree ("organizatio
 CREATE INDEX "branch_organizationId_idx" ON "branch" USING btree ("organizationId");--> statement-breakpoint
 CREATE INDEX "branch_countryCode_idx" ON "branch" USING btree ("countryCode");--> statement-breakpoint
 CREATE UNIQUE INDEX "branch_org_default_uidx" ON "branch" USING btree ("organizationId") WHERE "branch"."isDefault" = true;--> statement-breakpoint
+CREATE INDEX "branding_organizationId_idx" ON "branding" USING btree ("organizationId");--> statement-breakpoint
 CREATE INDEX "invitation_organizationId_idx" ON "invitation" USING btree ("organizationId");--> statement-breakpoint
 CREATE INDEX "invitation_email_idx" ON "invitation" USING btree ("email");--> statement-breakpoint
 CREATE UNIQUE INDEX "member_user_org_idx" ON "member" USING btree ("userId","organizationId");--> statement-breakpoint
 CREATE INDEX "member_organizationId_idx" ON "member" USING btree ("organizationId");--> statement-breakpoint
 CREATE INDEX "member_userId_idx" ON "member" USING btree ("userId");--> statement-breakpoint
 CREATE UNIQUE INDEX "organization_slug_uidx" ON "organization" USING btree ("slug");--> statement-breakpoint
+CREATE INDEX "organization_profile_organizationId_idx" ON "organization_profile" USING btree ("organizationId");--> statement-breakpoint
 CREATE UNIQUE INDEX "schedule_schedulable_uidx" ON "schedule" USING btree ("schedulableType","schedulableId");--> statement-breakpoint
 CREATE INDEX "schedule_organizationId_idx" ON "schedule" USING btree ("organizationId");--> statement-breakpoint
 CREATE UNIQUE INDEX "schedule_exception_date_uidx" ON "schedule_exception" USING btree ("scheduleId","date");--> statement-breakpoint

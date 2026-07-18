@@ -1,5 +1,5 @@
 {
-  "id": "f2061880-7a0d-4888-a817-acc67e3d9757",
+  "id": "ad8ae945-372a-449c-b729-f696098395cf",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -1035,6 +1035,12 @@
           "primaryKey": false,
           "notNull": true
         },
+        "brandingId": {
+          "name": "brandingId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
         "name": {
           "name": "name",
           "type": "text",
@@ -1088,6 +1094,18 @@
           "primaryKey": false,
           "notNull": false
         },
+        "latitude": {
+          "name": "latitude",
+          "type": "numeric(9, 6)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "longitude": {
+          "name": "longitude",
+          "type": "numeric(9, 6)",
+          "primaryKey": false,
+          "notNull": false
+        },
         "phone": {
           "name": "phone",
           "type": "text",
@@ -1138,6 +1156,18 @@
           "primaryKey": false,
           "notNull": true,
           "default": "now()"
+        },
+        "deletedAt": {
+          "name": "deletedAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "deletedById": {
+          "name": "deletedById",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
         }
       },
       "indexes": {
@@ -1223,6 +1253,19 @@
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
+        "branch_brandingId_branding_id_fk": {
+          "name": "branch_brandingId_branding_id_fk",
+          "tableFrom": "branch",
+          "tableTo": "branding",
+          "columnsFrom": [
+            "brandingId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "no action"
+        },
         "branch_countryCode_country_code_fk": {
           "name": "branch_countryCode_country_code_fk",
           "tableFrom": "branch",
@@ -1245,6 +1288,131 @@
           ],
           "columnsTo": [
             "code"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "no action"
+        },
+        "branch_deletedById_user_id_fk": {
+          "name": "branch_deletedById_user_id_fk",
+          "tableFrom": "branch",
+          "tableTo": "user",
+          "columnsFrom": [
+            "deletedById"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.branding": {
+      "name": "branding",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "organizationId": {
+          "name": "organizationId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "logoUrl": {
+          "name": "logoUrl",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "primaryColor": {
+          "name": "primaryColor",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "deletedAt": {
+          "name": "deletedAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "deletedById": {
+          "name": "deletedById",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "branding_organizationId_idx": {
+          "name": "branding_organizationId_idx",
+          "columns": [
+            {
+              "expression": "organizationId",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "branding_organizationId_organization_id_fk": {
+          "name": "branding_organizationId_organization_id_fk",
+          "tableFrom": "branding",
+          "tableTo": "organization",
+          "columnsFrom": [
+            "organizationId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "branding_deletedById_user_id_fk": {
+          "name": "branding_deletedById_user_id_fk",
+          "tableFrom": "branding",
+          "tableTo": "user",
+          "columnsFrom": [
+            "deletedById"
+          ],
+          "columnsTo": [
+            "id"
           ],
           "onDelete": "set null",
           "onUpdate": "no action"
@@ -1528,36 +1696,6 @@
           "primaryKey": false,
           "notNull": false
         },
-        "countryCode": {
-          "name": "countryCode",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "currencyCode": {
-          "name": "currencyCode",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "timezone": {
-          "name": "timezone",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "city": {
-          "name": "city",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "address": {
-          "name": "address",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
         "createdAt": {
           "name": "createdAt",
           "type": "timestamp",
@@ -1602,10 +1740,135 @@
           "with": {}
         }
       },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "organization_slug_unique": {
+          "name": "organization_slug_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "slug"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.organization_profile": {
+      "name": "organization_profile",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "organizationId": {
+          "name": "organizationId",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "industryCode": {
+          "name": "industryCode",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "countryCode": {
+          "name": "countryCode",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "currencyCode": {
+          "name": "currencyCode",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "timezone": {
+          "name": "timezone",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "city": {
+          "name": "city",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "address": {
+          "name": "address",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "organization_profile_organizationId_idx": {
+          "name": "organization_profile_organizationId_idx",
+          "columns": [
+            {
+              "expression": "organizationId",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
       "foreignKeys": {
-        "organization_countryCode_country_code_fk": {
-          "name": "organization_countryCode_country_code_fk",
-          "tableFrom": "organization",
+        "organization_profile_organizationId_organization_id_fk": {
+          "name": "organization_profile_organizationId_organization_id_fk",
+          "tableFrom": "organization_profile",
+          "tableTo": "organization",
+          "columnsFrom": [
+            "organizationId"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "organization_profile_industryCode_industry_code_fk": {
+          "name": "organization_profile_industryCode_industry_code_fk",
+          "tableFrom": "organization_profile",
+          "tableTo": "industry",
+          "columnsFrom": [
+            "industryCode"
+          ],
+          "columnsTo": [
+            "code"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "organization_profile_countryCode_country_code_fk": {
+          "name": "organization_profile_countryCode_country_code_fk",
+          "tableFrom": "organization_profile",
           "tableTo": "country",
           "columnsFrom": [
             "countryCode"
@@ -1616,9 +1879,9 @@
           "onDelete": "no action",
           "onUpdate": "no action"
         },
-        "organization_currencyCode_currency_code_fk": {
-          "name": "organization_currencyCode_currency_code_fk",
-          "tableFrom": "organization",
+        "organization_profile_currencyCode_currency_code_fk": {
+          "name": "organization_profile_currencyCode_currency_code_fk",
+          "tableFrom": "organization_profile",
           "tableTo": "currency",
           "columnsFrom": [
             "currencyCode"
@@ -1632,11 +1895,11 @@
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "organization_slug_unique": {
-          "name": "organization_slug_unique",
+        "organization_profile_organizationId_unique": {
+          "name": "organization_profile_organizationId_unique",
           "nullsNotDistinct": false,
           "columns": [
-            "slug"
+            "organizationId"
           ]
         }
       },

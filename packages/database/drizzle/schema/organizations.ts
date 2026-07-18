@@ -10,7 +10,7 @@ import {
 
 import { user } from "./auth";
 import { purchase } from "./purchases";
-import { branch } from "./branches";
+import { branch, branding } from "./branches";
 import { organizationProfile } from "./organization-profile";
 
 export const organization = pgTable(
@@ -87,6 +87,7 @@ export const organizationRelations = relations(organization, ({ many, one }) => 
 	invitations: many(invitation),
 	purchases: many(purchase),
 	branches: many(branch),
+	brandings: many(branding),
 	profile: one(organizationProfile, {
 		fields: [organization.id],
 		references: [organizationProfile.organizationId],

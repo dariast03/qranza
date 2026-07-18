@@ -1,6 +1,28 @@
 import { relations } from "drizzle-orm";
 import { index, integer, pgTable, text, timestamp } from "drizzle-orm/pg-core";
 
+import { user } from "./auth";
+
+export const timestampColumns = {
+	createdAt: timestamp("createdAt").defaultNow().notNull(),
+	updatedAt: timestamp("updatedAt")
+		.defaultNow()
+		.$onUpdate(() => new Date())
+		.notNull(),
+};
+
+export const softDeleteColumns = {
+	deletedAt: timestamp("deletedAt"),
+	deletedById: text("deletedById").references(() => user.id, {
+		onDelete: "set null",
+	}),
+};
+
+export const baseColumns = {
+	...timestampColumns,
+	...softDeleteColumns,
+};
+
 export const language = pgTable(
 	"language",
 	{
