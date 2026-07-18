@@ -54,6 +54,7 @@ catalog:
     ai: ^6.0.211
     autoprefixer: 10.5.2
     better-auth: 1.6.22
+    better-drizzle: ^0.1.1
     boring-avatars: ^2.0.4
     class-variance-authority: ^0.7.1
     clsx: ^2.1.1

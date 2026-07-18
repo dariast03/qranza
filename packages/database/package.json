@@ -14,6 +14,7 @@
 	},
 	"dependencies": {
 		"@paralleldrive/cuid2": "^3.3.0",
+		"better-drizzle": "catalog:",
 		"dotenv": "^17.4.2",
 		"drizzle-orm": "catalog:",
 		"drizzle-zod": "catalog:",
