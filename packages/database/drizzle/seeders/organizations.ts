@@ -4,7 +4,7 @@ import type { NodePgDatabase } from "drizzle-orm/node-postgres";
 import { isNotNull } from "drizzle-orm";
 import { organization } from "../schema/organizations";
 import { organizationProfile } from "../schema/organization-profile";
-import { branch } from "../schema/branches";
+import { branch, branding } from "../schema/branches";
 import { schedule, scheduleWeeklySlot } from "../schema/schedule";
 import { industry, country, currency } from "../schema/base";
 
@@ -73,18 +73,36 @@ async function createOrgProfile(
 		.returning({ id: organizationProfile.id });
 }
 
+async function createBranding(
+	db: NodePgDatabase<Record<string, never>>,
+	orgId: string,
+) {
+	const colors = ["#1A73E8", "#E8175D", "#0FA3B1", "#FF6B35", "#6C5CE7", "#2ECC71", "#E74C3C", "#F39C12"];
+	return db
+		.insert(branding)
+		.values({
+			organizationId: orgId,
+			name: faker.commerce.productName(),
+			primaryColor: faker.helpers.arrayElement(colors),
+			createdAt: new Date(),
+		})
+		.returning({ id: branding.id });
+}
+
 async function createBranch(
 	db: NodePgDatabase<Record<string, never>>,
 	orgId: string,
 	countryCode: string,
 	currencyCode: string,
 	isDefault: boolean,
+	brandingId?: string,
 ) {
 	const name = faker.company.name();
 	return db
 		.insert(branch)
 		.values({
 			organizationId: orgId,
+			brandingId: brandingId ?? null,
 			name,
 			slug: slugify(name),
 			type: "PHYSICAL",
@@ -93,6 +111,8 @@ async function createBranch(
 			address: faker.location.streetAddress(),
 			city: faker.location.city(),
 			countryCode,
+			latitude: String(faker.location.latitude({ min: -90, max: 90 })),
+			longitude: String(faker.location.longitude({ min: -180, max: 180 })),
 			phone: faker.phone.number(),
 			email: faker.internet.email(),
 			timezone: "America/La_Paz",
@@ -143,10 +163,21 @@ async function createBranchesWithSchedules(
 	const branchCount = faker.number.int({ min: 1, max: 3 });
 	let branchesCreated = 0;
 	let schedulesCreated = 0;
+	let brandingsCreated = 0;
+
+	const hasBranding = faker.datatype.boolean(0.6);
+	let brandingId: string | undefined;
+
+	if (hasBranding) {
+		const [brandingRow] = await createBranding(db, orgId);
+		brandingId = brandingRow.id;
+		brandingsCreated++;
+	}
 
 	for (let j = 0; j < branchCount; j++) {
 		const isDefault = j === 0;
-		const [branchRow] = await createBranch(db, orgId, countryCode, currencyCode, isDefault);
+		const assignBranding = isDefault && brandingId ? brandingId : undefined;
+		const [branchRow] = await createBranch(db, orgId, countryCode, currencyCode, isDefault, assignBranding);
 		branchesCreated++;
 
 		if (!faker.datatype.boolean(0.7)) continue;
@@ -154,7 +185,7 @@ async function createBranchesWithSchedules(
 		schedulesCreated++;
 	}
 
-	return { branchesCreated, schedulesCreated };
+	return { branchesCreated, schedulesCreated, brandingsCreated };
 }
 
 export const name = "organizations";
@@ -188,6 +219,7 @@ export async function seed(
 	let orgsCreated = 0;
 	let totalBranches = 0;
 	let totalSchedules = 0;
+	let totalBrandings = 0;
 
 	for (let i = 0; i < count; i++) {
 		const industryRow = faker.helpers.arrayElement(industriesRows);
@@ -198,7 +230,7 @@ export async function seed(
 		await createOrgProfile(db, org.id, industryRow.code, countryRow.code, currencyRow.code);
 		orgsCreated++;
 
-		const { branchesCreated, schedulesCreated } = await createBranchesWithSchedules(
+		const { branchesCreated, schedulesCreated, brandingsCreated } = await createBranchesWithSchedules(
 			db,
 			org.id,
 			countryRow.code,
@@ -207,7 +239,8 @@ export async function seed(
 
 		totalBranches += branchesCreated;
 		totalSchedules += schedulesCreated;
+		totalBrandings += brandingsCreated;
 	}
 
-	console.log(`  [organizations] ${orgsCreated} orgs, ${totalBranches} branches, ${totalSchedules} schedules`);
+	console.log(`  [organizations] ${orgsCreated} orgs, ${totalBranches} branches, ${totalSchedules} schedules, ${totalBrandings} brandings`);
 }
