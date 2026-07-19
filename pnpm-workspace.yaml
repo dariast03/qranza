@@ -20,6 +20,7 @@ catalog:
     "@dnd-kit/core": ^6.3.1
     "@dnd-kit/modifiers": ^9.0.0
     "@dnd-kit/sortable": ^10.0.0
+    "@dnd-kit/utilities": ^3.2.2
     "@fullcalendar/react": ^7.0.0
     "@hookform/resolvers": ^5.4.0
     "@mdx-js/mdx": ^3.1.1
@@ -39,6 +40,7 @@ catalog:
     "@tanstack/react-router": ^1.170.16
     "@tanstack/react-start": ^1.168.26
     "@tanstack/react-table": ^8.21.3
+    "@tanstack/react-virtual": ^3.14.6
     "@types/d3-geo": ^3.1.0
     "@types/js-cookie": ^3.0.6
     "@types/mdx": ^2.0.14
@@ -95,6 +97,7 @@ catalog:
     react-cropper: ^2.3.3
     react-dom: 19.2.7
     react-dropzone: ^15.0.0
+    react-phone-number-input: ^3.4.17
     react-qr-code: ^2.2.0
     recharts: ^3.9.0
     sharp: ^0.35.2

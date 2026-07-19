@@ -10,9 +10,9 @@
 		--secondary: var(--color-stone-100);
 		--secondary-foreground: var(--color-stone-900);
 		--destructive: var(--color-red-700);
-		--destructive-foreground: var(--color-white);
-		--success: var(--color-emerald-700);
-		--success-foreground: var(--color-white);
+		--destructive-foreground: var(--color-red-800);
+		--success: var(--color-emerald-500);
+		--success-foreground: var(--color-emerald-900);
 		--muted: var(--color-stone-100);
 		--muted-foreground: var(--color-stone-500);
 		--accent: var(--color-stone-100);
@@ -23,6 +23,12 @@
 		--card-foreground: var(--color-stone-950);
 		--radius: 0.75rem;
 		--font-sans: "Figtree", sans-serif;
+		--info: var(--color-violet-500);
+		--info-foreground: var(--color-violet-900);
+		--warning: var(--color-yellow-500);
+		--warning-foreground: var(--color-yellow-900);
+		--invert: var(--color-zinc-900);
+		--invert-foreground: var(--color-zinc-50);
 	}
 
 	.dark {
@@ -36,9 +42,9 @@
 		--secondary: var(--color-stone-800);
 		--secondary-foreground: var(--color-white);
 		--destructive: var(--color-red-600);
-		--destructive-foreground: var(--color-white);
-		--success: var(--color-emerald-600);
-		--success-foreground: var(--color-white);
+		--destructive-foreground: var(--color-red-600);
+		--success: var(--color-emerald-500);
+		--success-foreground: var(--color-emerald-600);
 		--muted: var(--color-stone-900);
 		--muted-foreground: var(--color-stone-400);
 		--accent: var(--color-stone-800);
@@ -47,6 +53,12 @@
 		--popover-foreground: var(--color-white);
 		--card: var(--color-stone-900);
 		--card-foreground: var(--color-white);
+		--info: var(--color-violet-500);
+		--info-foreground: var(--color-violet-600);
+		--warning: var(--color-yellow-500);
+		--warning-foreground: var(--color-yellow-600);
+		--invert: var(--color-zinc-700);
+		--invert-foreground: var(--color-zinc-50);
 	}
 }
 
