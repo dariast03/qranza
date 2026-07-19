@@ -1,4 +1,5 @@
 export * from "./branches";
+export * from "./brandings";
 export * from "./countries";
 export * from "./industries";
 export * from "./notifications";
