@@ -5,7 +5,6 @@ import { formatFormRootError } from "@repo/ui/components/form-root-error";
 import { FieldGroup, FieldLegend, FieldSet } from "@repo/ui/components/field";
 import { Spinner } from "@repo/ui/components/spinner";
 import { orpc } from "@shared/lib/orpc-query-utils";
-import { useAppForm } from "./app-form";
 import { useSelector } from "@tanstack/react-store";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { TriangleAlertIcon } from "lucide-react";
@@ -29,6 +28,7 @@ import {
 	BranchScheduleFields,
 } from "./sections";
 import { useBlocker } from "@tanstack/react-router";
+import { useForm } from "@tanstack/react-form";
 
 export interface BranchFormProps {
 	/**
@@ -140,7 +140,7 @@ export function BranchForm({
 	const isEdit = Boolean(branch);
 	const isMutating = createMutation.isPending || updateMutation.isPending;
 
-	const form = useAppForm({
+	const form = useForm({
 		defaultValues,
 		validators: {
 			onChange: branchFormSchema,
