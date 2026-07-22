@@ -10,130 +10,121 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
-import { Route as VerifyIndexRouteImport } from './routes/verify/index'
-import { Route as SignupIndexRouteImport } from './routes/signup/index'
-import { Route as ResetPasswordIndexRouteImport } from './routes/reset-password/index'
-import { Route as LoginIndexRouteImport } from './routes/login/index'
+import { Route as AuthenticatedMainRouteRouteImport } from './routes/_authenticated/_main/route'
+import { Route as ApiSplatRouteImport } from './routes/api/$'
 import { Route as ForgotPasswordIndexRouteImport } from './routes/forgot-password/index'
 import { Route as ImageProxySplatRouteImport } from './routes/image-proxy/$'
-import { Route as ApiSplatRouteImport } from './routes/api/$'
-import { Route as AuthenticatedMainRouteRouteImport } from './routes/_authenticated/_main/route'
-import { Route as AuthenticatedOnboardingIndexRouteImport } from './routes/_authenticated/onboarding/index'
-import { Route as AuthenticatedNewOrganizationIndexRouteImport } from './routes/_authenticated/new-organization/index'
-import { Route as AuthenticatedChoosePlanIndexRouteImport } from './routes/_authenticated/choose-plan/index'
-import { Route as AuthenticatedCheckoutReturnIndexRouteImport } from './routes/_authenticated/checkout-return/index'
+import { Route as LoginIndexRouteImport } from './routes/login/index'
+import { Route as ResetPasswordIndexRouteImport } from './routes/reset-password/index'
+import { Route as SignupIndexRouteImport } from './routes/signup/index'
+import { Route as VerifyIndexRouteImport } from './routes/verify/index'
 import { Route as AuthenticatedMainIndexRouteImport } from './routes/_authenticated/_main/index'
-import { Route as AuthenticatedMainSettingsRouteRouteImport } from './routes/_authenticated/_main/settings/route'
-import { Route as AuthenticatedMainDashboardRouteRouteImport } from './routes/_authenticated/_main/dashboard/route'
-import { Route as AuthenticatedMainAppRouteRouteImport } from './routes/_authenticated/_main/app/route'
 import { Route as AuthenticatedMainAdminRouteRouteImport } from './routes/_authenticated/_main/admin/route'
-import { Route as AuthenticatedOrganizationInvitationInvitationIdIndexRouteImport } from './routes/_authenticated/organization-invitation/$invitationId/index'
-import { Route as AuthenticatedMainSettingsIndexRouteImport } from './routes/_authenticated/_main/settings/index'
-import { Route as AuthenticatedMainDashboardIndexRouteImport } from './routes/_authenticated/_main/dashboard/index'
-import { Route as AuthenticatedMainChatbotIndexRouteImport } from './routes/_authenticated/_main/chatbot/index'
-import { Route as AuthenticatedMainAppIndexRouteImport } from './routes/_authenticated/_main/app/index'
-import { Route as AuthenticatedMainAdminIndexRouteImport } from './routes/_authenticated/_main/admin/index'
+import { Route as AuthenticatedMainAppRouteRouteImport } from './routes/_authenticated/_main/app/route'
+import { Route as AuthenticatedMainDashboardRouteRouteImport } from './routes/_authenticated/_main/dashboard/route'
+import { Route as AuthenticatedMainSettingsRouteRouteImport } from './routes/_authenticated/_main/settings/route'
+import { Route as AuthenticatedCheckoutReturnIndexRouteImport } from './routes/_authenticated/checkout-return/index'
+import { Route as AuthenticatedChoosePlanIndexRouteImport } from './routes/_authenticated/choose-plan/index'
+import { Route as AuthenticatedNewOrganizationIndexRouteImport } from './routes/_authenticated/new-organization/index'
+import { Route as AuthenticatedOnboardingIndexRouteImport } from './routes/_authenticated/onboarding/index'
 import { Route as AuthenticatedMainOrganizationSlugIndexRouteImport } from './routes/_authenticated/_main/$organizationSlug/index'
-import { Route as AuthenticatedMainDashboardSplatRouteImport } from './routes/_authenticated/_main/dashboard/$'
-import { Route as AuthenticatedMainDashboardUsersRouteRouteImport } from './routes/_authenticated/_main/dashboard/users/route'
-import { Route as AuthenticatedMainDashboardTasksRouteRouteImport } from './routes/_authenticated/_main/dashboard/tasks/route'
-import { Route as AuthenticatedMainDashboardRolesRouteRouteImport } from './routes/_authenticated/_main/dashboard/roles/route'
-import { Route as AuthenticatedMainDashboardProductivityRouteRouteImport } from './routes/_authenticated/_main/dashboard/productivity/route'
-import { Route as AuthenticatedMainDashboardMailRouteRouteImport } from './routes/_authenticated/_main/dashboard/mail/route'
-import { Route as AuthenticatedMainDashboardLogisticsRouteRouteImport } from './routes/_authenticated/_main/dashboard/logistics/route'
-import { Route as AuthenticatedMainDashboardKanbanRouteRouteImport } from './routes/_authenticated/_main/dashboard/kanban/route'
-import { Route as AuthenticatedMainDashboardInvoiceRouteRouteImport } from './routes/_authenticated/_main/dashboard/invoice/route'
-import { Route as AuthenticatedMainDashboardInfrastructureRouteRouteImport } from './routes/_authenticated/_main/dashboard/infrastructure/route'
-import { Route as AuthenticatedMainDashboardFinanceRouteRouteImport } from './routes/_authenticated/_main/dashboard/finance/route'
-import { Route as AuthenticatedMainDashboardEcommerceRouteRouteImport } from './routes/_authenticated/_main/dashboard/ecommerce/route'
-import { Route as AuthenticatedMainDashboardDefaultRouteRouteImport } from './routes/_authenticated/_main/dashboard/default/route'
-import { Route as AuthenticatedMainDashboardCrmRouteRouteImport } from './routes/_authenticated/_main/dashboard/crm/route'
-import { Route as AuthenticatedMainDashboardComingSoonRouteRouteImport } from './routes/_authenticated/_main/dashboard/coming-soon/route'
-import { Route as AuthenticatedMainDashboardChatRouteRouteImport } from './routes/_authenticated/_main/dashboard/chat/route'
-import { Route as AuthenticatedMainDashboardCalendarRouteRouteImport } from './routes/_authenticated/_main/dashboard/calendar/route'
-import { Route as AuthenticatedMainDashboardAnalyticsRouteRouteImport } from './routes/_authenticated/_main/dashboard/analytics/route'
-import { Route as AuthenticatedMainDashboardAcademyRouteRouteImport } from './routes/_authenticated/_main/dashboard/academy/route'
 import { Route as AuthenticatedMainOrganizationSlugSettingsRouteRouteImport } from './routes/_authenticated/_main/$organizationSlug/settings/route'
-import { Route as AuthenticatedMainSettingsSecurityIndexRouteImport } from './routes/_authenticated/_main/settings/security/index'
-import { Route as AuthenticatedMainSettingsNotificationsIndexRouteImport } from './routes/_authenticated/_main/settings/notifications/index'
-import { Route as AuthenticatedMainSettingsGeneralIndexRouteImport } from './routes/_authenticated/_main/settings/general/index'
-import { Route as AuthenticatedMainSettingsBillingIndexRouteImport } from './routes/_authenticated/_main/settings/billing/index'
-import { Route as AuthenticatedMainAppReportsIndexRouteImport } from './routes/_authenticated/_main/app/reports/index'
-import { Route as AuthenticatedMainAppOrdersIndexRouteImport } from './routes/_authenticated/_main/app/orders/index'
-import { Route as AuthenticatedMainAppDashboardIndexRouteImport } from './routes/_authenticated/_main/app/dashboard/index'
-import { Route as AuthenticatedMainAppCustomersIndexRouteImport } from './routes/_authenticated/_main/app/customers/index'
-import { Route as AuthenticatedMainAdminUsersIndexRouteImport } from './routes/_authenticated/_main/admin/users/index'
-import { Route as AuthenticatedMainAdminOrganizationsIndexRouteImport } from './routes/_authenticated/_main/admin/organizations/index'
+import { Route as AuthenticatedMainAdminIndexRouteImport } from './routes/_authenticated/_main/admin/index'
+import { Route as AuthenticatedMainAppIndexRouteImport } from './routes/_authenticated/_main/app/index'
+import { Route as AuthenticatedMainChatbotIndexRouteImport } from './routes/_authenticated/_main/chatbot/index'
+import { Route as AuthenticatedMainDashboardIndexRouteImport } from './routes/_authenticated/_main/dashboard/index'
+import { Route as AuthenticatedMainDashboardSplatRouteImport } from './routes/_authenticated/_main/dashboard/$'
+import { Route as AuthenticatedMainDashboardAcademyRouteRouteImport } from './routes/_authenticated/_main/dashboard/academy/route'
+import { Route as AuthenticatedMainDashboardAnalyticsRouteRouteImport } from './routes/_authenticated/_main/dashboard/analytics/route'
+import { Route as AuthenticatedMainDashboardCalendarRouteRouteImport } from './routes/_authenticated/_main/dashboard/calendar/route'
+import { Route as AuthenticatedMainDashboardChatRouteRouteImport } from './routes/_authenticated/_main/dashboard/chat/route'
+import { Route as AuthenticatedMainDashboardComingSoonRouteRouteImport } from './routes/_authenticated/_main/dashboard/coming-soon/route'
+import { Route as AuthenticatedMainDashboardCrmRouteRouteImport } from './routes/_authenticated/_main/dashboard/crm/route'
+import { Route as AuthenticatedMainDashboardDefaultRouteRouteImport } from './routes/_authenticated/_main/dashboard/default/route'
+import { Route as AuthenticatedMainDashboardEcommerceRouteRouteImport } from './routes/_authenticated/_main/dashboard/ecommerce/route'
+import { Route as AuthenticatedMainDashboardFinanceRouteRouteImport } from './routes/_authenticated/_main/dashboard/finance/route'
+import { Route as AuthenticatedMainDashboardInfrastructureRouteRouteImport } from './routes/_authenticated/_main/dashboard/infrastructure/route'
+import { Route as AuthenticatedMainDashboardInvoiceRouteRouteImport } from './routes/_authenticated/_main/dashboard/invoice/route'
+import { Route as AuthenticatedMainDashboardKanbanRouteRouteImport } from './routes/_authenticated/_main/dashboard/kanban/route'
+import { Route as AuthenticatedMainDashboardLogisticsRouteRouteImport } from './routes/_authenticated/_main/dashboard/logistics/route'
+import { Route as AuthenticatedMainDashboardMailRouteRouteImport } from './routes/_authenticated/_main/dashboard/mail/route'
+import { Route as AuthenticatedMainDashboardProductivityRouteRouteImport } from './routes/_authenticated/_main/dashboard/productivity/route'
+import { Route as AuthenticatedMainDashboardRolesRouteRouteImport } from './routes/_authenticated/_main/dashboard/roles/route'
+import { Route as AuthenticatedMainDashboardTasksRouteRouteImport } from './routes/_authenticated/_main/dashboard/tasks/route'
+import { Route as AuthenticatedMainDashboardUsersRouteRouteImport } from './routes/_authenticated/_main/dashboard/users/route'
+import { Route as AuthenticatedMainSettingsIndexRouteImport } from './routes/_authenticated/_main/settings/index'
+import { Route as AuthenticatedOrganizationInvitationInvitationIdIndexRouteImport } from './routes/_authenticated/organization-invitation/$invitationId/index'
 import { Route as AuthenticatedMainOrganizationSlugSettingsIndexRouteImport } from './routes/_authenticated/_main/$organizationSlug/settings/index'
-import { Route as AuthenticatedMainDashboardlegacyFinanceV1RouteRouteImport } from './routes/_authenticated/_main/dashboard/(legacy)/finance-v1/route'
-import { Route as AuthenticatedMainDashboardlegacyDefaultV1RouteRouteImport } from './routes/_authenticated/_main/dashboard/(legacy)/default-v1/route'
-import { Route as AuthenticatedMainDashboardlegacyCrmV1RouteRouteImport } from './routes/_authenticated/_main/dashboard/(legacy)/crm-v1/route'
+import { Route as AuthenticatedMainAdminOrganizationsIndexRouteImport } from './routes/_authenticated/_main/admin/organizations/index'
+import { Route as AuthenticatedMainAdminUsersIndexRouteImport } from './routes/_authenticated/_main/admin/users/index'
+import { Route as AuthenticatedMainAppCustomersIndexRouteImport } from './routes/_authenticated/_main/app/customers/index'
+import { Route as AuthenticatedMainAppDashboardIndexRouteImport } from './routes/_authenticated/_main/app/dashboard/index'
+import { Route as AuthenticatedMainAppOrdersIndexRouteImport } from './routes/_authenticated/_main/app/orders/index'
+import { Route as AuthenticatedMainAppReportsIndexRouteImport } from './routes/_authenticated/_main/app/reports/index'
 import { Route as AuthenticatedMainDashboardlegacyAnalyticsV1RouteRouteImport } from './routes/_authenticated/_main/dashboard/(legacy)/analytics-v1/route'
-import { Route as AuthenticatedMainAppTeamPermissionsIndexRouteImport } from './routes/_authenticated/_main/app/team/permissions/index'
-import { Route as AuthenticatedMainAppTeamMembersIndexRouteImport } from './routes/_authenticated/_main/app/team/members/index'
-import { Route as AuthenticatedMainAppSettingsSubscriptionsIndexRouteImport } from './routes/_authenticated/_main/app/settings/subscriptions/index'
-import { Route as AuthenticatedMainAppSettingsNotificationsIndexRouteImport } from './routes/_authenticated/_main/app/settings/notifications/index'
-import { Route as AuthenticatedMainAppSettingsBillingIndexRouteImport } from './routes/_authenticated/_main/app/settings/billing/index'
-import { Route as AuthenticatedMainAppReportsSalesIndexRouteImport } from './routes/_authenticated/_main/app/reports/sales/index'
-import { Route as AuthenticatedMainAppReportsProductsIndexRouteImport } from './routes/_authenticated/_main/app/reports/products/index'
-import { Route as AuthenticatedMainAppReportsInventoryIndexRouteImport } from './routes/_authenticated/_main/app/reports/inventory/index'
-import { Route as AuthenticatedMainAppReportsCustomersIndexRouteImport } from './routes/_authenticated/_main/app/reports/customers/index'
-import { Route as AuthenticatedMainAppOrdersShippingIndexRouteImport } from './routes/_authenticated/_main/app/orders/shipping/index'
-import { Route as AuthenticatedMainAppOrdersReturnsIndexRouteImport } from './routes/_authenticated/_main/app/orders/returns/index'
-import { Route as AuthenticatedMainAppOrdersPaymentsIndexRouteImport } from './routes/_authenticated/_main/app/orders/payments/index'
-import { Route as AuthenticatedMainAppOrdersPartialPaymentsIndexRouteImport } from './routes/_authenticated/_main/app/orders/partial-payments/index'
-import { Route as AuthenticatedMainAppItemVariantsIndexRouteImport } from './routes/_authenticated/_main/app/item/variants/index'
-import { Route as AuthenticatedMainAppItemUnitsIndexRouteImport } from './routes/_authenticated/_main/app/item/units/index'
-import { Route as AuthenticatedMainAppItemSettingsIndexRouteImport } from './routes/_authenticated/_main/app/item/settings/index'
-import { Route as AuthenticatedMainAppItemModifiersIndexRouteImport } from './routes/_authenticated/_main/app/item/modifiers/index'
-import { Route as AuthenticatedMainAppItemInventoryIndexRouteImport } from './routes/_authenticated/_main/app/item/inventory/index'
-import { Route as AuthenticatedMainAppItemGalleryIndexRouteImport } from './routes/_authenticated/_main/app/item/gallery/index'
-import { Route as AuthenticatedMainAppItemDiscountsIndexRouteImport } from './routes/_authenticated/_main/app/item/discounts/index'
-import { Route as AuthenticatedMainAppItemCustomAttributesIndexRouteImport } from './routes/_authenticated/_main/app/item/custom-attributes/index'
-import { Route as AuthenticatedMainAppItemCategoriesIndexRouteImport } from './routes/_authenticated/_main/app/item/categories/index'
-import { Route as AuthenticatedMainAppItemAllIndexRouteImport } from './routes/_authenticated/_main/app/item/all/index'
-import { Route as AuthenticatedMainAppChannelsPosIndexRouteImport } from './routes/_authenticated/_main/app/channels/pos/index'
-import { Route as AuthenticatedMainAdminOrganizationsNewIndexRouteImport } from './routes/_authenticated/_main/admin/organizations/new/index'
-import { Route as AuthenticatedMainAdminOrganizationsOrganizationIdIndexRouteImport } from './routes/_authenticated/_main/admin/organizations/$organizationId/index'
-import { Route as AuthenticatedMainOrganizationSlugSettingsMembersIndexRouteImport } from './routes/_authenticated/_main/$organizationSlug/settings/members/index'
-import { Route as AuthenticatedMainOrganizationSlugSettingsGeneralIndexRouteImport } from './routes/_authenticated/_main/$organizationSlug/settings/general/index'
+import { Route as AuthenticatedMainDashboardlegacyCrmV1RouteRouteImport } from './routes/_authenticated/_main/dashboard/(legacy)/crm-v1/route'
+import { Route as AuthenticatedMainDashboardlegacyDefaultV1RouteRouteImport } from './routes/_authenticated/_main/dashboard/(legacy)/default-v1/route'
+import { Route as AuthenticatedMainDashboardlegacyFinanceV1RouteRouteImport } from './routes/_authenticated/_main/dashboard/(legacy)/finance-v1/route'
+import { Route as AuthenticatedMainSettingsBillingIndexRouteImport } from './routes/_authenticated/_main/settings/billing/index'
+import { Route as AuthenticatedMainSettingsGeneralIndexRouteImport } from './routes/_authenticated/_main/settings/general/index'
+import { Route as AuthenticatedMainSettingsNotificationsIndexRouteImport } from './routes/_authenticated/_main/settings/notifications/index'
+import { Route as AuthenticatedMainSettingsSecurityIndexRouteImport } from './routes/_authenticated/_main/settings/security/index'
 import { Route as AuthenticatedMainOrganizationSlugSettingsBillingIndexRouteImport } from './routes/_authenticated/_main/$organizationSlug/settings/billing/index'
-import { Route as AuthenticatedMainAppSettingsBusinessLocationsIndexRouteImport } from './routes/_authenticated/_main/app/settings/business/locations/index'
-import { Route as AuthenticatedMainAppSettingsBusinessInfoIndexRouteImport } from './routes/_authenticated/_main/app/settings/business/info/index'
-import { Route as AuthenticatedMainAppSettingsAccountSecurityIndexRouteImport } from './routes/_authenticated/_main/app/settings/account/security/index'
-import { Route as AuthenticatedMainAppSettingsAccountProfileIndexRouteImport } from './routes/_authenticated/_main/app/settings/account/profile/index'
-import { Route as AuthenticatedMainAppSettingsAccountPreferencesIndexRouteImport } from './routes/_authenticated/_main/app/settings/account/preferences/index'
-import { Route as AuthenticatedMainAppChannelsWebThemeIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/theme/index'
-import { Route as AuthenticatedMainAppChannelsWebStorefrontIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/storefront/index'
-import { Route as AuthenticatedMainAppChannelsWebSeoIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/seo/index'
-import { Route as AuthenticatedMainAppChannelsWebPagesIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/pages/index'
-import { Route as AuthenticatedMainAppChannelsWebNotificationsIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/notifications/index'
-import { Route as AuthenticatedMainAppChannelsWebNavigationIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/navigation/index'
-import { Route as AuthenticatedMainAppChannelsWebDomainsIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/domains/index'
+import { Route as AuthenticatedMainOrganizationSlugSettingsGeneralIndexRouteImport } from './routes/_authenticated/_main/$organizationSlug/settings/general/index'
+import { Route as AuthenticatedMainOrganizationSlugSettingsMembersIndexRouteImport } from './routes/_authenticated/_main/$organizationSlug/settings/members/index'
+import { Route as AuthenticatedMainAdminOrganizationsOrganizationIdIndexRouteImport } from './routes/_authenticated/_main/admin/organizations/$organizationId/index'
+import { Route as AuthenticatedMainAdminOrganizationsNewIndexRouteImport } from './routes/_authenticated/_main/admin/organizations/new/index'
+import { Route as AuthenticatedMainAppChannelsPosIndexRouteImport } from './routes/_authenticated/_main/app/channels/pos/index'
+import { Route as AuthenticatedMainAppItemAllIndexRouteImport } from './routes/_authenticated/_main/app/item/all/index'
+import { Route as AuthenticatedMainAppItemCategoriesIndexRouteImport } from './routes/_authenticated/_main/app/item/categories/index'
+import { Route as AuthenticatedMainAppItemCustomAttributesIndexRouteImport } from './routes/_authenticated/_main/app/item/custom-attributes/index'
+import { Route as AuthenticatedMainAppItemDiscountsIndexRouteImport } from './routes/_authenticated/_main/app/item/discounts/index'
+import { Route as AuthenticatedMainAppItemGalleryIndexRouteImport } from './routes/_authenticated/_main/app/item/gallery/index'
+import { Route as AuthenticatedMainAppItemInventoryIndexRouteImport } from './routes/_authenticated/_main/app/item/inventory/index'
+import { Route as AuthenticatedMainAppItemModifiersIndexRouteImport } from './routes/_authenticated/_main/app/item/modifiers/index'
+import { Route as AuthenticatedMainAppItemSettingsIndexRouteImport } from './routes/_authenticated/_main/app/item/settings/index'
+import { Route as AuthenticatedMainAppItemUnitsIndexRouteImport } from './routes/_authenticated/_main/app/item/units/index'
+import { Route as AuthenticatedMainAppItemVariantsIndexRouteImport } from './routes/_authenticated/_main/app/item/variants/index'
+import { Route as AuthenticatedMainAppOrdersPartialPaymentsIndexRouteImport } from './routes/_authenticated/_main/app/orders/partial-payments/index'
+import { Route as AuthenticatedMainAppOrdersPaymentsIndexRouteImport } from './routes/_authenticated/_main/app/orders/payments/index'
+import { Route as AuthenticatedMainAppOrdersReturnsIndexRouteImport } from './routes/_authenticated/_main/app/orders/returns/index'
+import { Route as AuthenticatedMainAppOrdersShippingIndexRouteImport } from './routes/_authenticated/_main/app/orders/shipping/index'
+import { Route as AuthenticatedMainAppReportsCustomersIndexRouteImport } from './routes/_authenticated/_main/app/reports/customers/index'
+import { Route as AuthenticatedMainAppReportsInventoryIndexRouteImport } from './routes/_authenticated/_main/app/reports/inventory/index'
+import { Route as AuthenticatedMainAppReportsProductsIndexRouteImport } from './routes/_authenticated/_main/app/reports/products/index'
+import { Route as AuthenticatedMainAppReportsSalesIndexRouteImport } from './routes/_authenticated/_main/app/reports/sales/index'
+import { Route as AuthenticatedMainAppSettingsBillingIndexRouteImport } from './routes/_authenticated/_main/app/settings/billing/index'
+import { Route as AuthenticatedMainAppSettingsNotificationsIndexRouteImport } from './routes/_authenticated/_main/app/settings/notifications/index'
+import { Route as AuthenticatedMainAppSettingsSubscriptionsIndexRouteImport } from './routes/_authenticated/_main/app/settings/subscriptions/index'
+import { Route as AuthenticatedMainAppTeamMembersIndexRouteImport } from './routes/_authenticated/_main/app/team/members/index'
+import { Route as AuthenticatedMainAppTeamPermissionsIndexRouteImport } from './routes/_authenticated/_main/app/team/permissions/index'
 import { Route as AuthenticatedMainAppChannelsWebCheckoutIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/checkout/index'
+import { Route as AuthenticatedMainAppChannelsWebDomainsIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/domains/index'
+import { Route as AuthenticatedMainAppChannelsWebNavigationIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/navigation/index'
+import { Route as AuthenticatedMainAppChannelsWebNotificationsIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/notifications/index'
+import { Route as AuthenticatedMainAppChannelsWebPagesIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/pages/index'
+import { Route as AuthenticatedMainAppChannelsWebSeoIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/seo/index'
+import { Route as AuthenticatedMainAppChannelsWebStorefrontIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/storefront/index'
+import { Route as AuthenticatedMainAppChannelsWebThemeIndexRouteImport } from './routes/_authenticated/_main/app/channels/web/theme/index'
+import { Route as AuthenticatedMainAppSettingsAccountPreferencesIndexRouteImport } from './routes/_authenticated/_main/app/settings/account/preferences/index'
+import { Route as AuthenticatedMainAppSettingsAccountProfileIndexRouteImport } from './routes/_authenticated/_main/app/settings/account/profile/index'
+import { Route as AuthenticatedMainAppSettingsAccountSecurityIndexRouteImport } from './routes/_authenticated/_main/app/settings/account/security/index'
+import { Route as AuthenticatedMainAppSettingsBusinessInfoIndexRouteImport } from './routes/_authenticated/_main/app/settings/business/info/index'
+import { Route as AuthenticatedMainAppSettingsBusinessLocationsIndexRouteImport } from './routes/_authenticated/_main/app/settings/business/locations/index'
+import { Route as AuthenticatedMainAppSettingsBusinessLocationsBranchIdIndexRouteImport } from './routes/_authenticated/_main/app/settings/business/locations/$branchId/index'
+import { Route as AuthenticatedMainAppSettingsBusinessLocationsNewIndexRouteImport } from './routes/_authenticated/_main/app/settings/business/locations/new/index'
 
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
   id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
-const VerifyIndexRoute = VerifyIndexRouteImport.update({
-  id: '/verify/',
-  path: '/verify/',
-  getParentRoute: () => rootRouteImport,
+const AuthenticatedMainRouteRoute = AuthenticatedMainRouteRouteImport.update({
+  id: '/_main',
+  getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
-const SignupIndexRoute = SignupIndexRouteImport.update({
-  id: '/signup/',
-  path: '/signup/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ResetPasswordIndexRoute = ResetPasswordIndexRouteImport.update({
-  id: '/reset-password/',
-  path: '/reset-password/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LoginIndexRoute = LoginIndexRouteImport.update({
-  id: '/login/',
-  path: '/login/',
+const ApiSplatRoute = ApiSplatRouteImport.update({
+  id: '/api/$',
+  path: '/api/$',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ForgotPasswordIndexRoute = ForgotPasswordIndexRouteImport.update({
@@ -146,54 +137,35 @@ const ImageProxySplatRoute = ImageProxySplatRouteImport.update({
   path: '/image-proxy/$',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiSplatRoute = ApiSplatRouteImport.update({
-  id: '/api/$',
-  path: '/api/$',
+const LoginIndexRoute = LoginIndexRouteImport.update({
+  id: '/login/',
+  path: '/login/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AuthenticatedMainRouteRoute = AuthenticatedMainRouteRouteImport.update({
-  id: '/_main',
-  getParentRoute: () => AuthenticatedRouteRoute,
+const ResetPasswordIndexRoute = ResetPasswordIndexRouteImport.update({
+  id: '/reset-password/',
+  path: '/reset-password/',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const AuthenticatedOnboardingIndexRoute =
-  AuthenticatedOnboardingIndexRouteImport.update({
-    id: '/onboarding/',
-    path: '/onboarding/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedNewOrganizationIndexRoute =
-  AuthenticatedNewOrganizationIndexRouteImport.update({
-    id: '/new-organization/',
-    path: '/new-organization/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedChoosePlanIndexRoute =
-  AuthenticatedChoosePlanIndexRouteImport.update({
-    id: '/choose-plan/',
-    path: '/choose-plan/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
-const AuthenticatedCheckoutReturnIndexRoute =
-  AuthenticatedCheckoutReturnIndexRouteImport.update({
-    id: '/checkout-return/',
-    path: '/checkout-return/',
-    getParentRoute: () => AuthenticatedRouteRoute,
-  } as any)
+const SignupIndexRoute = SignupIndexRouteImport.update({
+  id: '/signup/',
+  path: '/signup/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerifyIndexRoute = VerifyIndexRouteImport.update({
+  id: '/verify/',
+  path: '/verify/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthenticatedMainIndexRoute = AuthenticatedMainIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => AuthenticatedMainRouteRoute,
 } as any)
-const AuthenticatedMainSettingsRouteRoute =
-  AuthenticatedMainSettingsRouteRouteImport.update({
-    id: '/settings',
-    path: '/settings',
-    getParentRoute: () => AuthenticatedMainRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardRouteRoute =
-  AuthenticatedMainDashboardRouteRouteImport.update({
-    id: '/dashboard',
-    path: '/dashboard',
+const AuthenticatedMainAdminRouteRoute =
+  AuthenticatedMainAdminRouteRouteImport.update({
+    id: '/admin',
+    path: '/admin',
     getParentRoute: () => AuthenticatedMainRouteRoute,
   } as any)
 const AuthenticatedMainAppRouteRoute =
@@ -202,47 +174,41 @@ const AuthenticatedMainAppRouteRoute =
     path: '/app',
     getParentRoute: () => AuthenticatedMainRouteRoute,
   } as any)
-const AuthenticatedMainAdminRouteRoute =
-  AuthenticatedMainAdminRouteRouteImport.update({
-    id: '/admin',
-    path: '/admin',
+const AuthenticatedMainDashboardRouteRoute =
+  AuthenticatedMainDashboardRouteRouteImport.update({
+    id: '/dashboard',
+    path: '/dashboard',
     getParentRoute: () => AuthenticatedMainRouteRoute,
   } as any)
-const AuthenticatedOrganizationInvitationInvitationIdIndexRoute =
-  AuthenticatedOrganizationInvitationInvitationIdIndexRouteImport.update({
-    id: '/organization-invitation/$invitationId/',
-    path: '/organization-invitation/$invitationId/',
+const AuthenticatedMainSettingsRouteRoute =
+  AuthenticatedMainSettingsRouteRouteImport.update({
+    id: '/settings',
+    path: '/settings',
+    getParentRoute: () => AuthenticatedMainRouteRoute,
+  } as any)
+const AuthenticatedCheckoutReturnIndexRoute =
+  AuthenticatedCheckoutReturnIndexRouteImport.update({
+    id: '/checkout-return/',
+    path: '/checkout-return/',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
-const AuthenticatedMainSettingsIndexRoute =
-  AuthenticatedMainSettingsIndexRouteImport.update({
-    id: '/',
-    path: '/',
-    getParentRoute: () => AuthenticatedMainSettingsRouteRoute,
+const AuthenticatedChoosePlanIndexRoute =
+  AuthenticatedChoosePlanIndexRouteImport.update({
+    id: '/choose-plan/',
+    path: '/choose-plan/',
+    getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
-const AuthenticatedMainDashboardIndexRoute =
-  AuthenticatedMainDashboardIndexRouteImport.update({
-    id: '/',
-    path: '/',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
+const AuthenticatedNewOrganizationIndexRoute =
+  AuthenticatedNewOrganizationIndexRouteImport.update({
+    id: '/new-organization/',
+    path: '/new-organization/',
+    getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
-const AuthenticatedMainChatbotIndexRoute =
-  AuthenticatedMainChatbotIndexRouteImport.update({
-    id: '/chatbot/',
-    path: '/chatbot/',
-    getParentRoute: () => AuthenticatedMainRouteRoute,
-  } as any)
-const AuthenticatedMainAppIndexRoute =
-  AuthenticatedMainAppIndexRouteImport.update({
-    id: '/',
-    path: '/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAdminIndexRoute =
-  AuthenticatedMainAdminIndexRouteImport.update({
-    id: '/',
-    path: '/',
-    getParentRoute: () => AuthenticatedMainAdminRouteRoute,
+const AuthenticatedOnboardingIndexRoute =
+  AuthenticatedOnboardingIndexRouteImport.update({
+    id: '/onboarding/',
+    path: '/onboarding/',
+    getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
 const AuthenticatedMainOrganizationSlugIndexRoute =
   AuthenticatedMainOrganizationSlugIndexRouteImport.update({
@@ -250,112 +216,40 @@ const AuthenticatedMainOrganizationSlugIndexRoute =
     path: '/$organizationSlug/',
     getParentRoute: () => AuthenticatedMainRouteRoute,
   } as any)
+const AuthenticatedMainOrganizationSlugSettingsRouteRoute =
+  AuthenticatedMainOrganizationSlugSettingsRouteRouteImport.update({
+    id: '/$organizationSlug/settings',
+    path: '/$organizationSlug/settings',
+    getParentRoute: () => AuthenticatedMainRouteRoute,
+  } as any)
+const AuthenticatedMainAdminIndexRoute =
+  AuthenticatedMainAdminIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedMainAdminRouteRoute,
+  } as any)
+const AuthenticatedMainAppIndexRoute =
+  AuthenticatedMainAppIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainChatbotIndexRoute =
+  AuthenticatedMainChatbotIndexRouteImport.update({
+    id: '/chatbot/',
+    path: '/chatbot/',
+    getParentRoute: () => AuthenticatedMainRouteRoute,
+  } as any)
+const AuthenticatedMainDashboardIndexRoute =
+  AuthenticatedMainDashboardIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
+  } as any)
 const AuthenticatedMainDashboardSplatRoute =
   AuthenticatedMainDashboardSplatRouteImport.update({
     id: '/$',
     path: '/$',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardUsersRouteRoute =
-  AuthenticatedMainDashboardUsersRouteRouteImport.update({
-    id: '/users',
-    path: '/users',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardTasksRouteRoute =
-  AuthenticatedMainDashboardTasksRouteRouteImport.update({
-    id: '/tasks',
-    path: '/tasks',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardRolesRouteRoute =
-  AuthenticatedMainDashboardRolesRouteRouteImport.update({
-    id: '/roles',
-    path: '/roles',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardProductivityRouteRoute =
-  AuthenticatedMainDashboardProductivityRouteRouteImport.update({
-    id: '/productivity',
-    path: '/productivity',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardMailRouteRoute =
-  AuthenticatedMainDashboardMailRouteRouteImport.update({
-    id: '/mail',
-    path: '/mail',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardLogisticsRouteRoute =
-  AuthenticatedMainDashboardLogisticsRouteRouteImport.update({
-    id: '/logistics',
-    path: '/logistics',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardKanbanRouteRoute =
-  AuthenticatedMainDashboardKanbanRouteRouteImport.update({
-    id: '/kanban',
-    path: '/kanban',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardInvoiceRouteRoute =
-  AuthenticatedMainDashboardInvoiceRouteRouteImport.update({
-    id: '/invoice',
-    path: '/invoice',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardInfrastructureRouteRoute =
-  AuthenticatedMainDashboardInfrastructureRouteRouteImport.update({
-    id: '/infrastructure',
-    path: '/infrastructure',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardFinanceRouteRoute =
-  AuthenticatedMainDashboardFinanceRouteRouteImport.update({
-    id: '/finance',
-    path: '/finance',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardEcommerceRouteRoute =
-  AuthenticatedMainDashboardEcommerceRouteRouteImport.update({
-    id: '/ecommerce',
-    path: '/ecommerce',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardDefaultRouteRoute =
-  AuthenticatedMainDashboardDefaultRouteRouteImport.update({
-    id: '/default',
-    path: '/default',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardCrmRouteRoute =
-  AuthenticatedMainDashboardCrmRouteRouteImport.update({
-    id: '/crm',
-    path: '/crm',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardComingSoonRouteRoute =
-  AuthenticatedMainDashboardComingSoonRouteRouteImport.update({
-    id: '/coming-soon',
-    path: '/coming-soon',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardChatRouteRoute =
-  AuthenticatedMainDashboardChatRouteRouteImport.update({
-    id: '/chat',
-    path: '/chat',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardCalendarRouteRoute =
-  AuthenticatedMainDashboardCalendarRouteRouteImport.update({
-    id: '/calendar',
-    path: '/calendar',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardAnalyticsRouteRoute =
-  AuthenticatedMainDashboardAnalyticsRouteRouteImport.update({
-    id: '/analytics',
-    path: '/analytics',
     getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
   } as any)
 const AuthenticatedMainDashboardAcademyRouteRoute =
@@ -364,46 +258,142 @@ const AuthenticatedMainDashboardAcademyRouteRoute =
     path: '/academy',
     getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
   } as any)
-const AuthenticatedMainOrganizationSlugSettingsRouteRoute =
-  AuthenticatedMainOrganizationSlugSettingsRouteRouteImport.update({
-    id: '/$organizationSlug/settings',
-    path: '/$organizationSlug/settings',
-    getParentRoute: () => AuthenticatedMainRouteRoute,
+const AuthenticatedMainDashboardAnalyticsRouteRoute =
+  AuthenticatedMainDashboardAnalyticsRouteRouteImport.update({
+    id: '/analytics',
+    path: '/analytics',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
   } as any)
-const AuthenticatedMainSettingsSecurityIndexRoute =
-  AuthenticatedMainSettingsSecurityIndexRouteImport.update({
-    id: '/security/',
-    path: '/security/',
+const AuthenticatedMainDashboardCalendarRouteRoute =
+  AuthenticatedMainDashboardCalendarRouteRouteImport.update({
+    id: '/calendar',
+    path: '/calendar',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
+  } as any)
+const AuthenticatedMainDashboardChatRouteRoute =
+  AuthenticatedMainDashboardChatRouteRouteImport.update({
+    id: '/chat',
+    path: '/chat',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
+  } as any)
+const AuthenticatedMainDashboardComingSoonRouteRoute =
+  AuthenticatedMainDashboardComingSoonRouteRouteImport.update({
+    id: '/coming-soon',
+    path: '/coming-soon',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
+  } as any)
+const AuthenticatedMainDashboardCrmRouteRoute =
+  AuthenticatedMainDashboardCrmRouteRouteImport.update({
+    id: '/crm',
+    path: '/crm',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
+  } as any)
+const AuthenticatedMainDashboardDefaultRouteRoute =
+  AuthenticatedMainDashboardDefaultRouteRouteImport.update({
+    id: '/default',
+    path: '/default',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
+  } as any)
+const AuthenticatedMainDashboardEcommerceRouteRoute =
+  AuthenticatedMainDashboardEcommerceRouteRouteImport.update({
+    id: '/ecommerce',
+    path: '/ecommerce',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
+  } as any)
+const AuthenticatedMainDashboardFinanceRouteRoute =
+  AuthenticatedMainDashboardFinanceRouteRouteImport.update({
+    id: '/finance',
+    path: '/finance',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
+  } as any)
+const AuthenticatedMainDashboardInfrastructureRouteRoute =
+  AuthenticatedMainDashboardInfrastructureRouteRouteImport.update({
+    id: '/infrastructure',
+    path: '/infrastructure',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
+  } as any)
+const AuthenticatedMainDashboardInvoiceRouteRoute =
+  AuthenticatedMainDashboardInvoiceRouteRouteImport.update({
+    id: '/invoice',
+    path: '/invoice',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
+  } as any)
+const AuthenticatedMainDashboardKanbanRouteRoute =
+  AuthenticatedMainDashboardKanbanRouteRouteImport.update({
+    id: '/kanban',
+    path: '/kanban',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
+  } as any)
+const AuthenticatedMainDashboardLogisticsRouteRoute =
+  AuthenticatedMainDashboardLogisticsRouteRouteImport.update({
+    id: '/logistics',
+    path: '/logistics',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
+  } as any)
+const AuthenticatedMainDashboardMailRouteRoute =
+  AuthenticatedMainDashboardMailRouteRouteImport.update({
+    id: '/mail',
+    path: '/mail',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
+  } as any)
+const AuthenticatedMainDashboardProductivityRouteRoute =
+  AuthenticatedMainDashboardProductivityRouteRouteImport.update({
+    id: '/productivity',
+    path: '/productivity',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
+  } as any)
+const AuthenticatedMainDashboardRolesRouteRoute =
+  AuthenticatedMainDashboardRolesRouteRouteImport.update({
+    id: '/roles',
+    path: '/roles',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
+  } as any)
+const AuthenticatedMainDashboardTasksRouteRoute =
+  AuthenticatedMainDashboardTasksRouteRouteImport.update({
+    id: '/tasks',
+    path: '/tasks',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
+  } as any)
+const AuthenticatedMainDashboardUsersRouteRoute =
+  AuthenticatedMainDashboardUsersRouteRouteImport.update({
+    id: '/users',
+    path: '/users',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
+  } as any)
+const AuthenticatedMainSettingsIndexRoute =
+  AuthenticatedMainSettingsIndexRouteImport.update({
+    id: '/',
+    path: '/',
     getParentRoute: () => AuthenticatedMainSettingsRouteRoute,
   } as any)
-const AuthenticatedMainSettingsNotificationsIndexRoute =
-  AuthenticatedMainSettingsNotificationsIndexRouteImport.update({
-    id: '/notifications/',
-    path: '/notifications/',
-    getParentRoute: () => AuthenticatedMainSettingsRouteRoute,
+const AuthenticatedOrganizationInvitationInvitationIdIndexRoute =
+  AuthenticatedOrganizationInvitationInvitationIdIndexRouteImport.update({
+    id: '/organization-invitation/$invitationId/',
+    path: '/organization-invitation/$invitationId/',
+    getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
-const AuthenticatedMainSettingsGeneralIndexRoute =
-  AuthenticatedMainSettingsGeneralIndexRouteImport.update({
-    id: '/general/',
-    path: '/general/',
-    getParentRoute: () => AuthenticatedMainSettingsRouteRoute,
+const AuthenticatedMainOrganizationSlugSettingsIndexRoute =
+  AuthenticatedMainOrganizationSlugSettingsIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticatedMainOrganizationSlugSettingsRouteRoute,
   } as any)
-const AuthenticatedMainSettingsBillingIndexRoute =
-  AuthenticatedMainSettingsBillingIndexRouteImport.update({
-    id: '/billing/',
-    path: '/billing/',
-    getParentRoute: () => AuthenticatedMainSettingsRouteRoute,
+const AuthenticatedMainAdminOrganizationsIndexRoute =
+  AuthenticatedMainAdminOrganizationsIndexRouteImport.update({
+    id: '/organizations/',
+    path: '/organizations/',
+    getParentRoute: () => AuthenticatedMainAdminRouteRoute,
   } as any)
-const AuthenticatedMainAppReportsIndexRoute =
-  AuthenticatedMainAppReportsIndexRouteImport.update({
-    id: '/reports/',
-    path: '/reports/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+const AuthenticatedMainAdminUsersIndexRoute =
+  AuthenticatedMainAdminUsersIndexRouteImport.update({
+    id: '/users/',
+    path: '/users/',
+    getParentRoute: () => AuthenticatedMainAdminRouteRoute,
   } as any)
-const AuthenticatedMainAppOrdersIndexRoute =
-  AuthenticatedMainAppOrdersIndexRouteImport.update({
-    id: '/orders/',
-    path: '/orders/',
+const AuthenticatedMainAppCustomersIndexRoute =
+  AuthenticatedMainAppCustomersIndexRouteImport.update({
+    id: '/customers/',
+    path: '/customers/',
     getParentRoute: () => AuthenticatedMainAppRouteRoute,
   } as any)
 const AuthenticatedMainAppDashboardIndexRoute =
@@ -412,40 +402,22 @@ const AuthenticatedMainAppDashboardIndexRoute =
     path: '/dashboard/',
     getParentRoute: () => AuthenticatedMainAppRouteRoute,
   } as any)
-const AuthenticatedMainAppCustomersIndexRoute =
-  AuthenticatedMainAppCustomersIndexRouteImport.update({
-    id: '/customers/',
-    path: '/customers/',
+const AuthenticatedMainAppOrdersIndexRoute =
+  AuthenticatedMainAppOrdersIndexRouteImport.update({
+    id: '/orders/',
+    path: '/orders/',
     getParentRoute: () => AuthenticatedMainAppRouteRoute,
   } as any)
-const AuthenticatedMainAdminUsersIndexRoute =
-  AuthenticatedMainAdminUsersIndexRouteImport.update({
-    id: '/users/',
-    path: '/users/',
-    getParentRoute: () => AuthenticatedMainAdminRouteRoute,
+const AuthenticatedMainAppReportsIndexRoute =
+  AuthenticatedMainAppReportsIndexRouteImport.update({
+    id: '/reports/',
+    path: '/reports/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
   } as any)
-const AuthenticatedMainAdminOrganizationsIndexRoute =
-  AuthenticatedMainAdminOrganizationsIndexRouteImport.update({
-    id: '/organizations/',
-    path: '/organizations/',
-    getParentRoute: () => AuthenticatedMainAdminRouteRoute,
-  } as any)
-const AuthenticatedMainOrganizationSlugSettingsIndexRoute =
-  AuthenticatedMainOrganizationSlugSettingsIndexRouteImport.update({
-    id: '/',
-    path: '/',
-    getParentRoute: () => AuthenticatedMainOrganizationSlugSettingsRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardlegacyFinanceV1RouteRoute =
-  AuthenticatedMainDashboardlegacyFinanceV1RouteRouteImport.update({
-    id: '/(legacy)/finance-v1',
-    path: '/finance-v1',
-    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
-  } as any)
-const AuthenticatedMainDashboardlegacyDefaultV1RouteRoute =
-  AuthenticatedMainDashboardlegacyDefaultV1RouteRouteImport.update({
-    id: '/(legacy)/default-v1',
-    path: '/default-v1',
+const AuthenticatedMainDashboardlegacyAnalyticsV1RouteRoute =
+  AuthenticatedMainDashboardlegacyAnalyticsV1RouteRouteImport.update({
+    id: '/(legacy)/analytics-v1',
+    path: '/analytics-v1',
     getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
   } as any)
 const AuthenticatedMainDashboardlegacyCrmV1RouteRoute =
@@ -454,172 +426,46 @@ const AuthenticatedMainDashboardlegacyCrmV1RouteRoute =
     path: '/crm-v1',
     getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
   } as any)
-const AuthenticatedMainDashboardlegacyAnalyticsV1RouteRoute =
-  AuthenticatedMainDashboardlegacyAnalyticsV1RouteRouteImport.update({
-    id: '/(legacy)/analytics-v1',
-    path: '/analytics-v1',
+const AuthenticatedMainDashboardlegacyDefaultV1RouteRoute =
+  AuthenticatedMainDashboardlegacyDefaultV1RouteRouteImport.update({
+    id: '/(legacy)/default-v1',
+    path: '/default-v1',
     getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
   } as any)
-const AuthenticatedMainAppTeamPermissionsIndexRoute =
-  AuthenticatedMainAppTeamPermissionsIndexRouteImport.update({
-    id: '/team/permissions/',
-    path: '/team/permissions/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+const AuthenticatedMainDashboardlegacyFinanceV1RouteRoute =
+  AuthenticatedMainDashboardlegacyFinanceV1RouteRouteImport.update({
+    id: '/(legacy)/finance-v1',
+    path: '/finance-v1',
+    getParentRoute: () => AuthenticatedMainDashboardRouteRoute,
   } as any)
-const AuthenticatedMainAppTeamMembersIndexRoute =
-  AuthenticatedMainAppTeamMembersIndexRouteImport.update({
-    id: '/team/members/',
-    path: '/team/members/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+const AuthenticatedMainSettingsBillingIndexRoute =
+  AuthenticatedMainSettingsBillingIndexRouteImport.update({
+    id: '/billing/',
+    path: '/billing/',
+    getParentRoute: () => AuthenticatedMainSettingsRouteRoute,
   } as any)
-const AuthenticatedMainAppSettingsSubscriptionsIndexRoute =
-  AuthenticatedMainAppSettingsSubscriptionsIndexRouteImport.update({
-    id: '/settings/subscriptions/',
-    path: '/settings/subscriptions/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+const AuthenticatedMainSettingsGeneralIndexRoute =
+  AuthenticatedMainSettingsGeneralIndexRouteImport.update({
+    id: '/general/',
+    path: '/general/',
+    getParentRoute: () => AuthenticatedMainSettingsRouteRoute,
   } as any)
-const AuthenticatedMainAppSettingsNotificationsIndexRoute =
-  AuthenticatedMainAppSettingsNotificationsIndexRouteImport.update({
-    id: '/settings/notifications/',
-    path: '/settings/notifications/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+const AuthenticatedMainSettingsNotificationsIndexRoute =
+  AuthenticatedMainSettingsNotificationsIndexRouteImport.update({
+    id: '/notifications/',
+    path: '/notifications/',
+    getParentRoute: () => AuthenticatedMainSettingsRouteRoute,
   } as any)
-const AuthenticatedMainAppSettingsBillingIndexRoute =
-  AuthenticatedMainAppSettingsBillingIndexRouteImport.update({
-    id: '/settings/billing/',
-    path: '/settings/billing/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+const AuthenticatedMainSettingsSecurityIndexRoute =
+  AuthenticatedMainSettingsSecurityIndexRouteImport.update({
+    id: '/security/',
+    path: '/security/',
+    getParentRoute: () => AuthenticatedMainSettingsRouteRoute,
   } as any)
-const AuthenticatedMainAppReportsSalesIndexRoute =
-  AuthenticatedMainAppReportsSalesIndexRouteImport.update({
-    id: '/reports/sales/',
-    path: '/reports/sales/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAppReportsProductsIndexRoute =
-  AuthenticatedMainAppReportsProductsIndexRouteImport.update({
-    id: '/reports/products/',
-    path: '/reports/products/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAppReportsInventoryIndexRoute =
-  AuthenticatedMainAppReportsInventoryIndexRouteImport.update({
-    id: '/reports/inventory/',
-    path: '/reports/inventory/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAppReportsCustomersIndexRoute =
-  AuthenticatedMainAppReportsCustomersIndexRouteImport.update({
-    id: '/reports/customers/',
-    path: '/reports/customers/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAppOrdersShippingIndexRoute =
-  AuthenticatedMainAppOrdersShippingIndexRouteImport.update({
-    id: '/orders/shipping/',
-    path: '/orders/shipping/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAppOrdersReturnsIndexRoute =
-  AuthenticatedMainAppOrdersReturnsIndexRouteImport.update({
-    id: '/orders/returns/',
-    path: '/orders/returns/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAppOrdersPaymentsIndexRoute =
-  AuthenticatedMainAppOrdersPaymentsIndexRouteImport.update({
-    id: '/orders/payments/',
-    path: '/orders/payments/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAppOrdersPartialPaymentsIndexRoute =
-  AuthenticatedMainAppOrdersPartialPaymentsIndexRouteImport.update({
-    id: '/orders/partial-payments/',
-    path: '/orders/partial-payments/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAppItemVariantsIndexRoute =
-  AuthenticatedMainAppItemVariantsIndexRouteImport.update({
-    id: '/item/variants/',
-    path: '/item/variants/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAppItemUnitsIndexRoute =
-  AuthenticatedMainAppItemUnitsIndexRouteImport.update({
-    id: '/item/units/',
-    path: '/item/units/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAppItemSettingsIndexRoute =
-  AuthenticatedMainAppItemSettingsIndexRouteImport.update({
-    id: '/item/settings/',
-    path: '/item/settings/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAppItemModifiersIndexRoute =
-  AuthenticatedMainAppItemModifiersIndexRouteImport.update({
-    id: '/item/modifiers/',
-    path: '/item/modifiers/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAppItemInventoryIndexRoute =
-  AuthenticatedMainAppItemInventoryIndexRouteImport.update({
-    id: '/item/inventory/',
-    path: '/item/inventory/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAppItemGalleryIndexRoute =
-  AuthenticatedMainAppItemGalleryIndexRouteImport.update({
-    id: '/item/gallery/',
-    path: '/item/gallery/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAppItemDiscountsIndexRoute =
-  AuthenticatedMainAppItemDiscountsIndexRouteImport.update({
-    id: '/item/discounts/',
-    path: '/item/discounts/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAppItemCustomAttributesIndexRoute =
-  AuthenticatedMainAppItemCustomAttributesIndexRouteImport.update({
-    id: '/item/custom-attributes/',
-    path: '/item/custom-attributes/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAppItemCategoriesIndexRoute =
-  AuthenticatedMainAppItemCategoriesIndexRouteImport.update({
-    id: '/item/categories/',
-    path: '/item/categories/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAppItemAllIndexRoute =
-  AuthenticatedMainAppItemAllIndexRouteImport.update({
-    id: '/item/all/',
-    path: '/item/all/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAppChannelsPosIndexRoute =
-  AuthenticatedMainAppChannelsPosIndexRouteImport.update({
-    id: '/channels/pos/',
-    path: '/channels/pos/',
-    getParentRoute: () => AuthenticatedMainAppRouteRoute,
-  } as any)
-const AuthenticatedMainAdminOrganizationsNewIndexRoute =
-  AuthenticatedMainAdminOrganizationsNewIndexRouteImport.update({
-    id: '/organizations/new/',
-    path: '/organizations/new/',
-    getParentRoute: () => AuthenticatedMainAdminRouteRoute,
-  } as any)
-const AuthenticatedMainAdminOrganizationsOrganizationIdIndexRoute =
-  AuthenticatedMainAdminOrganizationsOrganizationIdIndexRouteImport.update({
-    id: '/organizations/$organizationId/',
-    path: '/organizations/$organizationId/',
-    getParentRoute: () => AuthenticatedMainAdminRouteRoute,
-  } as any)
-const AuthenticatedMainOrganizationSlugSettingsMembersIndexRoute =
-  AuthenticatedMainOrganizationSlugSettingsMembersIndexRouteImport.update({
-    id: '/members/',
-    path: '/members/',
+const AuthenticatedMainOrganizationSlugSettingsBillingIndexRoute =
+  AuthenticatedMainOrganizationSlugSettingsBillingIndexRouteImport.update({
+    id: '/billing/',
+    path: '/billing/',
     getParentRoute: () => AuthenticatedMainOrganizationSlugSettingsRouteRoute,
   } as any)
 const AuthenticatedMainOrganizationSlugSettingsGeneralIndexRoute =
@@ -628,76 +474,172 @@ const AuthenticatedMainOrganizationSlugSettingsGeneralIndexRoute =
     path: '/general/',
     getParentRoute: () => AuthenticatedMainOrganizationSlugSettingsRouteRoute,
   } as any)
-const AuthenticatedMainOrganizationSlugSettingsBillingIndexRoute =
-  AuthenticatedMainOrganizationSlugSettingsBillingIndexRouteImport.update({
-    id: '/billing/',
-    path: '/billing/',
+const AuthenticatedMainOrganizationSlugSettingsMembersIndexRoute =
+  AuthenticatedMainOrganizationSlugSettingsMembersIndexRouteImport.update({
+    id: '/members/',
+    path: '/members/',
     getParentRoute: () => AuthenticatedMainOrganizationSlugSettingsRouteRoute,
   } as any)
-const AuthenticatedMainAppSettingsBusinessLocationsIndexRoute =
-  AuthenticatedMainAppSettingsBusinessLocationsIndexRouteImport.update({
-    id: '/settings/business/locations/',
-    path: '/settings/business/locations/',
+const AuthenticatedMainAdminOrganizationsOrganizationIdIndexRoute =
+  AuthenticatedMainAdminOrganizationsOrganizationIdIndexRouteImport.update({
+    id: '/organizations/$organizationId/',
+    path: '/organizations/$organizationId/',
+    getParentRoute: () => AuthenticatedMainAdminRouteRoute,
+  } as any)
+const AuthenticatedMainAdminOrganizationsNewIndexRoute =
+  AuthenticatedMainAdminOrganizationsNewIndexRouteImport.update({
+    id: '/organizations/new/',
+    path: '/organizations/new/',
+    getParentRoute: () => AuthenticatedMainAdminRouteRoute,
+  } as any)
+const AuthenticatedMainAppChannelsPosIndexRoute =
+  AuthenticatedMainAppChannelsPosIndexRouteImport.update({
+    id: '/channels/pos/',
+    path: '/channels/pos/',
     getParentRoute: () => AuthenticatedMainAppRouteRoute,
   } as any)
-const AuthenticatedMainAppSettingsBusinessInfoIndexRoute =
-  AuthenticatedMainAppSettingsBusinessInfoIndexRouteImport.update({
-    id: '/settings/business/info/',
-    path: '/settings/business/info/',
+const AuthenticatedMainAppItemAllIndexRoute =
+  AuthenticatedMainAppItemAllIndexRouteImport.update({
+    id: '/item/all/',
+    path: '/item/all/',
     getParentRoute: () => AuthenticatedMainAppRouteRoute,
   } as any)
-const AuthenticatedMainAppSettingsAccountSecurityIndexRoute =
-  AuthenticatedMainAppSettingsAccountSecurityIndexRouteImport.update({
-    id: '/settings/account/security/',
-    path: '/settings/account/security/',
+const AuthenticatedMainAppItemCategoriesIndexRoute =
+  AuthenticatedMainAppItemCategoriesIndexRouteImport.update({
+    id: '/item/categories/',
+    path: '/item/categories/',
     getParentRoute: () => AuthenticatedMainAppRouteRoute,
   } as any)
-const AuthenticatedMainAppSettingsAccountProfileIndexRoute =
-  AuthenticatedMainAppSettingsAccountProfileIndexRouteImport.update({
-    id: '/settings/account/profile/',
-    path: '/settings/account/profile/',
+const AuthenticatedMainAppItemCustomAttributesIndexRoute =
+  AuthenticatedMainAppItemCustomAttributesIndexRouteImport.update({
+    id: '/item/custom-attributes/',
+    path: '/item/custom-attributes/',
     getParentRoute: () => AuthenticatedMainAppRouteRoute,
   } as any)
-const AuthenticatedMainAppSettingsAccountPreferencesIndexRoute =
-  AuthenticatedMainAppSettingsAccountPreferencesIndexRouteImport.update({
-    id: '/settings/account/preferences/',
-    path: '/settings/account/preferences/',
+const AuthenticatedMainAppItemDiscountsIndexRoute =
+  AuthenticatedMainAppItemDiscountsIndexRouteImport.update({
+    id: '/item/discounts/',
+    path: '/item/discounts/',
     getParentRoute: () => AuthenticatedMainAppRouteRoute,
   } as any)
-const AuthenticatedMainAppChannelsWebThemeIndexRoute =
-  AuthenticatedMainAppChannelsWebThemeIndexRouteImport.update({
-    id: '/channels/web/theme/',
-    path: '/channels/web/theme/',
+const AuthenticatedMainAppItemGalleryIndexRoute =
+  AuthenticatedMainAppItemGalleryIndexRouteImport.update({
+    id: '/item/gallery/',
+    path: '/item/gallery/',
     getParentRoute: () => AuthenticatedMainAppRouteRoute,
   } as any)
-const AuthenticatedMainAppChannelsWebStorefrontIndexRoute =
-  AuthenticatedMainAppChannelsWebStorefrontIndexRouteImport.update({
-    id: '/channels/web/storefront/',
-    path: '/channels/web/storefront/',
+const AuthenticatedMainAppItemInventoryIndexRoute =
+  AuthenticatedMainAppItemInventoryIndexRouteImport.update({
+    id: '/item/inventory/',
+    path: '/item/inventory/',
     getParentRoute: () => AuthenticatedMainAppRouteRoute,
   } as any)
-const AuthenticatedMainAppChannelsWebSeoIndexRoute =
-  AuthenticatedMainAppChannelsWebSeoIndexRouteImport.update({
-    id: '/channels/web/seo/',
-    path: '/channels/web/seo/',
+const AuthenticatedMainAppItemModifiersIndexRoute =
+  AuthenticatedMainAppItemModifiersIndexRouteImport.update({
+    id: '/item/modifiers/',
+    path: '/item/modifiers/',
     getParentRoute: () => AuthenticatedMainAppRouteRoute,
   } as any)
-const AuthenticatedMainAppChannelsWebPagesIndexRoute =
-  AuthenticatedMainAppChannelsWebPagesIndexRouteImport.update({
-    id: '/channels/web/pages/',
-    path: '/channels/web/pages/',
+const AuthenticatedMainAppItemSettingsIndexRoute =
+  AuthenticatedMainAppItemSettingsIndexRouteImport.update({
+    id: '/item/settings/',
+    path: '/item/settings/',
     getParentRoute: () => AuthenticatedMainAppRouteRoute,
   } as any)
-const AuthenticatedMainAppChannelsWebNotificationsIndexRoute =
-  AuthenticatedMainAppChannelsWebNotificationsIndexRouteImport.update({
-    id: '/channels/web/notifications/',
-    path: '/channels/web/notifications/',
+const AuthenticatedMainAppItemUnitsIndexRoute =
+  AuthenticatedMainAppItemUnitsIndexRouteImport.update({
+    id: '/item/units/',
+    path: '/item/units/',
     getParentRoute: () => AuthenticatedMainAppRouteRoute,
   } as any)
-const AuthenticatedMainAppChannelsWebNavigationIndexRoute =
-  AuthenticatedMainAppChannelsWebNavigationIndexRouteImport.update({
-    id: '/channels/web/navigation/',
-    path: '/channels/web/navigation/',
+const AuthenticatedMainAppItemVariantsIndexRoute =
+  AuthenticatedMainAppItemVariantsIndexRouteImport.update({
+    id: '/item/variants/',
+    path: '/item/variants/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppOrdersPartialPaymentsIndexRoute =
+  AuthenticatedMainAppOrdersPartialPaymentsIndexRouteImport.update({
+    id: '/orders/partial-payments/',
+    path: '/orders/partial-payments/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppOrdersPaymentsIndexRoute =
+  AuthenticatedMainAppOrdersPaymentsIndexRouteImport.update({
+    id: '/orders/payments/',
+    path: '/orders/payments/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppOrdersReturnsIndexRoute =
+  AuthenticatedMainAppOrdersReturnsIndexRouteImport.update({
+    id: '/orders/returns/',
+    path: '/orders/returns/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppOrdersShippingIndexRoute =
+  AuthenticatedMainAppOrdersShippingIndexRouteImport.update({
+    id: '/orders/shipping/',
+    path: '/orders/shipping/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppReportsCustomersIndexRoute =
+  AuthenticatedMainAppReportsCustomersIndexRouteImport.update({
+    id: '/reports/customers/',
+    path: '/reports/customers/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppReportsInventoryIndexRoute =
+  AuthenticatedMainAppReportsInventoryIndexRouteImport.update({
+    id: '/reports/inventory/',
+    path: '/reports/inventory/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppReportsProductsIndexRoute =
+  AuthenticatedMainAppReportsProductsIndexRouteImport.update({
+    id: '/reports/products/',
+    path: '/reports/products/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppReportsSalesIndexRoute =
+  AuthenticatedMainAppReportsSalesIndexRouteImport.update({
+    id: '/reports/sales/',
+    path: '/reports/sales/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppSettingsBillingIndexRoute =
+  AuthenticatedMainAppSettingsBillingIndexRouteImport.update({
+    id: '/settings/billing/',
+    path: '/settings/billing/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppSettingsNotificationsIndexRoute =
+  AuthenticatedMainAppSettingsNotificationsIndexRouteImport.update({
+    id: '/settings/notifications/',
+    path: '/settings/notifications/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppSettingsSubscriptionsIndexRoute =
+  AuthenticatedMainAppSettingsSubscriptionsIndexRouteImport.update({
+    id: '/settings/subscriptions/',
+    path: '/settings/subscriptions/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppTeamMembersIndexRoute =
+  AuthenticatedMainAppTeamMembersIndexRouteImport.update({
+    id: '/team/members/',
+    path: '/team/members/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppTeamPermissionsIndexRoute =
+  AuthenticatedMainAppTeamPermissionsIndexRouteImport.update({
+    id: '/team/permissions/',
+    path: '/team/permissions/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppChannelsWebCheckoutIndexRoute =
+  AuthenticatedMainAppChannelsWebCheckoutIndexRouteImport.update({
+    id: '/channels/web/checkout/',
+    path: '/channels/web/checkout/',
     getParentRoute: () => AuthenticatedMainAppRouteRoute,
   } as any)
 const AuthenticatedMainAppChannelsWebDomainsIndexRoute =
@@ -706,10 +648,82 @@ const AuthenticatedMainAppChannelsWebDomainsIndexRoute =
     path: '/channels/web/domains/',
     getParentRoute: () => AuthenticatedMainAppRouteRoute,
   } as any)
-const AuthenticatedMainAppChannelsWebCheckoutIndexRoute =
-  AuthenticatedMainAppChannelsWebCheckoutIndexRouteImport.update({
-    id: '/channels/web/checkout/',
-    path: '/channels/web/checkout/',
+const AuthenticatedMainAppChannelsWebNavigationIndexRoute =
+  AuthenticatedMainAppChannelsWebNavigationIndexRouteImport.update({
+    id: '/channels/web/navigation/',
+    path: '/channels/web/navigation/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppChannelsWebNotificationsIndexRoute =
+  AuthenticatedMainAppChannelsWebNotificationsIndexRouteImport.update({
+    id: '/channels/web/notifications/',
+    path: '/channels/web/notifications/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppChannelsWebPagesIndexRoute =
+  AuthenticatedMainAppChannelsWebPagesIndexRouteImport.update({
+    id: '/channels/web/pages/',
+    path: '/channels/web/pages/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppChannelsWebSeoIndexRoute =
+  AuthenticatedMainAppChannelsWebSeoIndexRouteImport.update({
+    id: '/channels/web/seo/',
+    path: '/channels/web/seo/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppChannelsWebStorefrontIndexRoute =
+  AuthenticatedMainAppChannelsWebStorefrontIndexRouteImport.update({
+    id: '/channels/web/storefront/',
+    path: '/channels/web/storefront/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppChannelsWebThemeIndexRoute =
+  AuthenticatedMainAppChannelsWebThemeIndexRouteImport.update({
+    id: '/channels/web/theme/',
+    path: '/channels/web/theme/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppSettingsAccountPreferencesIndexRoute =
+  AuthenticatedMainAppSettingsAccountPreferencesIndexRouteImport.update({
+    id: '/settings/account/preferences/',
+    path: '/settings/account/preferences/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppSettingsAccountProfileIndexRoute =
+  AuthenticatedMainAppSettingsAccountProfileIndexRouteImport.update({
+    id: '/settings/account/profile/',
+    path: '/settings/account/profile/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppSettingsAccountSecurityIndexRoute =
+  AuthenticatedMainAppSettingsAccountSecurityIndexRouteImport.update({
+    id: '/settings/account/security/',
+    path: '/settings/account/security/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppSettingsBusinessInfoIndexRoute =
+  AuthenticatedMainAppSettingsBusinessInfoIndexRouteImport.update({
+    id: '/settings/business/info/',
+    path: '/settings/business/info/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppSettingsBusinessLocationsIndexRoute =
+  AuthenticatedMainAppSettingsBusinessLocationsIndexRouteImport.update({
+    id: '/settings/business/locations/',
+    path: '/settings/business/locations/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppSettingsBusinessLocationsBranchIdIndexRoute =
+  AuthenticatedMainAppSettingsBusinessLocationsBranchIdIndexRouteImport.update({
+    id: '/settings/business/locations/$branchId/',
+    path: '/settings/business/locations/$branchId/',
+    getParentRoute: () => AuthenticatedMainAppRouteRoute,
+  } as any)
+const AuthenticatedMainAppSettingsBusinessLocationsNewIndexRoute =
+  AuthenticatedMainAppSettingsBusinessLocationsNewIndexRouteImport.update({
+    id: '/settings/business/locations/new/',
+    path: '/settings/business/locations/new/',
     getParentRoute: () => AuthenticatedMainAppRouteRoute,
   } as any)
 
@@ -814,6 +828,8 @@ export interface FileRoutesByFullPath {
   '/app/settings/account/security/': typeof AuthenticatedMainAppSettingsAccountSecurityIndexRoute
   '/app/settings/business/info/': typeof AuthenticatedMainAppSettingsBusinessInfoIndexRoute
   '/app/settings/business/locations/': typeof AuthenticatedMainAppSettingsBusinessLocationsIndexRoute
+  '/app/settings/business/locations/$branchId/': typeof AuthenticatedMainAppSettingsBusinessLocationsBranchIdIndexRoute
+  '/app/settings/business/locations/new/': typeof AuthenticatedMainAppSettingsBusinessLocationsNewIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof AuthenticatedMainIndexRoute
@@ -911,6 +927,8 @@ export interface FileRoutesByTo {
   '/app/settings/account/security': typeof AuthenticatedMainAppSettingsAccountSecurityIndexRoute
   '/app/settings/business/info': typeof AuthenticatedMainAppSettingsBusinessInfoIndexRoute
   '/app/settings/business/locations': typeof AuthenticatedMainAppSettingsBusinessLocationsIndexRoute
+  '/app/settings/business/locations/$branchId': typeof AuthenticatedMainAppSettingsBusinessLocationsBranchIdIndexRoute
+  '/app/settings/business/locations/new': typeof AuthenticatedMainAppSettingsBusinessLocationsNewIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -1016,6 +1034,8 @@ export interface FileRoutesById {
   '/_authenticated/_main/app/settings/account/security/': typeof AuthenticatedMainAppSettingsAccountSecurityIndexRoute
   '/_authenticated/_main/app/settings/business/info/': typeof AuthenticatedMainAppSettingsBusinessInfoIndexRoute
   '/_authenticated/_main/app/settings/business/locations/': typeof AuthenticatedMainAppSettingsBusinessLocationsIndexRoute
+  '/_authenticated/_main/app/settings/business/locations/$branchId/': typeof AuthenticatedMainAppSettingsBusinessLocationsBranchIdIndexRoute
+  '/_authenticated/_main/app/settings/business/locations/new/': typeof AuthenticatedMainAppSettingsBusinessLocationsNewIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -1120,6 +1140,8 @@ export interface FileRouteTypes {
     | '/app/settings/account/security/'
     | '/app/settings/business/info/'
     | '/app/settings/business/locations/'
+    | '/app/settings/business/locations/$branchId/'
+    | '/app/settings/business/locations/new/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -1217,6 +1239,8 @@ export interface FileRouteTypes {
     | '/app/settings/account/security'
     | '/app/settings/business/info'
     | '/app/settings/business/locations'
+    | '/app/settings/business/locations/$branchId'
+    | '/app/settings/business/locations/new'
   id:
     | '__root__'
     | '/_authenticated'
@@ -1321,6 +1345,8 @@ export interface FileRouteTypes {
     | '/_authenticated/_main/app/settings/account/security/'
     | '/_authenticated/_main/app/settings/business/info/'
     | '/_authenticated/_main/app/settings/business/locations/'
+    | '/_authenticated/_main/app/settings/business/locations/$branchId/'
+    | '/_authenticated/_main/app/settings/business/locations/new/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -1343,32 +1369,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/verify/': {
-      id: '/verify/'
-      path: '/verify'
-      fullPath: '/verify/'
-      preLoaderRoute: typeof VerifyIndexRouteImport
-      parentRoute: typeof rootRouteImport
+    '/_authenticated/_main': {
+      id: '/_authenticated/_main'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedMainRouteRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/signup/': {
-      id: '/signup/'
-      path: '/signup'
-      fullPath: '/signup/'
-      preLoaderRoute: typeof SignupIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/reset-password/': {
-      id: '/reset-password/'
-      path: '/reset-password'
-      fullPath: '/reset-password/'
-      preLoaderRoute: typeof ResetPasswordIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/login/': {
-      id: '/login/'
-      path: '/login'
-      fullPath: '/login/'
-      preLoaderRoute: typeof LoginIndexRouteImport
+    '/api/$': {
+      id: '/api/$'
+      path: '/api/$'
+      fullPath: '/api/$'
+      preLoaderRoute: typeof ApiSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/forgot-password/': {
@@ -1385,74 +1397,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImageProxySplatRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/$': {
-      id: '/api/$'
-      path: '/api/$'
-      fullPath: '/api/$'
-      preLoaderRoute: typeof ApiSplatRouteImport
+    '/login/': {
+      id: '/login/'
+      path: '/login'
+      fullPath: '/login/'
+      preLoaderRoute: typeof LoginIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_authenticated/_main': {
-      id: '/_authenticated/_main'
-      path: ''
-      fullPath: '/'
-      preLoaderRoute: typeof AuthenticatedMainRouteRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
+    '/reset-password/': {
+      id: '/reset-password/'
+      path: '/reset-password'
+      fullPath: '/reset-password/'
+      preLoaderRoute: typeof ResetPasswordIndexRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/_authenticated/onboarding/': {
-      id: '/_authenticated/onboarding/'
-      path: '/onboarding'
-      fullPath: '/onboarding/'
-      preLoaderRoute: typeof AuthenticatedOnboardingIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
+    '/signup/': {
+      id: '/signup/'
+      path: '/signup'
+      fullPath: '/signup/'
+      preLoaderRoute: typeof SignupIndexRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/_authenticated/new-organization/': {
-      id: '/_authenticated/new-organization/'
-      path: '/new-organization'
-      fullPath: '/new-organization/'
-      preLoaderRoute: typeof AuthenticatedNewOrganizationIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/choose-plan/': {
-      id: '/_authenticated/choose-plan/'
-      path: '/choose-plan'
-      fullPath: '/choose-plan/'
-      preLoaderRoute: typeof AuthenticatedChoosePlanIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/checkout-return/': {
-      id: '/_authenticated/checkout-return/'
-      path: '/checkout-return'
-      fullPath: '/checkout-return/'
-      preLoaderRoute: typeof AuthenticatedCheckoutReturnIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
+    '/verify/': {
+      id: '/verify/'
+      path: '/verify'
+      fullPath: '/verify/'
+      preLoaderRoute: typeof VerifyIndexRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_authenticated/_main/': {
       id: '/_authenticated/_main/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof AuthenticatedMainIndexRouteImport
-      parentRoute: typeof AuthenticatedMainRouteRoute
-    }
-    '/_authenticated/_main/settings': {
-      id: '/_authenticated/_main/settings'
-      path: '/settings'
-      fullPath: '/settings'
-      preLoaderRoute: typeof AuthenticatedMainSettingsRouteRouteImport
-      parentRoute: typeof AuthenticatedMainRouteRoute
-    }
-    '/_authenticated/_main/dashboard': {
-      id: '/_authenticated/_main/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof AuthenticatedMainDashboardRouteRouteImport
-      parentRoute: typeof AuthenticatedMainRouteRoute
-    }
-    '/_authenticated/_main/app': {
-      id: '/_authenticated/_main/app'
-      path: '/app'
-      fullPath: '/app'
-      preLoaderRoute: typeof AuthenticatedMainAppRouteRouteImport
       parentRoute: typeof AuthenticatedMainRouteRoute
     }
     '/_authenticated/_main/admin': {
@@ -1462,47 +1439,54 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedMainAdminRouteRouteImport
       parentRoute: typeof AuthenticatedMainRouteRoute
     }
-    '/_authenticated/organization-invitation/$invitationId/': {
-      id: '/_authenticated/organization-invitation/$invitationId/'
-      path: '/organization-invitation/$invitationId'
-      fullPath: '/organization-invitation/$invitationId/'
-      preLoaderRoute: typeof AuthenticatedOrganizationInvitationInvitationIdIndexRouteImport
-      parentRoute: typeof AuthenticatedRouteRoute
-    }
-    '/_authenticated/_main/settings/': {
-      id: '/_authenticated/_main/settings/'
-      path: '/'
-      fullPath: '/settings/'
-      preLoaderRoute: typeof AuthenticatedMainSettingsIndexRouteImport
-      parentRoute: typeof AuthenticatedMainSettingsRouteRoute
-    }
-    '/_authenticated/_main/dashboard/': {
-      id: '/_authenticated/_main/dashboard/'
-      path: '/'
-      fullPath: '/dashboard/'
-      preLoaderRoute: typeof AuthenticatedMainDashboardIndexRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/chatbot/': {
-      id: '/_authenticated/_main/chatbot/'
-      path: '/chatbot'
-      fullPath: '/chatbot/'
-      preLoaderRoute: typeof AuthenticatedMainChatbotIndexRouteImport
+    '/_authenticated/_main/app': {
+      id: '/_authenticated/_main/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AuthenticatedMainAppRouteRouteImport
       parentRoute: typeof AuthenticatedMainRouteRoute
     }
-    '/_authenticated/_main/app/': {
-      id: '/_authenticated/_main/app/'
-      path: '/'
-      fullPath: '/app/'
-      preLoaderRoute: typeof AuthenticatedMainAppIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    '/_authenticated/_main/dashboard': {
+      id: '/_authenticated/_main/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof AuthenticatedMainDashboardRouteRouteImport
+      parentRoute: typeof AuthenticatedMainRouteRoute
     }
-    '/_authenticated/_main/admin/': {
-      id: '/_authenticated/_main/admin/'
-      path: '/'
-      fullPath: '/admin/'
-      preLoaderRoute: typeof AuthenticatedMainAdminIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAdminRouteRoute
+    '/_authenticated/_main/settings': {
+      id: '/_authenticated/_main/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof AuthenticatedMainSettingsRouteRouteImport
+      parentRoute: typeof AuthenticatedMainRouteRoute
+    }
+    '/_authenticated/checkout-return/': {
+      id: '/_authenticated/checkout-return/'
+      path: '/checkout-return'
+      fullPath: '/checkout-return/'
+      preLoaderRoute: typeof AuthenticatedCheckoutReturnIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/choose-plan/': {
+      id: '/_authenticated/choose-plan/'
+      path: '/choose-plan'
+      fullPath: '/choose-plan/'
+      preLoaderRoute: typeof AuthenticatedChoosePlanIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/new-organization/': {
+      id: '/_authenticated/new-organization/'
+      path: '/new-organization'
+      fullPath: '/new-organization/'
+      preLoaderRoute: typeof AuthenticatedNewOrganizationIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/onboarding/': {
+      id: '/_authenticated/onboarding/'
+      path: '/onboarding'
+      fullPath: '/onboarding/'
+      preLoaderRoute: typeof AuthenticatedOnboardingIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/_main/$organizationSlug/': {
       id: '/_authenticated/_main/$organizationSlug/'
@@ -1511,130 +1495,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedMainOrganizationSlugIndexRouteImport
       parentRoute: typeof AuthenticatedMainRouteRoute
     }
+    '/_authenticated/_main/$organizationSlug/settings': {
+      id: '/_authenticated/_main/$organizationSlug/settings'
+      path: '/$organizationSlug/settings'
+      fullPath: '/$organizationSlug/settings'
+      preLoaderRoute: typeof AuthenticatedMainOrganizationSlugSettingsRouteRouteImport
+      parentRoute: typeof AuthenticatedMainRouteRoute
+    }
+    '/_authenticated/_main/admin/': {
+      id: '/_authenticated/_main/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AuthenticatedMainAdminIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAdminRouteRoute
+    }
+    '/_authenticated/_main/app/': {
+      id: '/_authenticated/_main/app/'
+      path: '/'
+      fullPath: '/app/'
+      preLoaderRoute: typeof AuthenticatedMainAppIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/chatbot/': {
+      id: '/_authenticated/_main/chatbot/'
+      path: '/chatbot'
+      fullPath: '/chatbot/'
+      preLoaderRoute: typeof AuthenticatedMainChatbotIndexRouteImport
+      parentRoute: typeof AuthenticatedMainRouteRoute
+    }
+    '/_authenticated/_main/dashboard/': {
+      id: '/_authenticated/_main/dashboard/'
+      path: '/'
+      fullPath: '/dashboard/'
+      preLoaderRoute: typeof AuthenticatedMainDashboardIndexRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
+    }
     '/_authenticated/_main/dashboard/$': {
       id: '/_authenticated/_main/dashboard/$'
       path: '/$'
       fullPath: '/dashboard/$'
       preLoaderRoute: typeof AuthenticatedMainDashboardSplatRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/dashboard/users': {
-      id: '/_authenticated/_main/dashboard/users'
-      path: '/users'
-      fullPath: '/dashboard/users'
-      preLoaderRoute: typeof AuthenticatedMainDashboardUsersRouteRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/dashboard/tasks': {
-      id: '/_authenticated/_main/dashboard/tasks'
-      path: '/tasks'
-      fullPath: '/dashboard/tasks'
-      preLoaderRoute: typeof AuthenticatedMainDashboardTasksRouteRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/dashboard/roles': {
-      id: '/_authenticated/_main/dashboard/roles'
-      path: '/roles'
-      fullPath: '/dashboard/roles'
-      preLoaderRoute: typeof AuthenticatedMainDashboardRolesRouteRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/dashboard/productivity': {
-      id: '/_authenticated/_main/dashboard/productivity'
-      path: '/productivity'
-      fullPath: '/dashboard/productivity'
-      preLoaderRoute: typeof AuthenticatedMainDashboardProductivityRouteRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/dashboard/mail': {
-      id: '/_authenticated/_main/dashboard/mail'
-      path: '/mail'
-      fullPath: '/dashboard/mail'
-      preLoaderRoute: typeof AuthenticatedMainDashboardMailRouteRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/dashboard/logistics': {
-      id: '/_authenticated/_main/dashboard/logistics'
-      path: '/logistics'
-      fullPath: '/dashboard/logistics'
-      preLoaderRoute: typeof AuthenticatedMainDashboardLogisticsRouteRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/dashboard/kanban': {
-      id: '/_authenticated/_main/dashboard/kanban'
-      path: '/kanban'
-      fullPath: '/dashboard/kanban'
-      preLoaderRoute: typeof AuthenticatedMainDashboardKanbanRouteRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/dashboard/invoice': {
-      id: '/_authenticated/_main/dashboard/invoice'
-      path: '/invoice'
-      fullPath: '/dashboard/invoice'
-      preLoaderRoute: typeof AuthenticatedMainDashboardInvoiceRouteRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/dashboard/infrastructure': {
-      id: '/_authenticated/_main/dashboard/infrastructure'
-      path: '/infrastructure'
-      fullPath: '/dashboard/infrastructure'
-      preLoaderRoute: typeof AuthenticatedMainDashboardInfrastructureRouteRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/dashboard/finance': {
-      id: '/_authenticated/_main/dashboard/finance'
-      path: '/finance'
-      fullPath: '/dashboard/finance'
-      preLoaderRoute: typeof AuthenticatedMainDashboardFinanceRouteRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/dashboard/ecommerce': {
-      id: '/_authenticated/_main/dashboard/ecommerce'
-      path: '/ecommerce'
-      fullPath: '/dashboard/ecommerce'
-      preLoaderRoute: typeof AuthenticatedMainDashboardEcommerceRouteRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/dashboard/default': {
-      id: '/_authenticated/_main/dashboard/default'
-      path: '/default'
-      fullPath: '/dashboard/default'
-      preLoaderRoute: typeof AuthenticatedMainDashboardDefaultRouteRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/dashboard/crm': {
-      id: '/_authenticated/_main/dashboard/crm'
-      path: '/crm'
-      fullPath: '/dashboard/crm'
-      preLoaderRoute: typeof AuthenticatedMainDashboardCrmRouteRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/dashboard/coming-soon': {
-      id: '/_authenticated/_main/dashboard/coming-soon'
-      path: '/coming-soon'
-      fullPath: '/dashboard/coming-soon'
-      preLoaderRoute: typeof AuthenticatedMainDashboardComingSoonRouteRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/dashboard/chat': {
-      id: '/_authenticated/_main/dashboard/chat'
-      path: '/chat'
-      fullPath: '/dashboard/chat'
-      preLoaderRoute: typeof AuthenticatedMainDashboardChatRouteRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/dashboard/calendar': {
-      id: '/_authenticated/_main/dashboard/calendar'
-      path: '/calendar'
-      fullPath: '/dashboard/calendar'
-      preLoaderRoute: typeof AuthenticatedMainDashboardCalendarRouteRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/dashboard/analytics': {
-      id: '/_authenticated/_main/dashboard/analytics'
-      path: '/analytics'
-      fullPath: '/dashboard/analytics'
-      preLoaderRoute: typeof AuthenticatedMainDashboardAnalyticsRouteRouteImport
       parentRoute: typeof AuthenticatedMainDashboardRouteRoute
     }
     '/_authenticated/_main/dashboard/academy': {
@@ -1644,53 +1544,165 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedMainDashboardAcademyRouteRouteImport
       parentRoute: typeof AuthenticatedMainDashboardRouteRoute
     }
-    '/_authenticated/_main/$organizationSlug/settings': {
-      id: '/_authenticated/_main/$organizationSlug/settings'
-      path: '/$organizationSlug/settings'
-      fullPath: '/$organizationSlug/settings'
-      preLoaderRoute: typeof AuthenticatedMainOrganizationSlugSettingsRouteRouteImport
-      parentRoute: typeof AuthenticatedMainRouteRoute
+    '/_authenticated/_main/dashboard/analytics': {
+      id: '/_authenticated/_main/dashboard/analytics'
+      path: '/analytics'
+      fullPath: '/dashboard/analytics'
+      preLoaderRoute: typeof AuthenticatedMainDashboardAnalyticsRouteRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
     }
-    '/_authenticated/_main/settings/security/': {
-      id: '/_authenticated/_main/settings/security/'
-      path: '/security'
-      fullPath: '/settings/security/'
-      preLoaderRoute: typeof AuthenticatedMainSettingsSecurityIndexRouteImport
+    '/_authenticated/_main/dashboard/calendar': {
+      id: '/_authenticated/_main/dashboard/calendar'
+      path: '/calendar'
+      fullPath: '/dashboard/calendar'
+      preLoaderRoute: typeof AuthenticatedMainDashboardCalendarRouteRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
+    }
+    '/_authenticated/_main/dashboard/chat': {
+      id: '/_authenticated/_main/dashboard/chat'
+      path: '/chat'
+      fullPath: '/dashboard/chat'
+      preLoaderRoute: typeof AuthenticatedMainDashboardChatRouteRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
+    }
+    '/_authenticated/_main/dashboard/coming-soon': {
+      id: '/_authenticated/_main/dashboard/coming-soon'
+      path: '/coming-soon'
+      fullPath: '/dashboard/coming-soon'
+      preLoaderRoute: typeof AuthenticatedMainDashboardComingSoonRouteRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
+    }
+    '/_authenticated/_main/dashboard/crm': {
+      id: '/_authenticated/_main/dashboard/crm'
+      path: '/crm'
+      fullPath: '/dashboard/crm'
+      preLoaderRoute: typeof AuthenticatedMainDashboardCrmRouteRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
+    }
+    '/_authenticated/_main/dashboard/default': {
+      id: '/_authenticated/_main/dashboard/default'
+      path: '/default'
+      fullPath: '/dashboard/default'
+      preLoaderRoute: typeof AuthenticatedMainDashboardDefaultRouteRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
+    }
+    '/_authenticated/_main/dashboard/ecommerce': {
+      id: '/_authenticated/_main/dashboard/ecommerce'
+      path: '/ecommerce'
+      fullPath: '/dashboard/ecommerce'
+      preLoaderRoute: typeof AuthenticatedMainDashboardEcommerceRouteRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
+    }
+    '/_authenticated/_main/dashboard/finance': {
+      id: '/_authenticated/_main/dashboard/finance'
+      path: '/finance'
+      fullPath: '/dashboard/finance'
+      preLoaderRoute: typeof AuthenticatedMainDashboardFinanceRouteRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
+    }
+    '/_authenticated/_main/dashboard/infrastructure': {
+      id: '/_authenticated/_main/dashboard/infrastructure'
+      path: '/infrastructure'
+      fullPath: '/dashboard/infrastructure'
+      preLoaderRoute: typeof AuthenticatedMainDashboardInfrastructureRouteRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
+    }
+    '/_authenticated/_main/dashboard/invoice': {
+      id: '/_authenticated/_main/dashboard/invoice'
+      path: '/invoice'
+      fullPath: '/dashboard/invoice'
+      preLoaderRoute: typeof AuthenticatedMainDashboardInvoiceRouteRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
+    }
+    '/_authenticated/_main/dashboard/kanban': {
+      id: '/_authenticated/_main/dashboard/kanban'
+      path: '/kanban'
+      fullPath: '/dashboard/kanban'
+      preLoaderRoute: typeof AuthenticatedMainDashboardKanbanRouteRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
+    }
+    '/_authenticated/_main/dashboard/logistics': {
+      id: '/_authenticated/_main/dashboard/logistics'
+      path: '/logistics'
+      fullPath: '/dashboard/logistics'
+      preLoaderRoute: typeof AuthenticatedMainDashboardLogisticsRouteRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
+    }
+    '/_authenticated/_main/dashboard/mail': {
+      id: '/_authenticated/_main/dashboard/mail'
+      path: '/mail'
+      fullPath: '/dashboard/mail'
+      preLoaderRoute: typeof AuthenticatedMainDashboardMailRouteRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
+    }
+    '/_authenticated/_main/dashboard/productivity': {
+      id: '/_authenticated/_main/dashboard/productivity'
+      path: '/productivity'
+      fullPath: '/dashboard/productivity'
+      preLoaderRoute: typeof AuthenticatedMainDashboardProductivityRouteRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
+    }
+    '/_authenticated/_main/dashboard/roles': {
+      id: '/_authenticated/_main/dashboard/roles'
+      path: '/roles'
+      fullPath: '/dashboard/roles'
+      preLoaderRoute: typeof AuthenticatedMainDashboardRolesRouteRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
+    }
+    '/_authenticated/_main/dashboard/tasks': {
+      id: '/_authenticated/_main/dashboard/tasks'
+      path: '/tasks'
+      fullPath: '/dashboard/tasks'
+      preLoaderRoute: typeof AuthenticatedMainDashboardTasksRouteRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
+    }
+    '/_authenticated/_main/dashboard/users': {
+      id: '/_authenticated/_main/dashboard/users'
+      path: '/users'
+      fullPath: '/dashboard/users'
+      preLoaderRoute: typeof AuthenticatedMainDashboardUsersRouteRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
+    }
+    '/_authenticated/_main/settings/': {
+      id: '/_authenticated/_main/settings/'
+      path: '/'
+      fullPath: '/settings/'
+      preLoaderRoute: typeof AuthenticatedMainSettingsIndexRouteImport
       parentRoute: typeof AuthenticatedMainSettingsRouteRoute
     }
-    '/_authenticated/_main/settings/notifications/': {
-      id: '/_authenticated/_main/settings/notifications/'
-      path: '/notifications'
-      fullPath: '/settings/notifications/'
-      preLoaderRoute: typeof AuthenticatedMainSettingsNotificationsIndexRouteImport
-      parentRoute: typeof AuthenticatedMainSettingsRouteRoute
+    '/_authenticated/organization-invitation/$invitationId/': {
+      id: '/_authenticated/organization-invitation/$invitationId/'
+      path: '/organization-invitation/$invitationId'
+      fullPath: '/organization-invitation/$invitationId/'
+      preLoaderRoute: typeof AuthenticatedOrganizationInvitationInvitationIdIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
-    '/_authenticated/_main/settings/general/': {
-      id: '/_authenticated/_main/settings/general/'
-      path: '/general'
-      fullPath: '/settings/general/'
-      preLoaderRoute: typeof AuthenticatedMainSettingsGeneralIndexRouteImport
-      parentRoute: typeof AuthenticatedMainSettingsRouteRoute
+    '/_authenticated/_main/$organizationSlug/settings/': {
+      id: '/_authenticated/_main/$organizationSlug/settings/'
+      path: '/'
+      fullPath: '/$organizationSlug/settings/'
+      preLoaderRoute: typeof AuthenticatedMainOrganizationSlugSettingsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainOrganizationSlugSettingsRouteRoute
     }
-    '/_authenticated/_main/settings/billing/': {
-      id: '/_authenticated/_main/settings/billing/'
-      path: '/billing'
-      fullPath: '/settings/billing/'
-      preLoaderRoute: typeof AuthenticatedMainSettingsBillingIndexRouteImport
-      parentRoute: typeof AuthenticatedMainSettingsRouteRoute
+    '/_authenticated/_main/admin/organizations/': {
+      id: '/_authenticated/_main/admin/organizations/'
+      path: '/organizations'
+      fullPath: '/admin/organizations/'
+      preLoaderRoute: typeof AuthenticatedMainAdminOrganizationsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAdminRouteRoute
     }
-    '/_authenticated/_main/app/reports/': {
-      id: '/_authenticated/_main/app/reports/'
-      path: '/reports'
-      fullPath: '/app/reports/'
-      preLoaderRoute: typeof AuthenticatedMainAppReportsIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    '/_authenticated/_main/admin/users/': {
+      id: '/_authenticated/_main/admin/users/'
+      path: '/users'
+      fullPath: '/admin/users/'
+      preLoaderRoute: typeof AuthenticatedMainAdminUsersIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAdminRouteRoute
     }
-    '/_authenticated/_main/app/orders/': {
-      id: '/_authenticated/_main/app/orders/'
-      path: '/orders'
-      fullPath: '/app/orders/'
-      preLoaderRoute: typeof AuthenticatedMainAppOrdersIndexRouteImport
+    '/_authenticated/_main/app/customers/': {
+      id: '/_authenticated/_main/app/customers/'
+      path: '/customers'
+      fullPath: '/app/customers/'
+      preLoaderRoute: typeof AuthenticatedMainAppCustomersIndexRouteImport
       parentRoute: typeof AuthenticatedMainAppRouteRoute
     }
     '/_authenticated/_main/app/dashboard/': {
@@ -1700,46 +1712,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedMainAppDashboardIndexRouteImport
       parentRoute: typeof AuthenticatedMainAppRouteRoute
     }
-    '/_authenticated/_main/app/customers/': {
-      id: '/_authenticated/_main/app/customers/'
-      path: '/customers'
-      fullPath: '/app/customers/'
-      preLoaderRoute: typeof AuthenticatedMainAppCustomersIndexRouteImport
+    '/_authenticated/_main/app/orders/': {
+      id: '/_authenticated/_main/app/orders/'
+      path: '/orders'
+      fullPath: '/app/orders/'
+      preLoaderRoute: typeof AuthenticatedMainAppOrdersIndexRouteImport
       parentRoute: typeof AuthenticatedMainAppRouteRoute
     }
-    '/_authenticated/_main/admin/users/': {
-      id: '/_authenticated/_main/admin/users/'
-      path: '/users'
-      fullPath: '/admin/users/'
-      preLoaderRoute: typeof AuthenticatedMainAdminUsersIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAdminRouteRoute
+    '/_authenticated/_main/app/reports/': {
+      id: '/_authenticated/_main/app/reports/'
+      path: '/reports'
+      fullPath: '/app/reports/'
+      preLoaderRoute: typeof AuthenticatedMainAppReportsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
     }
-    '/_authenticated/_main/admin/organizations/': {
-      id: '/_authenticated/_main/admin/organizations/'
-      path: '/organizations'
-      fullPath: '/admin/organizations/'
-      preLoaderRoute: typeof AuthenticatedMainAdminOrganizationsIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAdminRouteRoute
-    }
-    '/_authenticated/_main/$organizationSlug/settings/': {
-      id: '/_authenticated/_main/$organizationSlug/settings/'
-      path: '/'
-      fullPath: '/$organizationSlug/settings/'
-      preLoaderRoute: typeof AuthenticatedMainOrganizationSlugSettingsIndexRouteImport
-      parentRoute: typeof AuthenticatedMainOrganizationSlugSettingsRouteRoute
-    }
-    '/_authenticated/_main/dashboard/(legacy)/finance-v1': {
-      id: '/_authenticated/_main/dashboard/(legacy)/finance-v1'
-      path: '/finance-v1'
-      fullPath: '/dashboard/finance-v1'
-      preLoaderRoute: typeof AuthenticatedMainDashboardlegacyFinanceV1RouteRouteImport
-      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
-    }
-    '/_authenticated/_main/dashboard/(legacy)/default-v1': {
-      id: '/_authenticated/_main/dashboard/(legacy)/default-v1'
-      path: '/default-v1'
-      fullPath: '/dashboard/default-v1'
-      preLoaderRoute: typeof AuthenticatedMainDashboardlegacyDefaultV1RouteRouteImport
+    '/_authenticated/_main/dashboard/(legacy)/analytics-v1': {
+      id: '/_authenticated/_main/dashboard/(legacy)/analytics-v1'
+      path: '/analytics-v1'
+      fullPath: '/dashboard/analytics-v1'
+      preLoaderRoute: typeof AuthenticatedMainDashboardlegacyAnalyticsV1RouteRouteImport
       parentRoute: typeof AuthenticatedMainDashboardRouteRoute
     }
     '/_authenticated/_main/dashboard/(legacy)/crm-v1': {
@@ -1749,200 +1740,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedMainDashboardlegacyCrmV1RouteRouteImport
       parentRoute: typeof AuthenticatedMainDashboardRouteRoute
     }
-    '/_authenticated/_main/dashboard/(legacy)/analytics-v1': {
-      id: '/_authenticated/_main/dashboard/(legacy)/analytics-v1'
-      path: '/analytics-v1'
-      fullPath: '/dashboard/analytics-v1'
-      preLoaderRoute: typeof AuthenticatedMainDashboardlegacyAnalyticsV1RouteRouteImport
+    '/_authenticated/_main/dashboard/(legacy)/default-v1': {
+      id: '/_authenticated/_main/dashboard/(legacy)/default-v1'
+      path: '/default-v1'
+      fullPath: '/dashboard/default-v1'
+      preLoaderRoute: typeof AuthenticatedMainDashboardlegacyDefaultV1RouteRouteImport
       parentRoute: typeof AuthenticatedMainDashboardRouteRoute
     }
-    '/_authenticated/_main/app/team/permissions/': {
-      id: '/_authenticated/_main/app/team/permissions/'
-      path: '/team/permissions'
-      fullPath: '/app/team/permissions/'
-      preLoaderRoute: typeof AuthenticatedMainAppTeamPermissionsIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    '/_authenticated/_main/dashboard/(legacy)/finance-v1': {
+      id: '/_authenticated/_main/dashboard/(legacy)/finance-v1'
+      path: '/finance-v1'
+      fullPath: '/dashboard/finance-v1'
+      preLoaderRoute: typeof AuthenticatedMainDashboardlegacyFinanceV1RouteRouteImport
+      parentRoute: typeof AuthenticatedMainDashboardRouteRoute
     }
-    '/_authenticated/_main/app/team/members/': {
-      id: '/_authenticated/_main/app/team/members/'
-      path: '/team/members'
-      fullPath: '/app/team/members/'
-      preLoaderRoute: typeof AuthenticatedMainAppTeamMembersIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    '/_authenticated/_main/settings/billing/': {
+      id: '/_authenticated/_main/settings/billing/'
+      path: '/billing'
+      fullPath: '/settings/billing/'
+      preLoaderRoute: typeof AuthenticatedMainSettingsBillingIndexRouteImport
+      parentRoute: typeof AuthenticatedMainSettingsRouteRoute
     }
-    '/_authenticated/_main/app/settings/subscriptions/': {
-      id: '/_authenticated/_main/app/settings/subscriptions/'
-      path: '/settings/subscriptions'
-      fullPath: '/app/settings/subscriptions/'
-      preLoaderRoute: typeof AuthenticatedMainAppSettingsSubscriptionsIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    '/_authenticated/_main/settings/general/': {
+      id: '/_authenticated/_main/settings/general/'
+      path: '/general'
+      fullPath: '/settings/general/'
+      preLoaderRoute: typeof AuthenticatedMainSettingsGeneralIndexRouteImport
+      parentRoute: typeof AuthenticatedMainSettingsRouteRoute
     }
-    '/_authenticated/_main/app/settings/notifications/': {
-      id: '/_authenticated/_main/app/settings/notifications/'
-      path: '/settings/notifications'
-      fullPath: '/app/settings/notifications/'
-      preLoaderRoute: typeof AuthenticatedMainAppSettingsNotificationsIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    '/_authenticated/_main/settings/notifications/': {
+      id: '/_authenticated/_main/settings/notifications/'
+      path: '/notifications'
+      fullPath: '/settings/notifications/'
+      preLoaderRoute: typeof AuthenticatedMainSettingsNotificationsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainSettingsRouteRoute
     }
-    '/_authenticated/_main/app/settings/billing/': {
-      id: '/_authenticated/_main/app/settings/billing/'
-      path: '/settings/billing'
-      fullPath: '/app/settings/billing/'
-      preLoaderRoute: typeof AuthenticatedMainAppSettingsBillingIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    '/_authenticated/_main/settings/security/': {
+      id: '/_authenticated/_main/settings/security/'
+      path: '/security'
+      fullPath: '/settings/security/'
+      preLoaderRoute: typeof AuthenticatedMainSettingsSecurityIndexRouteImport
+      parentRoute: typeof AuthenticatedMainSettingsRouteRoute
     }
-    '/_authenticated/_main/app/reports/sales/': {
-      id: '/_authenticated/_main/app/reports/sales/'
-      path: '/reports/sales'
-      fullPath: '/app/reports/sales/'
-      preLoaderRoute: typeof AuthenticatedMainAppReportsSalesIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/app/reports/products/': {
-      id: '/_authenticated/_main/app/reports/products/'
-      path: '/reports/products'
-      fullPath: '/app/reports/products/'
-      preLoaderRoute: typeof AuthenticatedMainAppReportsProductsIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/app/reports/inventory/': {
-      id: '/_authenticated/_main/app/reports/inventory/'
-      path: '/reports/inventory'
-      fullPath: '/app/reports/inventory/'
-      preLoaderRoute: typeof AuthenticatedMainAppReportsInventoryIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/app/reports/customers/': {
-      id: '/_authenticated/_main/app/reports/customers/'
-      path: '/reports/customers'
-      fullPath: '/app/reports/customers/'
-      preLoaderRoute: typeof AuthenticatedMainAppReportsCustomersIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/app/orders/shipping/': {
-      id: '/_authenticated/_main/app/orders/shipping/'
-      path: '/orders/shipping'
-      fullPath: '/app/orders/shipping/'
-      preLoaderRoute: typeof AuthenticatedMainAppOrdersShippingIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/app/orders/returns/': {
-      id: '/_authenticated/_main/app/orders/returns/'
-      path: '/orders/returns'
-      fullPath: '/app/orders/returns/'
-      preLoaderRoute: typeof AuthenticatedMainAppOrdersReturnsIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/app/orders/payments/': {
-      id: '/_authenticated/_main/app/orders/payments/'
-      path: '/orders/payments'
-      fullPath: '/app/orders/payments/'
-      preLoaderRoute: typeof AuthenticatedMainAppOrdersPaymentsIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/app/orders/partial-payments/': {
-      id: '/_authenticated/_main/app/orders/partial-payments/'
-      path: '/orders/partial-payments'
-      fullPath: '/app/orders/partial-payments/'
-      preLoaderRoute: typeof AuthenticatedMainAppOrdersPartialPaymentsIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/app/item/variants/': {
-      id: '/_authenticated/_main/app/item/variants/'
-      path: '/item/variants'
-      fullPath: '/app/item/variants/'
-      preLoaderRoute: typeof AuthenticatedMainAppItemVariantsIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/app/item/units/': {
-      id: '/_authenticated/_main/app/item/units/'
-      path: '/item/units'
-      fullPath: '/app/item/units/'
-      preLoaderRoute: typeof AuthenticatedMainAppItemUnitsIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/app/item/settings/': {
-      id: '/_authenticated/_main/app/item/settings/'
-      path: '/item/settings'
-      fullPath: '/app/item/settings/'
-      preLoaderRoute: typeof AuthenticatedMainAppItemSettingsIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/app/item/modifiers/': {
-      id: '/_authenticated/_main/app/item/modifiers/'
-      path: '/item/modifiers'
-      fullPath: '/app/item/modifiers/'
-      preLoaderRoute: typeof AuthenticatedMainAppItemModifiersIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/app/item/inventory/': {
-      id: '/_authenticated/_main/app/item/inventory/'
-      path: '/item/inventory'
-      fullPath: '/app/item/inventory/'
-      preLoaderRoute: typeof AuthenticatedMainAppItemInventoryIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/app/item/gallery/': {
-      id: '/_authenticated/_main/app/item/gallery/'
-      path: '/item/gallery'
-      fullPath: '/app/item/gallery/'
-      preLoaderRoute: typeof AuthenticatedMainAppItemGalleryIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/app/item/discounts/': {
-      id: '/_authenticated/_main/app/item/discounts/'
-      path: '/item/discounts'
-      fullPath: '/app/item/discounts/'
-      preLoaderRoute: typeof AuthenticatedMainAppItemDiscountsIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/app/item/custom-attributes/': {
-      id: '/_authenticated/_main/app/item/custom-attributes/'
-      path: '/item/custom-attributes'
-      fullPath: '/app/item/custom-attributes/'
-      preLoaderRoute: typeof AuthenticatedMainAppItemCustomAttributesIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/app/item/categories/': {
-      id: '/_authenticated/_main/app/item/categories/'
-      path: '/item/categories'
-      fullPath: '/app/item/categories/'
-      preLoaderRoute: typeof AuthenticatedMainAppItemCategoriesIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/app/item/all/': {
-      id: '/_authenticated/_main/app/item/all/'
-      path: '/item/all'
-      fullPath: '/app/item/all/'
-      preLoaderRoute: typeof AuthenticatedMainAppItemAllIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/app/channels/pos/': {
-      id: '/_authenticated/_main/app/channels/pos/'
-      path: '/channels/pos'
-      fullPath: '/app/channels/pos/'
-      preLoaderRoute: typeof AuthenticatedMainAppChannelsPosIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAppRouteRoute
-    }
-    '/_authenticated/_main/admin/organizations/new/': {
-      id: '/_authenticated/_main/admin/organizations/new/'
-      path: '/organizations/new'
-      fullPath: '/admin/organizations/new/'
-      preLoaderRoute: typeof AuthenticatedMainAdminOrganizationsNewIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAdminRouteRoute
-    }
-    '/_authenticated/_main/admin/organizations/$organizationId/': {
-      id: '/_authenticated/_main/admin/organizations/$organizationId/'
-      path: '/organizations/$organizationId'
-      fullPath: '/admin/organizations/$organizationId/'
-      preLoaderRoute: typeof AuthenticatedMainAdminOrganizationsOrganizationIdIndexRouteImport
-      parentRoute: typeof AuthenticatedMainAdminRouteRoute
-    }
-    '/_authenticated/_main/$organizationSlug/settings/members/': {
-      id: '/_authenticated/_main/$organizationSlug/settings/members/'
-      path: '/members'
-      fullPath: '/$organizationSlug/settings/members/'
-      preLoaderRoute: typeof AuthenticatedMainOrganizationSlugSettingsMembersIndexRouteImport
+    '/_authenticated/_main/$organizationSlug/settings/billing/': {
+      id: '/_authenticated/_main/$organizationSlug/settings/billing/'
+      path: '/billing'
+      fullPath: '/$organizationSlug/settings/billing/'
+      preLoaderRoute: typeof AuthenticatedMainOrganizationSlugSettingsBillingIndexRouteImport
       parentRoute: typeof AuthenticatedMainOrganizationSlugSettingsRouteRoute
     }
     '/_authenticated/_main/$organizationSlug/settings/general/': {
@@ -1952,88 +1796,200 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedMainOrganizationSlugSettingsGeneralIndexRouteImport
       parentRoute: typeof AuthenticatedMainOrganizationSlugSettingsRouteRoute
     }
-    '/_authenticated/_main/$organizationSlug/settings/billing/': {
-      id: '/_authenticated/_main/$organizationSlug/settings/billing/'
-      path: '/billing'
-      fullPath: '/$organizationSlug/settings/billing/'
-      preLoaderRoute: typeof AuthenticatedMainOrganizationSlugSettingsBillingIndexRouteImport
+    '/_authenticated/_main/$organizationSlug/settings/members/': {
+      id: '/_authenticated/_main/$organizationSlug/settings/members/'
+      path: '/members'
+      fullPath: '/$organizationSlug/settings/members/'
+      preLoaderRoute: typeof AuthenticatedMainOrganizationSlugSettingsMembersIndexRouteImport
       parentRoute: typeof AuthenticatedMainOrganizationSlugSettingsRouteRoute
     }
-    '/_authenticated/_main/app/settings/business/locations/': {
-      id: '/_authenticated/_main/app/settings/business/locations/'
-      path: '/settings/business/locations'
-      fullPath: '/app/settings/business/locations/'
-      preLoaderRoute: typeof AuthenticatedMainAppSettingsBusinessLocationsIndexRouteImport
+    '/_authenticated/_main/admin/organizations/$organizationId/': {
+      id: '/_authenticated/_main/admin/organizations/$organizationId/'
+      path: '/organizations/$organizationId'
+      fullPath: '/admin/organizations/$organizationId/'
+      preLoaderRoute: typeof AuthenticatedMainAdminOrganizationsOrganizationIdIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAdminRouteRoute
+    }
+    '/_authenticated/_main/admin/organizations/new/': {
+      id: '/_authenticated/_main/admin/organizations/new/'
+      path: '/organizations/new'
+      fullPath: '/admin/organizations/new/'
+      preLoaderRoute: typeof AuthenticatedMainAdminOrganizationsNewIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAdminRouteRoute
+    }
+    '/_authenticated/_main/app/channels/pos/': {
+      id: '/_authenticated/_main/app/channels/pos/'
+      path: '/channels/pos'
+      fullPath: '/app/channels/pos/'
+      preLoaderRoute: typeof AuthenticatedMainAppChannelsPosIndexRouteImport
       parentRoute: typeof AuthenticatedMainAppRouteRoute
     }
-    '/_authenticated/_main/app/settings/business/info/': {
-      id: '/_authenticated/_main/app/settings/business/info/'
-      path: '/settings/business/info'
-      fullPath: '/app/settings/business/info/'
-      preLoaderRoute: typeof AuthenticatedMainAppSettingsBusinessInfoIndexRouteImport
+    '/_authenticated/_main/app/item/all/': {
+      id: '/_authenticated/_main/app/item/all/'
+      path: '/item/all'
+      fullPath: '/app/item/all/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemAllIndexRouteImport
       parentRoute: typeof AuthenticatedMainAppRouteRoute
     }
-    '/_authenticated/_main/app/settings/account/security/': {
-      id: '/_authenticated/_main/app/settings/account/security/'
-      path: '/settings/account/security'
-      fullPath: '/app/settings/account/security/'
-      preLoaderRoute: typeof AuthenticatedMainAppSettingsAccountSecurityIndexRouteImport
+    '/_authenticated/_main/app/item/categories/': {
+      id: '/_authenticated/_main/app/item/categories/'
+      path: '/item/categories'
+      fullPath: '/app/item/categories/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemCategoriesIndexRouteImport
       parentRoute: typeof AuthenticatedMainAppRouteRoute
     }
-    '/_authenticated/_main/app/settings/account/profile/': {
-      id: '/_authenticated/_main/app/settings/account/profile/'
-      path: '/settings/account/profile'
-      fullPath: '/app/settings/account/profile/'
-      preLoaderRoute: typeof AuthenticatedMainAppSettingsAccountProfileIndexRouteImport
+    '/_authenticated/_main/app/item/custom-attributes/': {
+      id: '/_authenticated/_main/app/item/custom-attributes/'
+      path: '/item/custom-attributes'
+      fullPath: '/app/item/custom-attributes/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemCustomAttributesIndexRouteImport
       parentRoute: typeof AuthenticatedMainAppRouteRoute
     }
-    '/_authenticated/_main/app/settings/account/preferences/': {
-      id: '/_authenticated/_main/app/settings/account/preferences/'
-      path: '/settings/account/preferences'
-      fullPath: '/app/settings/account/preferences/'
-      preLoaderRoute: typeof AuthenticatedMainAppSettingsAccountPreferencesIndexRouteImport
+    '/_authenticated/_main/app/item/discounts/': {
+      id: '/_authenticated/_main/app/item/discounts/'
+      path: '/item/discounts'
+      fullPath: '/app/item/discounts/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemDiscountsIndexRouteImport
       parentRoute: typeof AuthenticatedMainAppRouteRoute
     }
-    '/_authenticated/_main/app/channels/web/theme/': {
-      id: '/_authenticated/_main/app/channels/web/theme/'
-      path: '/channels/web/theme'
-      fullPath: '/app/channels/web/theme/'
-      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebThemeIndexRouteImport
+    '/_authenticated/_main/app/item/gallery/': {
+      id: '/_authenticated/_main/app/item/gallery/'
+      path: '/item/gallery'
+      fullPath: '/app/item/gallery/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemGalleryIndexRouteImport
       parentRoute: typeof AuthenticatedMainAppRouteRoute
     }
-    '/_authenticated/_main/app/channels/web/storefront/': {
-      id: '/_authenticated/_main/app/channels/web/storefront/'
-      path: '/channels/web/storefront'
-      fullPath: '/app/channels/web/storefront/'
-      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebStorefrontIndexRouteImport
+    '/_authenticated/_main/app/item/inventory/': {
+      id: '/_authenticated/_main/app/item/inventory/'
+      path: '/item/inventory'
+      fullPath: '/app/item/inventory/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemInventoryIndexRouteImport
       parentRoute: typeof AuthenticatedMainAppRouteRoute
     }
-    '/_authenticated/_main/app/channels/web/seo/': {
-      id: '/_authenticated/_main/app/channels/web/seo/'
-      path: '/channels/web/seo'
-      fullPath: '/app/channels/web/seo/'
-      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebSeoIndexRouteImport
+    '/_authenticated/_main/app/item/modifiers/': {
+      id: '/_authenticated/_main/app/item/modifiers/'
+      path: '/item/modifiers'
+      fullPath: '/app/item/modifiers/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemModifiersIndexRouteImport
       parentRoute: typeof AuthenticatedMainAppRouteRoute
     }
-    '/_authenticated/_main/app/channels/web/pages/': {
-      id: '/_authenticated/_main/app/channels/web/pages/'
-      path: '/channels/web/pages'
-      fullPath: '/app/channels/web/pages/'
-      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebPagesIndexRouteImport
+    '/_authenticated/_main/app/item/settings/': {
+      id: '/_authenticated/_main/app/item/settings/'
+      path: '/item/settings'
+      fullPath: '/app/item/settings/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemSettingsIndexRouteImport
       parentRoute: typeof AuthenticatedMainAppRouteRoute
     }
-    '/_authenticated/_main/app/channels/web/notifications/': {
-      id: '/_authenticated/_main/app/channels/web/notifications/'
-      path: '/channels/web/notifications'
-      fullPath: '/app/channels/web/notifications/'
-      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebNotificationsIndexRouteImport
+    '/_authenticated/_main/app/item/units/': {
+      id: '/_authenticated/_main/app/item/units/'
+      path: '/item/units'
+      fullPath: '/app/item/units/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemUnitsIndexRouteImport
       parentRoute: typeof AuthenticatedMainAppRouteRoute
     }
-    '/_authenticated/_main/app/channels/web/navigation/': {
-      id: '/_authenticated/_main/app/channels/web/navigation/'
-      path: '/channels/web/navigation'
-      fullPath: '/app/channels/web/navigation/'
-      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebNavigationIndexRouteImport
+    '/_authenticated/_main/app/item/variants/': {
+      id: '/_authenticated/_main/app/item/variants/'
+      path: '/item/variants'
+      fullPath: '/app/item/variants/'
+      preLoaderRoute: typeof AuthenticatedMainAppItemVariantsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/orders/partial-payments/': {
+      id: '/_authenticated/_main/app/orders/partial-payments/'
+      path: '/orders/partial-payments'
+      fullPath: '/app/orders/partial-payments/'
+      preLoaderRoute: typeof AuthenticatedMainAppOrdersPartialPaymentsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/orders/payments/': {
+      id: '/_authenticated/_main/app/orders/payments/'
+      path: '/orders/payments'
+      fullPath: '/app/orders/payments/'
+      preLoaderRoute: typeof AuthenticatedMainAppOrdersPaymentsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/orders/returns/': {
+      id: '/_authenticated/_main/app/orders/returns/'
+      path: '/orders/returns'
+      fullPath: '/app/orders/returns/'
+      preLoaderRoute: typeof AuthenticatedMainAppOrdersReturnsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/orders/shipping/': {
+      id: '/_authenticated/_main/app/orders/shipping/'
+      path: '/orders/shipping'
+      fullPath: '/app/orders/shipping/'
+      preLoaderRoute: typeof AuthenticatedMainAppOrdersShippingIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/reports/customers/': {
+      id: '/_authenticated/_main/app/reports/customers/'
+      path: '/reports/customers'
+      fullPath: '/app/reports/customers/'
+      preLoaderRoute: typeof AuthenticatedMainAppReportsCustomersIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/reports/inventory/': {
+      id: '/_authenticated/_main/app/reports/inventory/'
+      path: '/reports/inventory'
+      fullPath: '/app/reports/inventory/'
+      preLoaderRoute: typeof AuthenticatedMainAppReportsInventoryIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/reports/products/': {
+      id: '/_authenticated/_main/app/reports/products/'
+      path: '/reports/products'
+      fullPath: '/app/reports/products/'
+      preLoaderRoute: typeof AuthenticatedMainAppReportsProductsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/reports/sales/': {
+      id: '/_authenticated/_main/app/reports/sales/'
+      path: '/reports/sales'
+      fullPath: '/app/reports/sales/'
+      preLoaderRoute: typeof AuthenticatedMainAppReportsSalesIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/settings/billing/': {
+      id: '/_authenticated/_main/app/settings/billing/'
+      path: '/settings/billing'
+      fullPath: '/app/settings/billing/'
+      preLoaderRoute: typeof AuthenticatedMainAppSettingsBillingIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/settings/notifications/': {
+      id: '/_authenticated/_main/app/settings/notifications/'
+      path: '/settings/notifications'
+      fullPath: '/app/settings/notifications/'
+      preLoaderRoute: typeof AuthenticatedMainAppSettingsNotificationsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/settings/subscriptions/': {
+      id: '/_authenticated/_main/app/settings/subscriptions/'
+      path: '/settings/subscriptions'
+      fullPath: '/app/settings/subscriptions/'
+      preLoaderRoute: typeof AuthenticatedMainAppSettingsSubscriptionsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/team/members/': {
+      id: '/_authenticated/_main/app/team/members/'
+      path: '/team/members'
+      fullPath: '/app/team/members/'
+      preLoaderRoute: typeof AuthenticatedMainAppTeamMembersIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/team/permissions/': {
+      id: '/_authenticated/_main/app/team/permissions/'
+      path: '/team/permissions'
+      fullPath: '/app/team/permissions/'
+      preLoaderRoute: typeof AuthenticatedMainAppTeamPermissionsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/channels/web/checkout/': {
+      id: '/_authenticated/_main/app/channels/web/checkout/'
+      path: '/channels/web/checkout'
+      fullPath: '/app/channels/web/checkout/'
+      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebCheckoutIndexRouteImport
       parentRoute: typeof AuthenticatedMainAppRouteRoute
     }
     '/_authenticated/_main/app/channels/web/domains/': {
@@ -2043,11 +1999,95 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedMainAppChannelsWebDomainsIndexRouteImport
       parentRoute: typeof AuthenticatedMainAppRouteRoute
     }
-    '/_authenticated/_main/app/channels/web/checkout/': {
-      id: '/_authenticated/_main/app/channels/web/checkout/'
-      path: '/channels/web/checkout'
-      fullPath: '/app/channels/web/checkout/'
-      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebCheckoutIndexRouteImport
+    '/_authenticated/_main/app/channels/web/navigation/': {
+      id: '/_authenticated/_main/app/channels/web/navigation/'
+      path: '/channels/web/navigation'
+      fullPath: '/app/channels/web/navigation/'
+      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebNavigationIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/channels/web/notifications/': {
+      id: '/_authenticated/_main/app/channels/web/notifications/'
+      path: '/channels/web/notifications'
+      fullPath: '/app/channels/web/notifications/'
+      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebNotificationsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/channels/web/pages/': {
+      id: '/_authenticated/_main/app/channels/web/pages/'
+      path: '/channels/web/pages'
+      fullPath: '/app/channels/web/pages/'
+      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebPagesIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/channels/web/seo/': {
+      id: '/_authenticated/_main/app/channels/web/seo/'
+      path: '/channels/web/seo'
+      fullPath: '/app/channels/web/seo/'
+      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebSeoIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/channels/web/storefront/': {
+      id: '/_authenticated/_main/app/channels/web/storefront/'
+      path: '/channels/web/storefront'
+      fullPath: '/app/channels/web/storefront/'
+      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebStorefrontIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/channels/web/theme/': {
+      id: '/_authenticated/_main/app/channels/web/theme/'
+      path: '/channels/web/theme'
+      fullPath: '/app/channels/web/theme/'
+      preLoaderRoute: typeof AuthenticatedMainAppChannelsWebThemeIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/settings/account/preferences/': {
+      id: '/_authenticated/_main/app/settings/account/preferences/'
+      path: '/settings/account/preferences'
+      fullPath: '/app/settings/account/preferences/'
+      preLoaderRoute: typeof AuthenticatedMainAppSettingsAccountPreferencesIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/settings/account/profile/': {
+      id: '/_authenticated/_main/app/settings/account/profile/'
+      path: '/settings/account/profile'
+      fullPath: '/app/settings/account/profile/'
+      preLoaderRoute: typeof AuthenticatedMainAppSettingsAccountProfileIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/settings/account/security/': {
+      id: '/_authenticated/_main/app/settings/account/security/'
+      path: '/settings/account/security'
+      fullPath: '/app/settings/account/security/'
+      preLoaderRoute: typeof AuthenticatedMainAppSettingsAccountSecurityIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/settings/business/info/': {
+      id: '/_authenticated/_main/app/settings/business/info/'
+      path: '/settings/business/info'
+      fullPath: '/app/settings/business/info/'
+      preLoaderRoute: typeof AuthenticatedMainAppSettingsBusinessInfoIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/settings/business/locations/': {
+      id: '/_authenticated/_main/app/settings/business/locations/'
+      path: '/settings/business/locations'
+      fullPath: '/app/settings/business/locations/'
+      preLoaderRoute: typeof AuthenticatedMainAppSettingsBusinessLocationsIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/settings/business/locations/$branchId/': {
+      id: '/_authenticated/_main/app/settings/business/locations/$branchId/'
+      path: '/settings/business/locations/$branchId'
+      fullPath: '/app/settings/business/locations/$branchId/'
+      preLoaderRoute: typeof AuthenticatedMainAppSettingsBusinessLocationsBranchIdIndexRouteImport
+      parentRoute: typeof AuthenticatedMainAppRouteRoute
+    }
+    '/_authenticated/_main/app/settings/business/locations/new/': {
+      id: '/_authenticated/_main/app/settings/business/locations/new/'
+      path: '/settings/business/locations/new'
+      fullPath: '/app/settings/business/locations/new/'
+      preLoaderRoute: typeof AuthenticatedMainAppSettingsBusinessLocationsNewIndexRouteImport
       parentRoute: typeof AuthenticatedMainAppRouteRoute
     }
   }
@@ -2122,6 +2162,8 @@ interface AuthenticatedMainAppRouteRouteChildren {
   AuthenticatedMainAppSettingsAccountSecurityIndexRoute: typeof AuthenticatedMainAppSettingsAccountSecurityIndexRoute
   AuthenticatedMainAppSettingsBusinessInfoIndexRoute: typeof AuthenticatedMainAppSettingsBusinessInfoIndexRoute
   AuthenticatedMainAppSettingsBusinessLocationsIndexRoute: typeof AuthenticatedMainAppSettingsBusinessLocationsIndexRoute
+  AuthenticatedMainAppSettingsBusinessLocationsBranchIdIndexRoute: typeof AuthenticatedMainAppSettingsBusinessLocationsBranchIdIndexRoute
+  AuthenticatedMainAppSettingsBusinessLocationsNewIndexRoute: typeof AuthenticatedMainAppSettingsBusinessLocationsNewIndexRoute
 }
 
 const AuthenticatedMainAppRouteRouteChildren: AuthenticatedMainAppRouteRouteChildren =
@@ -2208,6 +2250,10 @@ const AuthenticatedMainAppRouteRouteChildren: AuthenticatedMainAppRouteRouteChil
       AuthenticatedMainAppSettingsBusinessInfoIndexRoute,
     AuthenticatedMainAppSettingsBusinessLocationsIndexRoute:
       AuthenticatedMainAppSettingsBusinessLocationsIndexRoute,
+    AuthenticatedMainAppSettingsBusinessLocationsBranchIdIndexRoute:
+      AuthenticatedMainAppSettingsBusinessLocationsBranchIdIndexRoute,
+    AuthenticatedMainAppSettingsBusinessLocationsNewIndexRoute:
+      AuthenticatedMainAppSettingsBusinessLocationsNewIndexRoute,
   }
 
 const AuthenticatedMainAppRouteRouteWithChildren =
