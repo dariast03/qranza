@@ -93,7 +93,7 @@ async function createBranch(
 	db: NodePgDatabase<Record<string, never>>,
 	orgId: string,
 	countryCode: string,
-	currencyCode: string,
+	_currencyCode: string,
 	isDefault: boolean,
 	brandingId?: string,
 ) {
@@ -104,7 +104,6 @@ async function createBranch(
 			organizationId: orgId,
 			brandingId: brandingId ?? null,
 			name,
-			slug: slugify(name),
 			type: "PHYSICAL",
 			status: "ACTIVE",
 			isDefault,
@@ -115,8 +114,6 @@ async function createBranch(
 			longitude: String(faker.location.longitude({ min: -180, max: 180 })),
 			phone: faker.phone.number(),
 			email: faker.internet.email(),
-			timezone: "America/La_Paz",
-			currencyCode,
 			socialLinks: {},
 			createdAt: new Date(),
 		})

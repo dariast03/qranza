@@ -726,7 +726,129 @@
 				"dangerZone": "Zona de peligro"
 			}
 		},
-		"save": "Guardar"
+		"save": "Guardar",
+		"branches": {
+			"title": "Sucursales",
+			"description": "Gestiona las ubicaciones de tu negocio.",
+			"empty": "No hay sucursales registradas.",
+			"emptyDescription": "Crea tu primera sucursal para comenzar a gestionar tu negocio.",
+			"create": "Nueva sucursal",
+			"edit": "Editar",
+			"delete": "Eliminar",
+			"restore": "Restaurar",
+			"search": "Buscar sucursales...",
+			"actions": {
+				"back": "Volver"
+			},
+			"sections": {
+				"details": "Detalles de la sucursal"
+			},
+			"confirmDelete": {
+				"title": "Eliminar sucursal",
+				"message": "¿Estás seguro de que deseas eliminar esta sucursal? Esta acción no se puede deshacer.",
+				"confirm": "Eliminar"
+			},
+			"columns": {
+				"name": "Nombre",
+				"type": "Tipo",
+				"status": "Estado",
+				"city": "Ciudad",
+				"phone": "Teléfono",
+				"email": "Correo",
+				"actions": "Acciones"
+			},
+			"type": {
+				"PHYSICAL": "Física",
+				"VIRTUAL": "Virtual"
+			},
+			"status": {
+				"ACTIVE": "Activa",
+				"ARCHIVED": "Archivada"
+			},
+			"notifications": {
+				"created": "Sucursal creada correctamente.",
+				"updated": "Sucursal actualizada correctamente.",
+				"deleted": "Sucursal eliminada correctamente.",
+				"restored": "Sucursal restaurada correctamente.",
+				"error": "Ocurrió un error. Por favor, inténtalo de nuevo."
+			},
+			"form": {
+				"createTitle": "Crear sucursal",
+				"createSubtitle": "Configura una nueva ubicación para tu negocio.",
+				"editTitle": "Editar sucursal",
+				"editSubtitle": "Actualiza la información de esta ubicación.",
+				"sections": {
+					"basic": "Información básica",
+					"branding": "Imagen de marca",
+					"location": "Contacto y ubicación"
+				},
+				"actions": {
+					"create": "Crear sucursal",
+					"save": "Guardar cambios",
+					"cancel": "Cancelar"
+				},
+				"fields": {
+					"name": {
+						"label": "Nombre",
+						"description": "El nombre que se muestra en toda la aplicación.",
+						"placeholder": "Sucursal centro"
+					},
+					"brandingId": {
+						"label": "Imagen de marca",
+						"description": "Identidad visual opcional aplicada a esta ubicación.",
+						"placeholder": "Selecciona una marca",
+						"none": "Sin marca"
+					},
+					"address": {
+						"label": "Dirección",
+						"description": "Dirección física de la sucursal.",
+						"placeholder": "Av. Reforma 123, Local 4"
+					},
+					"city": {
+						"label": "Ciudad",
+						"placeholder": "Ciudad de México"
+					},
+					"countryCode": {
+						"label": "País",
+						"description": "Código de país ISO de dos letras.",
+						"placeholder": "MX"
+					},
+					"phone": {
+						"label": "Teléfono",
+						"placeholder": "+52 55 5555 5555"
+					},
+					"email": {
+						"label": "Correo",
+						"description": "Correo público de contacto para esta sucursal.",
+						"placeholder": "sucursal@ejemplo.com"
+					},
+					"website": {
+						"label": "Sitio web",
+						"description": "Debe ser una URL válida (https://…).",
+						"placeholder": "https://ejemplo.com"
+					}
+				},
+				"schedule": {
+					"title": "Horario de atención",
+					"description": "Configura los horarios de apertura para cada día de la semana. Añade tantos bloques como necesites y se ordenarán automáticamente.",
+					"addSlot": "Añadir horario",
+					"days": {
+						"MONDAY": "Lunes",
+						"TUESDAY": "Martes",
+						"WEDNESDAY": "Miércoles",
+						"THURSDAY": "Jueves",
+						"FRIDAY": "Viernes",
+						"SATURDAY": "Sábado",
+						"SUNDAY": "Domingo"
+					},
+					"opensAt": "Abre a las",
+					"closesAt": "Cierra a las",
+					"to": "a",
+					"closed": "Cerrado",
+					"remove": "Eliminar"
+				}
+			}
+		}
 	},
 	"start": {
 		"subtitle": "Consulta las últimas estadísticas de tu negocio.",

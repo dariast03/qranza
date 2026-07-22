@@ -626,7 +626,129 @@
 				"dangerZone": "Zone de danger"
 			}
 		},
-		"save": "Enregistrer"
+		"save": "Enregistrer",
+		"branches": {
+			"title": "Emplacements",
+			"description": "Gérez les emplacements de votre entreprise.",
+			"empty": "Aucun emplacement enregistré.",
+			"emptyDescription": "Créez votre premier emplacement pour commencer à gérer votre activité.",
+			"create": "Nouvel emplacement",
+			"edit": "Modifier",
+			"delete": "Supprimer",
+			"restore": "Restaurer",
+			"search": "Rechercher des emplacements...",
+			"actions": {
+				"back": "Retour"
+			},
+			"sections": {
+				"details": "Détails de l'emplacement"
+			},
+			"confirmDelete": {
+				"title": "Supprimer l'emplacement",
+				"message": "Êtes-vous sûr de vouloir supprimer cet emplacement ? Cette action est irréversible.",
+				"confirm": "Supprimer"
+			},
+			"columns": {
+				"name": "Nom",
+				"type": "Type",
+				"status": "Statut",
+				"city": "Ville",
+				"phone": "Téléphone",
+				"email": "E-mail",
+				"actions": "Actions"
+			},
+			"type": {
+				"PHYSICAL": "Physique",
+				"VIRTUAL": "Virtuel"
+			},
+			"status": {
+				"ACTIVE": "Actif",
+				"ARCHIVED": "Archivé"
+			},
+			"notifications": {
+				"created": "Emplacement créé avec succès.",
+				"updated": "Emplacement mis à jour avec succès.",
+				"deleted": "Emplacement supprimé avec succès.",
+				"restored": "Emplacement restauré avec succès.",
+				"error": "Une erreur s'est produite. Veuillez réessayer."
+			},
+			"form": {
+				"createTitle": "Créer un emplacement",
+				"createSubtitle": "Configurez une nouvelle succursale pour votre entreprise.",
+				"editTitle": "Modifier l'emplacement",
+				"editSubtitle": "Mettez à jour les informations de cet emplacement.",
+				"sections": {
+					"basic": "Informations de base",
+					"branding": "Identité visuelle",
+					"location": "Contact et emplacement"
+				},
+				"actions": {
+					"create": "Créer l'emplacement",
+					"save": "Enregistrer les modifications",
+					"cancel": "Annuler"
+				},
+				"fields": {
+					"name": {
+						"label": "Nom",
+						"description": "Le nom affiché dans toute l'application.",
+						"placeholder": "Boutique du centre-ville"
+					},
+					"brandingId": {
+						"label": "Identité visuelle",
+						"description": "Identité visuelle optionnelle appliquée à cet emplacement.",
+						"placeholder": "Sélectionnez une identité",
+						"none": "Aucune identité"
+					},
+					"address": {
+						"label": "Adresse",
+						"description": "Adresse postale de l'emplacement.",
+						"placeholder": "12 rue de la Paix, Local 4"
+					},
+					"city": {
+						"label": "Ville",
+						"placeholder": "Paris"
+					},
+					"countryCode": {
+						"label": "Pays",
+						"description": "Code pays ISO à deux lettres.",
+						"placeholder": "FR"
+					},
+					"phone": {
+						"label": "Téléphone",
+						"placeholder": "+33 1 23 45 67 89"
+					},
+					"email": {
+						"label": "E-mail",
+						"description": "E-mail de contact public pour cet emplacement.",
+						"placeholder": "boutique@exemple.com"
+					},
+					"website": {
+						"label": "Site web",
+						"description": "Doit être une URL valide (https://…).",
+						"placeholder": "https://exemple.com"
+					}
+				},
+				"schedule": {
+					"title": "Horaires d'ouverture",
+					"description": "Configurez les horaires d'ouverture pour chaque jour de la semaine. Ajoutez autant de créneaux que nécessaire, ils seront triés automatiquement.",
+					"addSlot": "Ajouter un créneau",
+					"days": {
+						"MONDAY": "Lundi",
+						"TUESDAY": "Mardi",
+						"WEDNESDAY": "Mercredi",
+						"THURSDAY": "Jeudi",
+						"FRIDAY": "Vendredi",
+						"SATURDAY": "Samedi",
+						"SUNDAY": "Dimanche"
+					},
+					"opensAt": "Ouvre à",
+					"closesAt": "Ferme à",
+					"to": "à",
+					"closed": "Fermé",
+					"remove": "Supprimer"
+				}
+			}
+		}
 	},
 	"start": {
 		"subtitle": "Consultez les dernières statistiques de votre entreprise.",

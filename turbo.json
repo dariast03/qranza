@@ -2,7 +2,6 @@
 	"$schema": "https://v2-9-15.turborepo.dev/schema.json",
 	"globalDependencies": ["**/.env.*local", ".env"],
 	"globalEnv": ["*"],
-	"ui": "tui",
 	"tasks": {
 		"build": {
 			"dependsOn": ["^generate", "^build"],

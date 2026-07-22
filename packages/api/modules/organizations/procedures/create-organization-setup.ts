@@ -10,13 +10,6 @@ import { z } from "zod";
 
 import { protectedProcedure } from "../../../orpc/procedures";
 
-function slugify(text: string): string {
-	return text
-		.toLowerCase()
-		.replace(/[^a-z0-9]+/g, "-")
-		.replace(/(^-|-$)/g, "");
-}
-
 export const createOrganizationSetup = protectedProcedure
 	.route({
 		method: "POST",
@@ -84,17 +77,11 @@ export const createOrganizationSetup = protectedProcedure
 		});
 
 		// Create default branch
-		const branchSlug = slugify(name);
 		await createBranch({
 			organizationId: organization.id,
 			name,
-			slug: branchSlug,
-			type: "PHYSICAL",
-			status: "ACTIVE",
 			isDefault: true,
 			countryCode,
-			timezone: timezone ?? "America/La_Paz",
-			currencyCode,
 			city: city ?? null,
 			socialLinks: {},
 		});

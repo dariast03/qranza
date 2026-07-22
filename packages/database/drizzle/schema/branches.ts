@@ -11,7 +11,7 @@ import {
 	uniqueIndex,
 } from "drizzle-orm/pg-core";
 
-import { baseColumns, country, currency, softDeleteColumns } from "./base";
+import { baseColumns, country, softDeleteColumns } from "./base";
 import { user } from "./auth";
 import { organization } from "./organizations";
 
@@ -35,7 +35,6 @@ export const branch = pgTable(
 			onDelete: "set null",
 		}),
 		name: text("name").notNull(),
-		slug: text("slug").notNull(),
 		type: branchTypeEnum("type").default("PHYSICAL").notNull(),
 		status: branchStatusEnum("status").default("ACTIVE").notNull(),
 		isDefault: boolean("isDefault").default(false).notNull(),
@@ -56,17 +55,9 @@ export const branch = pgTable(
 			.default({})
 			.notNull(),
 
-		timezone: text("timezone"),
-		currencyCode: text("currencyCode").references(() => currency.code, {
-			onDelete: "set null",
-		}),
 		...baseColumns,
 	},
 	(table) => [
-		uniqueIndex("branch_org_slug_uidx").on(
-			table.organizationId,
-			table.slug,
-		),
 		index("branch_organizationId_idx").on(table.organizationId),
 		index("branch_countryCode_idx").on(table.countryCode),
 		uniqueIndex("branch_org_default_uidx")
@@ -87,10 +78,6 @@ export const branchRelations = relations(branch, ({ one }) => ({
 	country: one(country, {
 		fields: [branch.countryCode],
 		references: [country.code],
-	}),
-	currency: one(currency, {
-		fields: [branch.currencyCode],
-		references: [currency.code],
 	}),
 	deletedBy: one(user, {
 		fields: [branch.deletedById],

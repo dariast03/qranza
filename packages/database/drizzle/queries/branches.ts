@@ -1,12 +1,82 @@
-import { and, eq } from "drizzle-orm";
+import { and, eq, ilike, or, sql, desc, asc } from "drizzle-orm";
 import { betterClient, db } from "../client";
 import * as schema from "../schema";
 
-export async function getBranchesByOrganizationId(organizationId: string) {
-	return betterClient.branch.findMany({
-		where: { organizationId },
-		orderBy: [{ isDefault: "asc" }, { name: "asc" }],
-	});
+type BranchSortField = "name" | "type" | "status" | "city" | "createdAt";
+
+export type BranchListParams = {
+	organizationId: string;
+	limit?: number;
+	offset?: number;
+	query?: string;
+	sort?: {
+		field: BranchSortField;
+		direction: "asc" | "desc";
+	};
+};
+
+export async function getBranchesByOrganizationId(params: BranchListParams) {
+	const { organizationId, limit = 10, offset = 0, query, sort } = params;
+
+	const conditions = [eq(schema.branch.organizationId, organizationId)];
+
+	if (query) {
+		const searchPattern = `%${query}%`;
+		conditions.push(
+			or(
+				ilike(schema.branch.name, searchPattern),
+				ilike(schema.branch.city, searchPattern),
+				ilike(schema.branch.email, searchPattern),
+			)!,
+		);
+	}
+
+	const sortColumn = sort?.field === "city"
+		? schema.branch.city
+		: sort?.field === "name"
+			? schema.branch.name
+			: sort?.field === "type"
+				? schema.branch.type
+				: sort?.field === "status"
+					? schema.branch.status
+					: schema.branch.createdAt;
+
+	const sortFn = sort?.direction === "desc" ? desc : asc;
+
+	const rows = await db
+		.select()
+		.from(schema.branch)
+		.where(and(...conditions))
+		.orderBy(sort?.field === "name" ? sortFn(sortColumn) : sortFn(sortColumn))
+		.limit(limit)
+		.offset(offset);
+
+	return rows;
+}
+
+export async function countBranchesByOrganizationId(
+	organizationId: string,
+	query?: string,
+) {
+	const conditions = [eq(schema.branch.organizationId, organizationId)];
+
+	if (query) {
+		const searchPattern = `%${query}%`;
+		conditions.push(
+			or(
+				ilike(schema.branch.name, searchPattern),
+				ilike(schema.branch.city, searchPattern),
+				ilike(schema.branch.email, searchPattern),
+			)!,
+		);
+	}
+
+	const [result] = await db
+		.select({ count: sql<number>`count(*)::int` })
+		.from(schema.branch)
+		.where(and(...conditions));
+
+	return result.count;
 }
 
 export async function getBranchById(id: string) {
@@ -15,7 +85,6 @@ export async function getBranchById(id: string) {
 		include: {
 			organization: true,
 			country: true,
-			currency: true,
 			branding: true,
 		},
 	});
@@ -27,7 +96,6 @@ export async function getBranchById(id: string) {
 			and(eq(s.schedulableType, "BRANCH"), eq(s.schedulableId, id)),
 		with: {
 			weeklySlots: true,
-			exceptions: true,
 		},
 	});
 
@@ -40,35 +108,17 @@ export async function getDefaultBranchByOrganizationId(organizationId: string) {
 	});
 }
 
-export async function getBranchBySlug(organizationId: string, slug: string) {
-	return betterClient.branch.findFirst({
-		where: { organizationId, slug },
-	});
-}
-
 type DayOfWeek = "MONDAY" | "TUESDAY" | "WEDNESDAY" | "THURSDAY" | "FRIDAY" | "SATURDAY" | "SUNDAY";
 
 type WeeklySlotInput = {
 	dayOfWeek: DayOfWeek;
 	opensAt: string;
 	closesAt: string;
-	closesNextDay?: boolean;
-};
-
-type ExceptionInput = {
-	date: string;
-	isClosed?: boolean;
-	opensAt?: string | null;
-	closesAt?: string | null;
-	reason?: string | null;
 };
 
 export async function createBranch({
 	organizationId,
 	name,
-	slug,
-	type = "PHYSICAL",
-	status = "ACTIVE",
 	isDefault = false,
 	address,
 	city,
@@ -77,16 +127,11 @@ export async function createBranch({
 	email,
 	website,
 	socialLinks,
-	timezone,
-	currencyCode,
 	brandingId,
 	schedule,
 }: {
 	organizationId: string;
 	name: string;
-	slug: string;
-	type?: "PHYSICAL" | "VIRTUAL";
-	status?: "ACTIVE" | "ARCHIVED";
 	isDefault?: boolean;
 	address?: string | null;
 	city?: string | null;
@@ -95,12 +140,9 @@ export async function createBranch({
 	email?: string | null;
 	website?: string | null;
 	socialLinks?: Record<string, string>;
-	timezone?: string | null;
-	currencyCode?: string | null;
 	brandingId?: string | null;
 	schedule?: {
 		weeklySlots?: WeeklySlotInput[];
-		exceptions?: ExceptionInput[];
 	};
 }) {
 	return db.transaction(async (tx) => {
@@ -110,9 +152,6 @@ export async function createBranch({
 				organizationId,
 				brandingId: brandingId ?? null,
 				name,
-				slug,
-				type,
-				status,
 				isDefault,
 				address: address ?? null,
 				city: city ?? null,
@@ -121,8 +160,6 @@ export async function createBranch({
 				email: email ?? null,
 				website: website ?? null,
 				socialLinks: socialLinks ?? {},
-				timezone: timezone ?? null,
-				currencyCode: currencyCode ?? null,
 			})
 			.returning({ id: schema.branch.id });
 
@@ -142,20 +179,7 @@ export async function createBranch({
 					dayOfWeek: slot.dayOfWeek,
 					opensAt: slot.opensAt,
 					closesAt: slot.closesAt,
-					closesNextDay: slot.closesNextDay ?? false,
-				})),
-			);
-		}
-
-		if (schedule?.exceptions?.length) {
-			await tx.insert(schema.scheduleException).values(
-				schedule.exceptions.map((exc) => ({
-					scheduleId,
-					date: exc.date,
-					isClosed: exc.isClosed ?? true,
-					opensAt: exc.opensAt ?? null,
-					closesAt: exc.closesAt ?? null,
-					reason: exc.reason ?? null,
+					closesNextDay: false,
 				})),
 			);
 		}
@@ -168,9 +192,6 @@ export async function updateBranch(
 	id: string,
 	data: {
 		name?: string;
-		slug?: string;
-		type?: "PHYSICAL" | "VIRTUAL";
-		status?: "ACTIVE" | "ARCHIVED";
 		isDefault?: boolean;
 		address?: string | null;
 		city?: string | null;
@@ -179,13 +200,10 @@ export async function updateBranch(
 		email?: string | null;
 		website?: string | null;
 		socialLinks?: Record<string, string>;
-		timezone?: string | null;
-		currencyCode?: string | null;
 		brandingId?: string | null;
 	},
 	schedule?: {
 		weeklySlots?: WeeklySlotInput[];
-		exceptions?: ExceptionInput[];
 	},
 ) {
 	return db.transaction(async (tx) => {
@@ -213,26 +231,7 @@ export async function updateBranch(
 								dayOfWeek: slot.dayOfWeek,
 								opensAt: slot.opensAt,
 								closesAt: slot.closesAt,
-								closesNextDay: slot.closesNextDay ?? false,
-							})),
-						);
-					}
-				}
-
-				if (schedule.exceptions) {
-					await tx
-						.delete(schema.scheduleException)
-						.where(eq(schema.scheduleException.scheduleId, existingSchedule.id));
-
-					if (schedule.exceptions.length) {
-						await tx.insert(schema.scheduleException).values(
-							schedule.exceptions.map((exc) => ({
-								scheduleId: existingSchedule.id,
-								date: exc.date,
-								isClosed: exc.isClosed ?? true,
-								opensAt: exc.opensAt ?? null,
-								closesAt: exc.closesAt ?? null,
-								reason: exc.reason ?? null,
+								closesNextDay: false,
 							})),
 						);
 					}

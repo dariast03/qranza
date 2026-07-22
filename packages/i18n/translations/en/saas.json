@@ -732,7 +732,129 @@
 				"dangerZone": "Danger zone"
 			}
 		},
-		"save": "Save"
+		"save": "Save",
+		"branches": {
+			"title": "Locations",
+			"description": "Manage your business locations.",
+			"empty": "No locations registered.",
+			"emptyDescription": "Create your first location to start managing your business.",
+			"create": "New location",
+			"edit": "Edit",
+			"delete": "Delete",
+			"restore": "Restore",
+			"search": "Search locations...",
+			"actions": {
+				"back": "Back"
+			},
+			"sections": {
+				"details": "Location details"
+			},
+			"confirmDelete": {
+				"title": "Delete location",
+				"message": "Are you sure you want to delete this location? This action cannot be undone.",
+				"confirm": "Delete"
+			},
+			"columns": {
+				"name": "Name",
+				"type": "Type",
+				"status": "Status",
+				"city": "City",
+				"phone": "Phone",
+				"email": "Email",
+				"actions": "Actions"
+			},
+			"type": {
+				"PHYSICAL": "Physical",
+				"VIRTUAL": "Virtual"
+			},
+			"status": {
+				"ACTIVE": "Active",
+				"ARCHIVED": "Archived"
+			},
+			"notifications": {
+				"created": "Location created successfully.",
+				"updated": "Location updated successfully.",
+				"deleted": "Location deleted successfully.",
+				"restored": "Location restored successfully.",
+				"error": "An error occurred. Please try again."
+			},
+			"form": {
+				"createTitle": "Create location",
+				"createSubtitle": "Set up a new branch for your business.",
+				"editTitle": "Edit location",
+				"editSubtitle": "Update the information of this location.",
+				"sections": {
+					"basic": "Basic information",
+					"branding": "Branding",
+					"location": "Contact & location"
+				},
+				"actions": {
+					"create": "Create location",
+					"save": "Save changes",
+					"cancel": "Cancel"
+				},
+				"fields": {
+					"name": {
+						"label": "Name",
+						"description": "The display name shown across the app.",
+						"placeholder": "Main street store"
+					},
+					"brandingId": {
+						"label": "Branding",
+						"description": "Optional visual identity applied to this location.",
+						"placeholder": "Select a branding",
+						"none": "No branding"
+					},
+					"address": {
+						"label": "Address",
+						"description": "Street address of the location.",
+						"placeholder": "123 Main St, Suite 4"
+					},
+					"city": {
+						"label": "City",
+						"placeholder": "New York"
+					},
+					"countryCode": {
+						"label": "Country",
+						"description": "Two-letter ISO country code.",
+						"placeholder": "US"
+					},
+					"phone": {
+						"label": "Phone",
+						"placeholder": "+1 555 0100"
+					},
+					"email": {
+						"label": "Email",
+						"description": "Public contact email for this location.",
+						"placeholder": "store@example.com"
+					},
+					"website": {
+						"label": "Website",
+						"description": "Must be a valid URL (https://…).",
+						"placeholder": "https://example.com"
+					}
+				},
+				"schedule": {
+					"title": "Opening hours",
+					"description": "Configure the opening hours for each day of the week. Add as many slots as you need and they will be sorted automatically.",
+					"addSlot": "Add slot",
+					"days": {
+						"MONDAY": "Monday",
+						"TUESDAY": "Tuesday",
+						"WEDNESDAY": "Wednesday",
+						"THURSDAY": "Thursday",
+						"FRIDAY": "Friday",
+						"SATURDAY": "Saturday",
+						"SUNDAY": "Sunday"
+					},
+					"opensAt": "Opens at",
+					"closesAt": "Closes at",
+					"to": "to",
+					"closed": "Closed",
+					"remove": "Remove"
+				}
+			}
+		}
 	},
 	"start": {
 		"subtitle": "See the latest stats of your awesome business.",

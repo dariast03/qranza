@@ -628,7 +628,129 @@
 				"dangerZone": "Gefahrenzone"
 			}
 		},
-		"save": "Speichern"
+		"save": "Speichern",
+		"branches": {
+			"title": "Standorte",
+			"description": "Verwalte die Standorte deines Unternehmens.",
+			"empty": "Keine Standorte erfasst.",
+			"emptyDescription": "Erstelle deinen ersten Standort, um dein Unternehmen zu verwalten.",
+			"create": "Neuer Standort",
+			"edit": "Bearbeiten",
+			"delete": "Löschen",
+			"restore": "Wiederherstellen",
+			"search": "Standorte suchen...",
+			"actions": {
+				"back": "Zurück"
+			},
+			"sections": {
+				"details": "Standortdetails"
+			},
+			"confirmDelete": {
+				"title": "Standort löschen",
+				"message": "Bist du sicher, dass du diesen Standort löschen möchtest? Diese Aktion kann nicht rückgängig gemacht werden.",
+				"confirm": "Löschen"
+			},
+			"columns": {
+				"name": "Name",
+				"type": "Typ",
+				"status": "Status",
+				"city": "Stadt",
+				"phone": "Telefon",
+				"email": "E-Mail",
+				"actions": "Aktionen"
+			},
+			"type": {
+				"PHYSICAL": "Physisch",
+				"VIRTUAL": "Virtuell"
+			},
+			"status": {
+				"ACTIVE": "Aktiv",
+				"ARCHIVED": "Archiviert"
+			},
+			"notifications": {
+				"created": "Standort erfolgreich erstellt.",
+				"updated": "Standort erfolgreich aktualisiert.",
+				"deleted": "Standort erfolgreich gelöscht.",
+				"restored": "Standort erfolgreich wiederhergestellt.",
+				"error": "Ein Fehler ist aufgetreten. Bitte versuche es erneut."
+			},
+			"form": {
+				"createTitle": "Standort erstellen",
+				"createSubtitle": "Richte eine neue Filiale für dein Unternehmen ein.",
+				"editTitle": "Standort bearbeiten",
+				"editSubtitle": "Aktualisiere die Informationen dieses Standorts.",
+				"sections": {
+					"basic": "Grundinformationen",
+					"branding": "Markenidentität",
+					"location": "Kontakt & Standort"
+				},
+				"actions": {
+					"create": "Standort erstellen",
+					"save": "Änderungen speichern",
+					"cancel": "Abbrechen"
+				},
+				"fields": {
+					"name": {
+						"label": "Name",
+						"description": "Der Anzeigename in der gesamten App.",
+						"placeholder": "Hauptfiliale"
+					},
+					"brandingId": {
+						"label": "Markenidentität",
+						"description": "Optionale visuelle Identität für diesen Standort.",
+						"placeholder": "Marke auswählen",
+						"none": "Keine Marke"
+					},
+					"address": {
+						"label": "Adresse",
+						"description": "Postadresse des Standorts.",
+						"placeholder": "Hauptstraße 12, Lokal 4"
+					},
+					"city": {
+						"label": "Stadt",
+						"placeholder": "Berlin"
+					},
+					"countryCode": {
+						"label": "Land",
+						"description": "ISO-Ländercode (zwei Buchstaben).",
+						"placeholder": "DE"
+					},
+					"phone": {
+						"label": "Telefon",
+						"placeholder": "+49 30 12345678"
+					},
+					"email": {
+						"label": "E-Mail",
+						"description": "Öffentliche Kontakt-E-Mail für diesen Standort.",
+						"placeholder": "filiale@beispiel.de"
+					},
+					"website": {
+						"label": "Webseite",
+						"description": "Muss eine gültige URL sein (https://…).",
+						"placeholder": "https://beispiel.de"
+					}
+				},
+				"schedule": {
+					"title": "Öffnungszeiten",
+					"description": "Konfiguriere die Öffnungszeiten für jeden Wochentag. Füge so viele Zeitfenster hinzu, wie du brauchst – sie werden automatisch sortiert.",
+					"addSlot": "Zeitfenster hinzufügen",
+					"days": {
+						"MONDAY": "Montag",
+						"TUESDAY": "Dienstag",
+						"WEDNESDAY": "Mittwoch",
+						"THURSDAY": "Donnerstag",
+						"FRIDAY": "Freitag",
+						"SATURDAY": "Samstag",
+						"SUNDAY": "Sonntag"
+					},
+					"opensAt": "Öffnet um",
+					"closesAt": "Schließt um",
+					"to": "bis",
+					"closed": "Geschlossen",
+					"remove": "Entfernen"
+				}
+			}
+		}
 	},
 	"start": {
 		"subtitle": "Sieh dir die neuesten Statistiken über dein großartiges Unternehmen an.",

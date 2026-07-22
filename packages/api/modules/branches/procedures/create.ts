@@ -18,15 +18,6 @@ const slotSchema = z.object({
 	dayOfWeek: dayOfWeekEnum,
 	opensAt: z.string(),
 	closesAt: z.string(),
-	closesNextDay: z.boolean().optional(),
-});
-
-const exceptionSchema = z.object({
-	date: z.string(),
-	isClosed: z.boolean().optional(),
-	opensAt: z.string().nullable().optional(),
-	closesAt: z.string().nullable().optional(),
-	reason: z.string().nullable().optional(),
 });
 
 export const create = organizationProcedure
@@ -41,9 +32,6 @@ export const create = organizationProcedure
 	.input(
 		z.object({
 			name: z.string().min(1).max(100),
-			slug: z.string().min(1).max(100),
-			type: z.enum(["PHYSICAL", "VIRTUAL"]).optional(),
-			status: z.enum(["ACTIVE", "ARCHIVED"]).optional(),
 			address: z.string().nullable().optional(),
 			city: z.string().nullable().optional(),
 			countryCode: z.string().nullable().optional(),
@@ -51,13 +39,10 @@ export const create = organizationProcedure
 			email: z.string().nullable().optional(),
 			website: z.string().nullable().optional(),
 			socialLinks: z.record(z.string(), z.string()).optional(),
-			timezone: z.string().nullable().optional(),
-			currencyCode: z.string().nullable().optional(),
 			brandingId: z.string().nullable().optional(),
 			schedule: z
 				.object({
 					weeklySlots: z.array(slotSchema).optional(),
-					exceptions: z.array(exceptionSchema).optional(),
 				})
 				.optional(),
 		}),
