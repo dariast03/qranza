@@ -25,6 +25,9 @@ import { ThemeBootScript } from "@shared/scripts/theme-boot";
 import { PreferencesStoreProvider } from "@shared/stores/preferences/preferences-provider";
 import { NotFound } from "./-components/not-found";
 import { RootError } from "./-components/root-error";
+import { TanStackDevtools } from "@tanstack/react-devtools";
+import { ReactQueryDevtoolsPanel } from "@tanstack/react-query-devtools";
+import { formDevtoolsPlugin } from "@tanstack/react-form-devtools";
 
 export const Route = createRootRoute({
 	head: () => ({
@@ -99,6 +102,18 @@ function RootLayout() {
 									>
 										<Outlet />
 										<Toaster position="top-right" />
+
+										<TanStackDevtools
+											plugins={[
+												{
+													name: "TanStack Query",
+													render: (
+														<ReactQueryDevtoolsPanel />
+													),
+												},
+												formDevtoolsPlugin(),
+											]}
+										/>
 									</PreferencesStoreProvider>
 								</I18nProvider>
 							</ClientProviders>

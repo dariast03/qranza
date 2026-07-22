@@ -17,6 +17,7 @@
 			"@ai/*": ["./modules/ai/*"],
 			"@onboarding/*": ["./modules/onboarding/*"],
 			"@shared/*": ["./modules/shared/*"],
+			"@routes/*": ["./routes/*"],
 			"@server/*": ["./src/server/*"],
 			"@scripts/*": ["./src/scripts/*"],
 		},

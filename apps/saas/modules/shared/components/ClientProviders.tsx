@@ -1,5 +1,6 @@
 import { ProgressProvider } from "@bprogress/react";
 import type { PropsWithChildren } from "react";
+import { ConfirmDialogProvider } from "@omit/react-confirm-dialog";
 
 export function ClientProviders({ children }: PropsWithChildren) {
 	return (
@@ -10,7 +11,7 @@ export function ClientProviders({ children }: PropsWithChildren) {
 			shallowRouting
 			delay={250}
 		>
-			{children}
+			<ConfirmDialogProvider>{children}</ConfirmDialogProvider>
 		</ProgressProvider>
 	);
 }

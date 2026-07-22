@@ -7,6 +7,7 @@
 
 @source "../../../packages/ui/components";
 @source "../node_modules/streamdown/dist/*.js";
+@source '../node_modules/@omit/react-confirm-dialog/dist/index.js';
 
 @variant dark (&:where(.dark, .dark *));
 
