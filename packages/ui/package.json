@@ -30,7 +30,7 @@
 		"react-day-picker": "^10.0.1",
 		"react-phone-number-input": "catalog:",
 		"react-resizable-panels": "catalog:",
-		"recharts": "3.8.0",
+		"recharts": "3.10.1",
 		"sonner": "catalog:",
 		"tailwind-merge": "catalog:",
 		"vaul": "catalog:"
