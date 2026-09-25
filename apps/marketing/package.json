@@ -40,9 +40,9 @@
 	},
 	"devDependencies": {
 		"@content-collections/cli": "^0.1.9",
-		"@content-collections/core": "^0.15.2",
+		"@content-collections/core": "^0.15.3",
 		"@content-collections/mdx": "^0.2.2",
-		"@content-collections/vite": "^0.3.0",
+		"@content-collections/vite": "^0.3.1",
 		"@mdx-js/mdx": "catalog:",
 		"@playwright/test": "catalog:",
 		"@repo/auth": "workspace:*",
