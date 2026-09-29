@@ -7,126 +7,126 @@ packages:
 minimumReleaseAge: 1440
 
 catalog:
-    "@ai-sdk/anthropic": ^3.0.87
-    "@ai-sdk/openai": ^3.0.75
-    "@ai-sdk/react": ^3.0.213
-    "@faker-js/faker": ^9.3.0
-    "@aws-sdk/client-s3": 3.1075.0
-    "@aws-sdk/s3-request-presigner": 3.1075.0
-    "@base-ui/react": ^1.6.0
-    "@better-auth/passkey": 1.6.22
+    "@ai-sdk/anthropic": ^4.0.65
+    "@ai-sdk/openai": ^4.0.78
+    "@ai-sdk/react": ^4.0.119
+    "@faker-js/faker": ^10.6.0
+    "@aws-sdk/client-s3": 3.1141.0
+    "@aws-sdk/s3-request-presigner": 3.1141.0
+    "@base-ui/react": ^1.8.0
+    "@better-auth/passkey": 1.7.6
     "@better-drizzle/soft-delete": "^0.1.1"
     "@bprogress/react": 1.2.7
     "@dnd-kit/core": ^6.3.1
     "@dnd-kit/modifiers": ^9.0.0
     "@dnd-kit/sortable": ^10.0.0
     "@dnd-kit/utilities": ^3.2.2
-    "@fullcalendar/react": ^7.0.0
-    "@hookform/resolvers": ^5.4.0
+    "@fullcalendar/react": ^7.1.0
+    "@hookform/resolvers": ^5.9.1
     "@mdx-js/mdx": ^3.1.1
-    "@orpc/client": 1.14.6
-    "@orpc/json-schema": 1.14.6
-    "@orpc/openapi": 1.14.6
-    "@orpc/server": 1.14.6
-    "@orpc/tanstack-query": 1.14.6
-    "@orpc/zod": 1.14.6
+    "@orpc/client": 1.15.4
+    "@orpc/json-schema": 1.15.4
+    "@orpc/openapi": 1.15.4
+    "@orpc/server": 1.15.4
+    "@orpc/tanstack-query": 1.15.4
+    "@orpc/zod": 1.15.4
     "@omit/react-confirm-dialog": ^2.0.0
-    "@playwright/test": ^1.61.1
-    "@shadcn/react": "^0.2.0"
-    "@shikijs/rehype": ^4.3.0
-    "@sindresorhus/slugify": ^3.0.0
+    "@playwright/test": ^1.63.0
+    "@shadcn/react": "^0.3.1"
+    "@shikijs/rehype": ^4.4.3
+    "@sindresorhus/slugify": ^3.0.1
     "@tailwindcss/vite": ^4.3.3
-    "@tanstack/react-devtools": ^0.10.8
-    "@tanstack/react-form": ^1.33.2
-    "@tanstack/react-form-devtools": ^0.2.31
-    "@tanstack/react-query": ^5.101.2
-    "@tanstack/react-query-devtools": ^5.101.3
+    "@tanstack/react-devtools": ^0.10.13
+    "@tanstack/react-form": ^1.33.5
+    "@tanstack/react-form-devtools": ^0.2.34
+    "@tanstack/react-query": ^5.104.0
+    "@tanstack/react-query-devtools": ^5.104.0
     "@tanstack/react-router": ^1.170.18
     "@tanstack/react-start": ^1.168.32
-    "@tanstack/react-store": ^0.11.0
-    "@tanstack/react-table": ^8.21.3
-    "@tanstack/react-virtual": ^3.14.6
-    "@types/d3-geo": ^3.1.0
+    "@tanstack/react-store": ^0.11.1
+    "@tanstack/react-table": ^9.2.4
+    "@tanstack/react-virtual": ^3.14.13
+    "@types/d3-geo": ^3.1.1
     "@types/js-cookie": ^3.0.6
     "@types/mdx": ^2.0.14
-    "@types/node": ^22.20.0
-    "@types/nodemailer": ^8.0.1
+    "@types/node": ^26.6.3
+    "@types/nodemailer": ^8.0.2
     "@types/nprogress": ^0.2.3
-    "@types/react": 19.2.17
-    "@types/react-dom": 19.2.3
+    "@types/react": 19.3.0
+    "@types/react-dom": 19.3.0
     "@types/topojson-client": ^3.1.5
     "@types/uuid": ^11.0.0
     "@unpic/react": ^1.0.2
-    "@vitejs/plugin-react": ^6.0.3
-    "@vitest/coverage-v8": ^4.1.9
-    ai: ^6.0.211
-    autoprefixer: 10.5.2
-    better-auth: 1.6.22
-    better-drizzle: ^0.1.1
+    "@vitejs/plugin-react": ^6.1.1
+    "@vitest/coverage-v8": ^5.0.2
+    ai: ^7.0.116
+    autoprefixer: 10.6.1
+    better-auth: 1.7.6
+    better-drizzle: ^0.2.0
     boring-avatars: ^2.0.4
     class-variance-authority: ^0.7.1
     clsx: ^2.1.1
     cmdk: "^1.1.1"
-    cookie: ^1.1.1
+    cookie: ^2.0.1
     cropperjs: 1.6.2
     d3-geo: ^3.1.1
     date-fns: ^4.4.0
-    dotenv: ^17.4.2
+    dotenv: ^18.0.4
     dotenv-cli: ^11.0.0
-    drizzle-kit: ^0.31.10
-    drizzle-orm: ^0.45.2
+    drizzle-kit: ^0.31.11
+    drizzle-orm: ^0.45.3
     drizzle-zod: 0.8.3
     embla-carousel-react: ^8.6.0
-    es-toolkit: ^1.49.0
-    hono: ^4.12.27
-    input-otp: ^1.4.2
+    es-toolkit: ^1.52.0
+    hono: ^4.13.9
+    input-otp: ^1.5.0
     js-cookie: ^3.0.8
-    lucide-react: ^1.23.0
+    lucide-react: ^1.48.0
     mdx: ^0.3.1
     mdx-bundler: ^10.1.1
-    motion: ^12.42.2
-    nanoid: ^5.1.16
+    motion: ^13.4.4
+    nanoid: ^6.0.1
     nprogress: ^0.2.0
-    nuqs: ^2.8.9
-    openai: ^6.45.0
-    oxfmt: 0.56.0
-    oxlint: 1.71.0
-    pg: ^8.22.0
-    postcss: 8.5.20
+    nuqs: ^2.10.1
+    openai: ^7.23.0
+    oxfmt: 0.70.0
+    oxlint: 1.85.0
+    pg: ^8.23.0
+    postcss: 8.5.28
     prettier: 3.8.3
-    radix-ui: ^1.6.2
+    radix-ui: ^1.6.7
     react-day-picker: ^10.0.1
-    react-hook-form: ^7.81.0
-    react-resizable-panels: ^4.12.1
-    react: 19.2.7
+    react-hook-form: ^7.89.0
+    react-resizable-panels: ^4.13.3
+    react: 19.3.0
     react-cropper: ^2.3.3
-    react-dom: 19.2.7
-    react-dropzone: ^19.1.1
-    react-phone-number-input: ^3.4.17
+    react-dom: 19.3.0
+    react-dropzone: ^20.1.2
+    react-phone-number-input: ^3.4.18
     react-qr-code: ^2.2.0
     recharts: ^3.9.0
     sharp: ^0.35.2
-    simple-icons: ^16.26.0
+    simple-icons: ^16.32.0
     slugify: ^1.6.9
-    sonner: ^2.0.7
-    start-server-and-test: ^3.0.11
-    streamdown: ^2.5.0
-    tailwind-merge: ^3.6.0
-    tailwindcss: 4.3.1
+    sonner: ^2.0.8
+    start-server-and-test: ^3.0.12
+    streamdown: ^2.6.0
+    tailwind-merge: ^3.7.0
+    tailwindcss: 4.3.3
     tanstack-table-search-params: ^0.12.1
-    temporal-polyfill: ^1.0.1
-    tsx: ^4.22.4
+    temporal-polyfill: ^1.0.5
+    tsx: ^4.23.15
     topojson-client: ^3.1.0
     typescript: 7.0.2
     ufo: ^1.6.4
-    use-intl: ^4.13.0
+    use-intl: ^4.14.7
     usehooks-ts: ^3.1.1
-    uuid: ^14.0.1
-    vite: ^8.1.0
-    vitest: ^4.1.9
+    uuid: ^14.0.2
+    vite: ^8.3.1
+    vitest: ^5.0.2
     vaul: ^1.1.2
-    zod: ^4.4.3
-    zustand: ^5.0.14
+    zod: ^4.6.5
+    zustand: ^5.0.15
 
 allowBuilds:
     "@swc/core": true
